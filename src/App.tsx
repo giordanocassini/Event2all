@@ -1,9 +1,12 @@
-import { useState } from "react";
-
+// import { useState } from "react";
+import FormLogin from "./components/FormLogin/FormLogin";
+import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
-  const [count, setCount] = useState(0);
-
-  return <></>;
+  return (
+    <>
+      <FormLogin />
+    </>
+  );
 }
 
 export default App;
