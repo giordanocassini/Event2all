@@ -7,7 +7,6 @@ import "./styles.scss"
 
 export default function Header() {
   return (
-    <StyledNav>
     <Navbar id="view-height" className='bg-info'>
       <Container>
         <Navbar.Brand className='text-white' href="#home">📷 Logomarca</Navbar.Brand>
@@ -18,6 +17,5 @@ export default function Header() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-    </StyledNav>
   );
 }
