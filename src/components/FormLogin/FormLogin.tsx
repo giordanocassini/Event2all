@@ -1,9 +1,8 @@
 import { FormEvent, useState } from "react";
 import { Card, Form, Button, FormGroup } from "react-bootstrap";
 // import { Link } from "react-router-dom";
-import { Formik } from "formik";
 
-// import { login } from "../../services/userServices";
+import { login } from "../../services/auth";
 // import { useDispatch } from "react-redux";
 // import { getUser, setUser } from "../../store/modules/users";
 // import { Dispatch } from "@reduxjs/toolkit";
@@ -11,9 +10,22 @@ import { Formik } from "formik";
 export default function FormLogin() {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const submit = async (event: FormEvent) => {
+    event.preventDefault();
+    try {
+      const response = await login({ email, password });
 
+      window.localStorage.setItem("token", response.data.token);
+      window.localStorage.setItem("id", response.data.id);
+      // dispatch(getUser());
+
+      // navigate("/");
+    } catch (error) {
+      alert("Opa! Deu algo errado!");
+    }
+  };
   return (
-    <Form>
+    <Form onSubmit={submit}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email</Form.Label>
         <Form.Control
