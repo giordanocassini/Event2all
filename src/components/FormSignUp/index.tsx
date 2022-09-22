@@ -3,7 +3,7 @@ import { Form, Card, FormGroup } from "react-bootstrap";
 import { FormEvent, useEffect, useState } from "react";
 /* import { cadastro } from "../../services/userServices";
 import { useNavigate } from "react-router-dom"; */
-export default function FormRegister() {
+export default function FormSignUp() {
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
