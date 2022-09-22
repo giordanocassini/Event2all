@@ -1,6 +1,6 @@
 import { FormEvent, useState } from "react";
 import { Card, Form, Button, FormGroup } from "react-bootstrap";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { login } from "../../services/auth";
 // import { useDispatch } from "react-redux";
@@ -51,7 +51,7 @@ export default function FormLogin() {
           Fazer login
         </Button>
         <FormGroup className="cadastrarLink">
-          <a href="#">Cadastre-se</a>
+          <Link to={"/register"}> Cadastre-se</Link>
         </FormGroup>
       </Form>
     </div>

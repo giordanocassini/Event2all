@@ -1,6 +1,8 @@
-import Button from "react-bootstrap/Button";
-import { Form, Card, FormGroup } from "react-bootstrap";
+import { Form, Card, FormGroup, Button } from "react-bootstrap";
 import { FormEvent, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { register } from "../../services/auth";
+
 /* import { cadastro } from "../../services/userServices";
 import { useNavigate } from "react-router-dom"; */
 export default function FormSignUp() {
@@ -13,19 +15,18 @@ export default function FormSignUp() {
 
   //const navigate = useNavigate();
 
-  /* const submit = async (event: FormEvent) => {
+  const submit = async (event: FormEvent) => {
     event.preventDefault();
     try {
-      await cadastro({
+      await register({
         name,
         email,
         password,
-        apartment: parseInt(apartment),
       });
 
       alert("Usuário cadastrado com sucesso");
 
-      navigate("/login");
+      // navigate("/login");
     } catch (error) {
       alert("Opa! Deu algo errado!");
     }
@@ -38,7 +39,7 @@ export default function FormSignUp() {
       setWrongPass("");
     }
   }, [confirmarPassword]);
- */
+
   return (
     <div>
       <div
@@ -46,7 +47,7 @@ export default function FormSignUp() {
         justify-content-center  "
       >
         <Card className="cardForm ">
-          <Form className="formulario text-center" >
+          <Form className="formulario text-center">
             <img src="/assets/img/logo-colorido.png" alt="" />
             <h3> Crie sua conta agora!</h3>
             <span>Chegou a hora de planejar eventos incríveis!</span>
@@ -95,7 +96,8 @@ export default function FormSignUp() {
               Fazer cadastro
             </Button>
             <FormGroup className="cadastrarLink">
-                <p>Já tem cadastro?</p><a href="#">Login</a>
+              <p>Já tem cadastro?</p>
+              <Link to={"/login"}>Login</Link>
             </FormGroup>
           </Form>
         </Card>
