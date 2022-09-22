@@ -1,20 +1,11 @@
 // import { useState } from "react";
-//import FormLogin from "./components/FormLogin/FormLogin";
+
 import "bootstrap/dist/css/bootstrap.min.css";
-import FormLogin from "./components/FormLogin";
-import Header from "./components/Header";
-import FormSignUp from "./components/FormSignUp";
-import Footer from "./components/Footer";
+
+import AppRoutes from "./routes/Routes";
 
 function App() {
-  return (
-    <>
-      {/* {<Header />}
-      <FormSignUp /> */}
-      {/* <FormLogin/> */}
-      {<Footer />}
-    </>
-  );
+  return <AppRoutes />;
 }
 
 export default App;

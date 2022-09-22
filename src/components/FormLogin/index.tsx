@@ -25,33 +25,35 @@ export default function FormLogin() {
     }
   };
   return (
-    <Form onSubmit={submit}>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email</Form.Label>
-        <Form.Control
-          type="email"
-          placeholder="Digite seu email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-      </Form.Group>
+    <div className="container h-100 pt-5 d-flex alight-itens-center justify-content-center">
+      <Form onSubmit={submit}>
+        <Form.Group className="mb-3 " controlId="formBasicEmail">
+          <Form.Label>Email</Form.Label>
+          <Form.Control
+            type="email"
+            placeholder="Digite seu email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Senha</Form.Label>
-        <Form.Control
-          type="password"
-          placeholder="Digite a sua senha"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Label>Senha</Form.Label>
+          <Form.Control
+            type="password"
+            placeholder="Digite a sua senha"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </Form.Group>
 
-      <Button variant="primary" type="submit">
-        Fazer login
-      </Button>
-      <FormGroup className="cadastrarLink">
-        <a href="#">Cadastre-se</a>
-      </FormGroup>
-    </Form>
+        <Button variant="primary" type="submit">
+          Fazer login
+        </Button>
+        <FormGroup className="cadastrarLink">
+          <a href="#">Cadastre-se</a>
+        </FormGroup>
+      </Form>
+    </div>
   );
 }
