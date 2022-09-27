@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
-    <Navbar className="backgroundHeader">
+    <Navbar className="backgroundHeader p-4">
       <Container className=" d-flex aligh-items-center justify-content-center">
         <Link to={"/"}>
           <img src="../../../public/images/logotipo2.png" alt="logo do event" />
