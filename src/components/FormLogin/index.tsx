@@ -1,11 +1,11 @@
 import { FormEvent, useState } from "react";
 import { Card, Form, Button, FormGroup } from "react-bootstrap";
 import { Link } from "react-router-dom";
-
 import { login } from "../../services/auth";
 // import { useDispatch } from "react-redux";
 // import { getUser, setUser } from "../../store/modules/users";
 // import { Dispatch } from "@reduxjs/toolkit";
+import "./formLogin.scss";
 
 export default function FormLogin() {
   const [email, setEmail] = useState<string>("");
@@ -25,13 +25,15 @@ export default function FormLogin() {
     }
   };
   return (
-    <div className="container h-100 pt-5 d-flex alight-itens-center justify-content-center">
+    <div className="form-login h-100 pt-5 d-flex alight-itens-center justify-content-space-around">
+      <h3>Login</h3>
+      <p>Preencha seus dados e programe seu evento já!</p>
       <Form onSubmit={submit}>
-        <Form.Group className="mb-3 " controlId="formBasicEmail">
-          <Form.Label>Email</Form.Label>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label>E-mail</Form.Label>
           <Form.Control
             type="email"
-            placeholder="Digite seu email"
+            placeholder="Digite seu e-mail"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -41,16 +43,17 @@ export default function FormLogin() {
           <Form.Label>Senha</Form.Label>
           <Form.Control
             type="password"
-            placeholder="Digite a sua senha"
+            placeholder="Digite sua senha"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>
 
-        <Button variant="primary" type="submit">
+        <Button className="button-login" variant="primary" type="submit">
           Fazer login
         </Button>
         <FormGroup className="cadastrarLink">
+          <span>Não tem login?</span>
           <Link to={"/register"}> Cadastre-se</Link>
         </FormGroup>
       </Form>
