@@ -1,0 +1,27 @@
+@import "../../assets/styles/variables.scss";
+Form {
+  h3 {
+    font-size: 51px;
+    font-weight: 700;
+  }
+  span {
+    color: $text-details;
+  }
+
+  .buttonCadastro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 8px;
+    width: 340px;
+    height: 47px;
+    background: $green-primary;
+    border: 2px solid $green-primary;
+    border-radius: 4.8px;
+    color: $dark-blue;
+    font-weight: 700;
+    border-bottom: 2px solid $green-details;
+    font-size: 21px;
+  }
+}
