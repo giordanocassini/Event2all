@@ -6,7 +6,7 @@ import "./headerHome.scss";
 
 export default function HeaderHome() {
   return (
-    <Navbar id="view-height" className="bg-info">
+    <Navbar className="bg-info">
       <Container>
         <Navbar.Brand className="text-white" href="#home">
           <img src="../../../public/images/logotipo2.png"></img>

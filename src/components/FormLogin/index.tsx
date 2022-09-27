@@ -53,8 +53,12 @@ export default function FormLogin() {
           Fazer login
         </Button>
         <FormGroup className="cadastrarLink">
-          <span>Não tem login?</span>
-          <Link to={"/register"}> Cadastre-se</Link>
+          <span className="d-flex aligh-itens-center justify-content-center pt-4">
+            Não tem login?
+            <Link className="px-2" to={"/register"}>
+              Cadastre-se
+            </Link>
+          </span>
         </FormGroup>
       </Form>
     </div>

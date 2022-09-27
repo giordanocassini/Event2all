@@ -1,25 +1,32 @@
+@import "../../assets/styles/variables.scss";
+
 .form-login {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-}
-
-.button-login {
-    box-sizing: border-box;
+  h3 {
+    font-weight: 700;
+    font-size: 60px;
+  }
+  p {
+    font-weight: 400;
+    color: $text-details;
+  }
+  .button-login {
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 8px 16px;
     gap: 8px;
     width: 340px;
-    height: 47px;    
-    background: #14C989;
-    border: 2px solid #14C989;
+    height: 47px;
+    background: $green-primary;
+    border: 2px solid $green-primary;
     border-radius: 4.8px;
-    flex: none;
-    order: 0;
-    align-self: stretch;
-    flex-grow: 0;
+    color: $dark-blue;
+    font-weight: 700;
+    border-bottom: 2px solid $green-details;
+    font-size: 21px;
+  }
 }
