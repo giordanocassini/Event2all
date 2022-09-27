@@ -1,5 +1,5 @@
 import Card from 'react-bootstrap/Card';
-import "./styles.scss";
+import "./footer.scss";
 
 export default function Footer() {
   return (

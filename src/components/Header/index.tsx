@@ -1,20 +1,17 @@
-import { Button } from 'react-bootstrap';
-import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
-import { StyledNav } from './styles';
-import "./styles.scss"
-
+import Container from "react-bootstrap/Container";
+import Navbar from "react-bootstrap/Navbar";
+// import { StyledNav } from "./styles";
+import "./header.scss";
+import Photo from "../../assets/images/logotipo2.png";
 
 export default function Header() {
   return (
-    <Navbar id="view-height" className='bg-info'>
-      <Container>
-        <Navbar.Brand className='text-white' href="#home">📷 Logomarca</Navbar.Brand>
-        <Navbar.Brand className='text-white' href="#home">Home</Navbar.Brand>
+    <Navbar id="view-height" className="bg">
+      <Container className="header-login">
+        <Navbar.Brand href="#home">
+          <img src={Photo}></img>
+        </Navbar.Brand>
         <Navbar.Toggle />
-        <Navbar.Collapse className="justify-content-end">
-            <Button className='py-1 px-4 rounded-1'>Login</Button>
-        </Navbar.Collapse>
       </Container>
     </Navbar>
   );
