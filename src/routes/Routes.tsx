@@ -11,7 +11,7 @@ export default function AppRoutes() {
         <Route path="/login" element={<Login />} />
         <Route path="/cadastro" element={<SignUp />} />
         <Route path="/" element={<Home />} />
-        <Route path="/Dashboard" element={<Dashboard />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </Router>
   );

@@ -27,52 +27,54 @@ export default function FormLogin() {
       alert("Opa! Logado com sucesso!");
 
       //navigate("/")
-
     } catch (error) {
       alert("Opa! Deu algo errado!");
     }
   };
   return (
     <div className="vh-100">
-    <div className="form-login h-100 d-flex align-items-center justify-content-center">
-      <Header />
-      <h3>Login</h3>
-      <p>Preencha seus dados e programe seu evento já!</p>
-      <Form onSubmit={submit}>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>E-mail</Form.Label>
-          <Form.Control
-            type="email"
-            placeholder="Digite seu e-mail"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </Form.Group>
+      <div className="form-login h-100 d-flex align-items-center justify-content-center">
+        <h3>Login</h3>
+        <p>Preencha seus dados e programe seu evento já!</p>
+        <Form onSubmit={submit}>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>E-mail</Form.Label>
+            <Form.Control
+              type="email"
+              placeholder="Digite seu e-mail"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Senha</Form.Label>
-          <Form.Control
-            type="password"
-            placeholder="Digite sua senha"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Label>Senha</Form.Label>
+            <Form.Control
+              type="password"
+              placeholder="Digite sua senha"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </Form.Group>
 
-        <Button className="button-login" variant="primary" type="submit">
-          Fazer login
-        </Button>
-        <FormGroup className="cadastrarLink">
-          <span className="d-flex aligh-itens-center justify-content-center pt-4">
-            Não tem login?
-            <Link className="px-2" to={"/cadastro"}>
-              Cadastre-se
-            </Link>
-          </span>
-        </FormGroup>
-      </Form>
-    <Footer  backgroundColor="#E5E5E5" color="#000000" logotipo="logotipo.png"/>
+          <Button className="button-login" variant="primary" type="submit">
+            Fazer login
+          </Button>
+          <FormGroup className="cadastrarLink">
+            <span className="d-flex aligh-itens-center justify-content-center pt-4">
+              Não tem login?
+              <Link className="px-2" to={"/cadastro"}>
+                Cadastre-se
+              </Link>
+            </span>
+          </FormGroup>
+        </Form>
+        <Footer
+          backgroundColor="#E5E5E5"
+          color="#000000"
+          logotipo="logotipo.png"
+        />
+      </div>
     </div>
-  </div>
   );
 }

@@ -45,7 +45,10 @@ export default function FormSignUp() {
 
   return (
     <div className="vh-100">
-      <div className="formCadastro h-100 d-flex align-items-center justify-content-center">
+      <div
+        className="formCadastro h-100 
+      d-flex align-items-center justify-content-center"
+      >
         <Header />
         <Form className="formulario text-center">
           {/* <img src="/assets/img/logo-colorido.png" alt="logo" /> */}
