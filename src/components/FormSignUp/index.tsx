@@ -94,6 +94,7 @@ export default function FormSignUp() {
               className="inputTexto"
               type="date"
               placeholder="DD/MM/AAAA"
+              onfocus="(this.type='date')"
               value={birthday}
               onChange={(e) => setBirthday(e.target.value)}
               required
