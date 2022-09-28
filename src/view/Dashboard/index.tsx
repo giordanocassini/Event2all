@@ -1,7 +1,7 @@
 import SideBar from "../../components/SideBar/SideBar";
 
 
-export default function HomeLoged () {
+export default function Dashboard () {
     return (
       <>
       <SideBar />
