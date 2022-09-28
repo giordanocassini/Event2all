@@ -38,14 +38,14 @@ export default function FormSignUp() {
     }
   };
 
-/*   useEffect(() => {
+  useEffect(() => {
     if (password !== confirmarPassword) {
       setWrongPass("wrong-password");
     } else {
       setWrongPass("");
     }
   }, [confirmarPassword]);
- */
+
   return (
     <div className="vh-100">
       <div

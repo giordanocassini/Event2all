@@ -1,0 +1,31 @@
+@import "../../assets/styles/variables.scss";
+
+.img-home {
+  margin-top: 3.75rem;
+  width: 30rem !important;
+  height: 30rem;
+}
+
+.content-home {
+  width: 45% !important;
+  padding-left: 7rem;
+}
+
+div > h3 {
+  font-weight: 700;
+  font-size: 51px;
+  line-height: 70px;
+  text-align: left;
+}
+
+.cards {
+  background-color: $green-primary;
+}
+
+#card {
+  background-color: #fff;
+}
+
+.mood {
+  width: 4%;
+}
