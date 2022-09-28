@@ -8,6 +8,11 @@ Form {
     color: $text-details;
   }
 
+  
+  .obligatory {
+    color: red;
+  }
+
   .buttonCadastro {
     padding: 8px 16px;
     gap: 8px;

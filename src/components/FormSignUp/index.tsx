@@ -12,7 +12,7 @@ export default function FormSignUp() {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [confirmarPassword, setConfirmarPassword] = useState<string>("");
-  const [apartment, setApartment] = useState<string>("");
+  const [birthday, setBirthday] = useState<string>("");
   const [wrongPass, setWrongPass] = useState<string>("");
 
   //const navigate = useNavigate();
@@ -23,6 +23,7 @@ export default function FormSignUp() {
       await register({
         name,
         email,
+        birthday,
         password,
       });
 
@@ -44,57 +45,96 @@ export default function FormSignUp() {
 
   return (
     <div className="vh-100">
-      <div
-        className="formCadastro h-100 d-flex align-items-center justify-content-center"
-      >
+      <div className="formCadastro h-100 d-flex align-items-center justify-content-center">
         <Header />
         <Form className="formulario text-center">
           {/* <img src="/assets/img/logo-colorido.png" alt="logo" /> */}
           <h3> Crie sua conta!</h3>
           <span>Preencha seus dados e programe seu evento já!</span>
           <Form.Group
-            className=" boxform d-flex  p-3 "
+            className=" boxform p-1 text-start mb-2"
             controlId="formBasicEmail"
           >
+            <Form.Label>
+              Nome <span className="obligatory">*</span>
+            </Form.Label>
             <Form.Control
               className="inputTexto"
               type="text"
               placeholder="Digite seu nome"
               value={name}
               onChange={(e) => setName(e.target.value)}
+              required
             />
           </Form.Group>
-          <Form.Group className="boxform p-3" controlId="formBasicEmail">
+          <Form.Group
+            className="boxform p-1 text-start mb-2"
+            controlId="formBasicEmail"
+          >
+            <Form.Label>
+              E-mail <span className="obligatory">*</span>
+            </Form.Label>
             <Form.Control
               className="inputTexto"
               type="email"
               placeholder="Digite seu  e-mail"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </Form.Group>
+          <Form.Group
+            className="boxform p-1 text-start mb-2"
+            controlId="formBasicBirthday"
+          >
+            <Form.Label>
+              Data de nascimento <span className="obligatory">*</span>
+            </Form.Label>
+            <Form.Control
+              className="inputTexto"
+              type="date"
+              placeholder="DD/MM/AAAA"
+              value={birthday}
+              onChange={(e) => setBirthday(e.target.value)}
+              required
             />
           </Form.Group>
 
-          <Form.Group className=" boxform p-3" controlId="formBasicPassword">
+          <Form.Group
+            className=" boxform p-1 text-start mb-2"
+            controlId="formBasicPassword"
+          >
+            <Form.Label>
+              Senha <span className="obligatory">*</span>
+            </Form.Label>
             <Form.Control
               className="inputTexto"
               type="password"
               placeholder="Digite sua senha"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              required
             />
           </Form.Group>
-          <Form.Group className="p-3 boxform" controlId="formBasicPassword">
+          <Form.Group
+            className="p-1 boxform text-start mb-2"
+            controlId="formBasicPassword"
+          >
+            <Form.Label>
+              Confirmar senha <span className="obligatory">*</span>
+            </Form.Label>
             <Form.Control
               className={`inputTexto ${wrongPass}`}
               type="password"
               placeholder="Confirme sua senha"
               value={confirmarPassword}
               onChange={(e) => setConfirmarPassword(e.target.value)}
+              required
             />
           </Form.Group>
 
-          <Button className="buttonCadastro" type="submit">
-            Fazer cadastro
+          <Button className="buttonCadastro mt-4" type="submit">
+            Cadastrar-se
           </Button>
           <FormGroup className="cadastrarLink">
             <p className="p-4">
@@ -102,7 +142,11 @@ export default function FormSignUp() {
             </p>
           </FormGroup>
         </Form>
-        <Footer  backgroundColor="#E5E5E5" color="#000000" logotipo="logotipo.png"/>
+        <Footer
+          backgroundColor="#E5E5E5"
+          color="#000000"
+          logotipo="logotipo.png"
+        />
       </div>
     </div>
   );
