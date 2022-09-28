@@ -2,7 +2,9 @@ import { Form, Card, FormGroup, Button } from "react-bootstrap";
 import { FormEvent, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { register } from "../../services/auth";
-import "./formsign.scss";
+import Header from "../Header";
+import Footer from "../Footer";
+import "./formSignUp.scss";
 /* import { cadastro } from "../../services/userServices";
 import { useNavigate } from "react-router-dom"; */
 export default function FormSignUp() {
@@ -41,13 +43,13 @@ export default function FormSignUp() {
   }, [confirmarPassword]);
 
   return (
-    <div>
+    <div className="vh-100">
       <div
-        className="formCadastro container h-100 pt-5 d-flex align-itens-center 
-        justify-content-center  "
+        className="formCadastro h-100 d-flex align-items-center justify-content-center"
       >
+        <Header />
         <Form className="formulario text-center">
-          <img src="/assets/img/logo-colorido.png" alt="" />
+          {/* <img src="/assets/img/logo-colorido.png" alt="logo" /> */}
           <h3> Crie sua conta!</h3>
           <span>Preencha seus dados e programe seu evento já!</span>
           <Form.Group
@@ -100,6 +102,7 @@ export default function FormSignUp() {
             </p>
           </FormGroup>
         </Form>
+        <Footer  backgroundColor="#E5E5E5" color="#000000" logotipo="logotipo.png"/>
       </div>
     </div>
   );
