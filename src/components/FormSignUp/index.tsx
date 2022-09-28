@@ -49,7 +49,6 @@ export default function FormSignUp() {
         className="formCadastro h-100 
       d-flex align-items-center justify-content-center"
       >
-        <Header />
         <Form className="formulario text-center">
           {/* <img src="/assets/img/logo-colorido.png" alt="logo" /> */}
           <h3> Crie sua conta!</h3>
