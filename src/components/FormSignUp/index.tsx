@@ -48,7 +48,7 @@ export default function FormSignUp() {
       <div className="formCadastro h-100 d-flex align-items-center justify-content-center">
         <Header />
         <Form className="formulario text-center">
-          <h3> Crie sua conta!</h3>
+          <h3>Crie sua conta!</h3>
           <span>Preencha seus dados e programe seu evento já!</span>
           <Form.Group
             className=" boxform p-1 text-start mb-2"
@@ -92,7 +92,7 @@ export default function FormSignUp() {
             <Form.Control
               className="inputTexto"
               type="date"
-              placeholder="DD/MM/AAAA"
+              // placeholder="DD/MM/AAAA"
               onfocus="(this.type='date')"
               value={birthday}
               onChange={(e) => setBirthday(e.target.value)}
