@@ -1,5 +1,5 @@
 import { FormEvent, useState } from "react";
-import { Card, Form, Button, FormGroup } from "react-bootstrap";
+import { Form, Button, FormGroup } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { login } from "../../services/auth";
 // import { useDispatch } from "react-redux";
@@ -16,10 +16,16 @@ export default function FormLogin() {
       const response = await login({ email, password });
 
       window.localStorage.setItem("token", response.data.token);
-      window.localStorage.setItem("id", response.data.id);
+      window.localStorage.setItem("id", response.data.user.id);
       // dispatch(getUser());
 
-      // navigate("/");
+      console.log("logado com:", response.data.user);
+      console.log("token", response.data.token);
+
+      alert("Opa! Logado com sucesso!");
+
+      //navigate("/")
+
     } catch (error) {
       alert("Opa! Deu algo errado!");
     }
@@ -55,7 +61,7 @@ export default function FormLogin() {
         <FormGroup className="cadastrarLink">
           <span className="d-flex aligh-itens-center justify-content-center pt-4">
             Não tem login?
-            <Link className="px-2" to={"/register"}>
+            <Link className="px-2" to={"/cadastro"}>
               Cadastre-se
             </Link>
           </span>
