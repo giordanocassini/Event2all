@@ -69,11 +69,6 @@ export default function FormLogin() {
             </span>
           </FormGroup>
         </Form>
-        <Footer
-          backgroundColor="#E5E5E5"
-          color="#000000"
-          logotipo="logotipo.png"
-        />
       </div>
     </div>
   );
