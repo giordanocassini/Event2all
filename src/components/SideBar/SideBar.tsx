@@ -43,11 +43,11 @@ class SideBar extends React.Component<any, any> {
             </Nav.Link>
           </Nav.Item>
 
-          <SubMenu
+          {/* <SubMenu
             title="Pages"
             icon={faCopy}
             items={["Link", "Link2", "Active"]}
-          />
+          /> */}
 
           <Nav.Item>
             <Nav.Link href="/">

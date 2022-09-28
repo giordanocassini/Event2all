@@ -3,6 +3,7 @@ import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import { StyledNav } from "./styles";
 import "./headerHome.scss";
+import { Link } from "react-router-dom";
 
 export default function HeaderHome() {
   return (
@@ -22,8 +23,16 @@ export default function HeaderHome() {
         </Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
-          <Button className="btn-light py-1 px-4 me-2 rounded-1 text-dark fw-bold">Fazer login</Button>
-          <Button className="btn-success py-1 px-4 rounded-1 text-dark fw-bold">Cadastrar-se</Button>
+          <Button className="btn-light py-1 px-4 me-2 rounded-1 text-dark fw-bold">
+            <Link className="button-header" to={"/login"}>
+              Fazer login
+            </Link>
+          </Button>
+          <Button className="btn-success py-1 px-4 rounded-1 text-dark fw-bold" >
+            <Link className="button-header" to={"/cadastro"}>
+              Cadastrar-se
+            </Link>
+          </Button>
         </Navbar.Collapse>
       </Container>
     </Navbar>
