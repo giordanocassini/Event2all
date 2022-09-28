@@ -2,6 +2,8 @@ import { FormEvent, useState } from "react";
 import { Card, Form, Button, FormGroup } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { login } from "../../services/auth";
+import Footer from "../Footer";
+import Header from "../Header";
 // import { useDispatch } from "react-redux";
 // import { getUser, setUser } from "../../store/modules/users";
 // import { Dispatch } from "@reduxjs/toolkit";
@@ -25,7 +27,9 @@ export default function FormLogin() {
     }
   };
   return (
-    <div className="form-login h-100 pt-5 d-flex alight-itens-center justify-content-space-around">
+    <div className="vh-100">
+    <div className="form-login h-100 d-flex align-items-center justify-content-center">
+      <Header />
       <h3>Login</h3>
       <p>Preencha seus dados e programe seu evento já!</p>
       <Form onSubmit={submit}>
@@ -61,6 +65,8 @@ export default function FormLogin() {
           </span>
         </FormGroup>
       </Form>
+    <Footer  backgroundColor="#E5E5E5" color="#000000" logotipo="logotipo.png"/>
     </div>
+  </div>
   );
 }

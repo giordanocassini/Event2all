@@ -5,9 +5,9 @@ import Header from "../../components/Header";
 export default function Login() {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <FormLogin />
-      <Footer  backgroundColor="#E5E5E5" color="#000000" logotipo="logotipo.png"/>
+      {/* <Footer  backgroundColor="#E5E5E5" color="#000000" logotipo="logotipo.png"/> */}
     </>
   );
 }
