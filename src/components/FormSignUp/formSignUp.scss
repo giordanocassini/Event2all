@@ -12,6 +12,10 @@ Form {
     color: red;
   }
 
+  input[type="date"], focus {
+    color: #95a5a9;
+  }
+
   .buttonCadastro {
     padding: 8px 16px;
     gap: 8px;
