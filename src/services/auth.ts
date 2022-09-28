@@ -15,5 +15,5 @@ export function login(payload: LoginPayload) {
 }
 
 export function register(payload: RegisterUser) {
-  return baseApi.post("", payload);
+  return baseApi.post("/user", payload);
 }
