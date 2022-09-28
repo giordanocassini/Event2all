@@ -1,6 +1,9 @@
 .backgroundHeader {
   background-color: #191933;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: fixed !important;
+  top: 0;
+  width: 100vw;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
 }
