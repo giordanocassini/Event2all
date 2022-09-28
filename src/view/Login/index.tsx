@@ -7,7 +7,7 @@ export default function Login() {
     <>
       <Header />
       <FormLogin />
-      <Footer />
+      <Footer  backgroundColor="#E5E5E5" color="#000000" logotipo="logotipo.png"/>
     </>
   );
 }

@@ -2,4 +2,18 @@
     position: fixed;
     bottom: 0;
     width: 100vw;
+    justify-content: space-between !important;
 }
+.footer{
+    display: flex;
+    flex-direction: row;
+}
+.logoFooter{
+    margin-left: 4.5rem;
+}
+.copyright{
+    display: flex;
+    justify-content: end;
+    margin-right: 4.5rem;
+}
+

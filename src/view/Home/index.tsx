@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
     <HeaderHome />
-    <Footer />
+    <Footer backgroundColor="#191933" color="#FBFBFB" logotipo="logotipo2.png"/>
     </>
   )
 }

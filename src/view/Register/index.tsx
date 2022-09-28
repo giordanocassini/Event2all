@@ -7,7 +7,7 @@ export default function Register() {
     <>
       <Header />
       <FormSignUp />
-      <Footer />
+      <Footer backgroundColor="#E5E5E5" color="#000000" logotipo="logotipo.png"/>
     </>
   );
 }
