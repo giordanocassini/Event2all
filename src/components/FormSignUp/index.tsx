@@ -19,37 +19,40 @@ export default function FormSignUp() {
 
   const submit = async (event: FormEvent) => {
     event.preventDefault();
-    try {
-      await register({
-        name,
-        email,
-        birthday,
-        password,
-      });
 
-      alert("Usuário cadastrado com sucesso");
-
-      navigate("/login");
-    } catch (error) {
-      alert("Opa! Deu algo errado!");
+    if (password !== confirmarPassword) {
+      alert("Senha não confere!");
+    } else {
+      try {
+        await register({
+          name,
+          email,
+          //birthday,
+          password,
+        });
+        alert("Usuário cadastrado com sucesso");
+        navigate("/login");
+      } catch (error) {
+        alert("Opa! Deu algo errado!");
+      }
     }
   };
 
-  useEffect(() => {
+/*   useEffect(() => {
     if (password !== confirmarPassword) {
       setWrongPass("wrong-password");
     } else {
       setWrongPass("");
     }
   }, [confirmarPassword]);
-
+ */
   return (
     <div className="vh-100">
       <div
         className="formCadastro h-100 
       d-flex align-items-center justify-content-center"
       >
-        <Form className="formulario text-center">
+        <Form onSubmit={submit} className="formulario text-center">
           <h3>Crie sua conta!</h3>
           <span>Preencha seus dados e programe seu evento já!</span>
           <Form.Group
