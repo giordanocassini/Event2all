@@ -5,8 +5,8 @@ import { register } from "../../services/auth";
 import Header from "../Header";
 import Footer from "../Footer";
 import "./formSignUp.scss";
-/* import { cadastro } from "../../services/userServices";
-import { useNavigate } from "react-router-dom"; */
+//import { cadastro } from "../../services/userServices";
+import { useNavigate } from "react-router-dom";
 export default function FormSignUp() {
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
@@ -15,7 +15,7 @@ export default function FormSignUp() {
   const [birthday, setBirthday] = useState<string>("");
   const [wrongPass, setWrongPass] = useState<string>("");
 
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const submit = async (event: FormEvent) => {
     event.preventDefault();
@@ -29,7 +29,7 @@ export default function FormSignUp() {
 
       alert("Usuário cadastrado com sucesso");
 
-      // navigate("/login");
+      navigate("/login");
     } catch (error) {
       alert("Opa! Deu algo errado!");
     }
@@ -48,7 +48,6 @@ export default function FormSignUp() {
       <div className="formCadastro h-100 d-flex align-items-center justify-content-center">
         <Header />
         <Form className="formulario text-center">
-          {/* <img src="/assets/img/logo-colorido.png" alt="logo" /> */}
           <h3> Crie sua conta!</h3>
           <span>Preencha seus dados e programe seu evento já!</span>
           <Form.Group
@@ -96,7 +95,7 @@ export default function FormSignUp() {
               placeholder="DD/MM/AAAA"
               value={birthday}
               onChange={(e) => setBirthday(e.target.value)}
-              required
+              //required
             />
           </Form.Group>
 
