@@ -1,9 +1,12 @@
 import { Card } from "react-bootstrap";
+import HeaderHome from "../HeaderHome";
+import Footer from "../Footer";
 import "./homeSite.scss";
 
 export default function HomeSite() {
   return (
-    <>
+    <div className="vh-100 vw-100">
+      <HeaderHome />
       <div className="d-flex justify-content-center align-items-center">
         <img
           className="img-home w-50"
@@ -19,19 +22,68 @@ export default function HomeSite() {
           </div>
         </div>
       </div>
-      <div className="cards vh-50">
-        <div className="h-50">
+      
+      {/* C A R D S  */}
+
+      <div id="cards" className="d-flex justify-content-center align-items-center">
+        {/* <div className="d-flex"> */}
           <Card
             id="card"
-            className="d-flex flex-row align-items-center justify-content-space-between shadow-sm rounded text-center"
+            className="shadow-sm rounded text-center"
           >
             <Card.Body>
               <Card.Img
                 src="../../../public/images/mood.png"
+                alt="mood"
+                className="mood"
+              />
+              <h4 className="text-center">Prático</h4>
+              <span>
+                Em poucos cliques, adicione orçamento, tarefas e convidados.
+              </span>
+            </Card.Body>
+            </Card>
+          <Card
+            id="card"
+            className="shadow-sm rounded text-center"
+          >
+            <Card.Body>
+              <Card.Img
+                src="../../../public/images/money.png"
+                alt="money"
+                className="mood"
+              />
+              <h4 className="text-center">Fácil</h4>
+              <span>
+                Em poucos cliques, adicione orçamento, tarefas e convidados.
+              </span>
+            </Card.Body>
+            </Card>
+          <Card
+            id="card"
+            className="shadow-sm rounded text-center"
+          >
+            <Card.Body>
+              <Card.Img
+                src="../../../public/images/thumb.png"
+                alt="thumb"
+                className="mood"
+              />
+              <h4 className="text-center">Sem custos</h4>
+              <span>
+                Em poucos cliques, adicione orçamento, tarefas e convidados.
+              </span>
+            </Card.Body>
+            </Card>
+
+
+            {/* <Card.Body>
+              <Card.Img
+                src="../../../public/images/mood.png"
                 alt="Mood"
                 className="mood pt-5"
               />
-              <h3>Prático</h3>
+              <h3 className="text-center">Prático</h3>
               <span>
                 Em poucos cliques, adicione orçamento, tarefas e convidados.
               </span>
@@ -42,25 +94,15 @@ export default function HomeSite() {
                 alt="Mood"
                 className="mood pt-5"
               />
-              <h3>Prático</h3>
+              <h3 className="text-center">Prático</h3>
               <span>
                 Em poucos cliques, adicione orçamento, tarefas e convidados.
               </span>
-            </Card.Body>
-            <Card.Body>
-              <Card.Img
-                src="../../../public/images/mood.png"
-                alt="Mood"
-                className="mood pt-5"
-              />
-              <h3>Prático</h3>
-              <span>
-                Em poucos cliques, adicione orçamento, tarefas e convidados.
-              </span>
-            </Card.Body>
-          </Card>
-        </div>
+            </Card.Body> */}
+          
+        {/* </div> */}
       </div>
-    </>
+      <Footer backgroundColor="#191933" color="#FBFBFB" logotipo="logotipo2.png"/>
+    </div>
   );
 }

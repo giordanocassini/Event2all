@@ -13,19 +13,33 @@
 
 div > h3 {
   font-weight: 700;
-  font-size: 51px;
-  line-height: 70px;
+  font-size: 3.1875rem;
+  line-height: 4.375rem;
   text-align: left;
 }
 
-.cards {
-  background-color: $green-primary;
+#card {
+  background-color: #ffffff;
+  width: 15rem;
+  height: 14.5rem;
+  margin-left: 1.5rem;
+  border:#6A6A6A 0.05px solid;
+  border-bottom: #6A6A6A .1875rem solid;
 }
 
-#card {
-  background-color: #fff;
+#cards{
+  height: 60vh;
+  background-color: $green-primary;
+  margin-top: 3.75rem;
 }
 
 .mood {
-  width: 4%;
+  width: 20%;
+}
+
+h4{
+  font-size: 2.175rem;
+  font-weight: 700;
+  line-height: 4.375rem;
+  color: #0D6EFD;
 }

@@ -5,9 +5,9 @@ import HomeSite from "../../components/HomeSite";
 export default function Home() {
   return (
     <>
-    <HeaderHome />
+    {/* <HeaderHome /> */}
     <HomeSite />
-    <Footer backgroundColor="#191933" color="#FBFBFB" logotipo="logotipo2.png"/>
+    {/* <Footer backgroundColor="#191933" color="#FBFBFB" logotipo="logotipo2.png"/> */}
     </>
   )
 }
