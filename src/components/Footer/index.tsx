@@ -1,10 +1,27 @@
-import Card from 'react-bootstrap/Card';
+import Navbar from "react-bootstrap/Navbar";
 import "./footer.scss";
 
-export default function Footer() {
+export default function Footer(props: any) {
   return (
-    <Card id='asd'className="text-center d-flex">
-        <div className="text-muted">© Todos os direitos reservados. ‘Nome da marca’</div>
-    </Card>
+    <Navbar id="asd" style={{backgroundColor: props.backgroundColor}}>
+      <div className="footer">
+        <Navbar.Brand  className="logoFooter" href="#home">
+          <img src={`../../../public/images/${props.logotipo}`}></img>
+        </Navbar.Brand>
+        <Navbar.Brand href="#facebook">
+          <img src="../../../public/images/face.png"></img>
+        </Navbar.Brand>
+        <Navbar.Brand href="#instagram">
+        <img src="../../../public/images/insta.png"></img>
+        </Navbar.Brand>
+        <Navbar.Brand href="#google">
+        <img src="../../../public/images/img.png"></img>
+        </Navbar.Brand>
+        <Navbar.Brand href="#ios">
+        <img src="../../../public/images/ios.png"></img>
+        </Navbar.Brand>
+      </div>
+      <div className="copyright" style={{color: props.color}}>© Todos os direitos reservados. Event2All.</div>
+    </Navbar>
   );
 }
