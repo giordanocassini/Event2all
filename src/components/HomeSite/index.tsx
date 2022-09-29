@@ -28,13 +28,13 @@ export default function HomeSite() {
         {/* <div className="d-flex"> */}
           <Card
             id="card"
-            className="shadow-sm rounded text-center"
+            className="rounded text-center"
           >
             <Card.Body>
               <Card.Img
                 src="../../../public/images/mood.png"
                 alt="mood"
-                className="mood"
+                className="mood mt-4"
               />
               <h4 className="text-center">Prático</h4>
               <span>
@@ -44,13 +44,13 @@ export default function HomeSite() {
             </Card>
           <Card
             id="card"
-            className="shadow-sm rounded text-center"
+            className="rounded text-center"
           >
             <Card.Body>
               <Card.Img
-                src="../../../public/images/money.png"
+                src="../../../public/images/thumb.png"
                 alt="money"
-                className="mood"
+                className="mood mt-4"
               />
               <h4 className="text-center">Fácil</h4>
               <span>
@@ -60,13 +60,13 @@ export default function HomeSite() {
             </Card>
           <Card
             id="card"
-            className="shadow-sm rounded text-center"
+            className="rounded text-center"
           >
             <Card.Body>
               <Card.Img
-                src="../../../public/images/thumb.png"
+                src="../../../public/images/money.png"
                 alt="thumb"
-                className="mood"
+                className="mood mt-4"
               />
               <h4 className="text-center">Sem custos</h4>
               <span>
