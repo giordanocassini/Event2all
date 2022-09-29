@@ -3,7 +3,7 @@ import "./footer.scss";
 
 export default function Footer(props: any) {
   return (
-    <Navbar id="asd" style={{backgroundColor: props.backgroundColor}}>
+    <Navbar id="asd" style={{backgroundColor: props.backgroundColor, position: props.position}}>
       <div className="footer">
         <Navbar.Brand  className="logoFooter" href="#home">
           <img src={`../../../public/images/${props.logotipo}`}></img>

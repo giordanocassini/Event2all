@@ -76,7 +76,7 @@ export default function HomeSite() {
             </Card>
 
       </div>
-      <Footer backgroundColor="#191933" color="#FBFBFB" logotipo="logotipo2.png"/>
+      <Footer backgroundColor="#191933" color="#FBFBFB" logotipo="logotipo2.png" position="static"/>
     </div>
   );
 }
