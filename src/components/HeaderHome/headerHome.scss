@@ -1,42 +1,45 @@
 @import "../../assets/styles/variables.scss";
 
-#view-height{
-    height: 9vh;
+#view-height {
+  height: 9vh;
 }
 
-.dark-blue{
-    background-color: $dark-blue;
+.dark-blue {
+  background-color: $dark-blue;
 }
 
-.nav-text{
-    font-size: 1rem;
+.nav-text {
+  font-size: 1rem;
+}
+.nav-text:hover {
+  color: $success;
 }
 
-.nav-text:active{
-    color: $green-primary !important;
+.nav-text:active {
+  color: $green-primary !important;
 }
 
-.btn{
-    border:#6A6A6A 0.05px solid;
-    border-bottom: #6A6A6A .0938rem solid;
+.btn {
+  border: #6a6a6a 0.05px solid;
+  border-bottom: #6a6a6a 0.0938rem solid;
 }
 
-.btn:hover{
-    border-color: $green-primary !important;
-    transform: translateY(0.2px)
-    // padding: 2px !important;
+.btn:hover {
+  border-color: $green-primary !important;
+  transform: translateY(0.2px);
+  // padding: 2px !important;
 }
 
-.btn-success{
-    border: $green-details 0.05px solid !important;
-    border-bottom: $green-details .0938rem solid !important;
+.btn-success {
+  border: $green-details 0.05px solid !important;
+  border-bottom: $green-details 0.0938rem solid !important;
 }
 
-.btn-success:hover{
-    border-color: $green-details !important;
+.btn-success:hover {
+  border-color: $green-details !important;
 }
 
-.button-header{
-    text-decoration: none;
-    color: $dark-blue;
+.button-header {
+  text-decoration: none;
+  color: $dark-blue;
 }

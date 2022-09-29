@@ -7,18 +7,18 @@ import { Link } from "react-router-dom";
 
 export default function HeaderHome() {
   return (
-    <Navbar className="dark-blue">
+    <Navbar className="dark-blue p-4">
       <Container>
         <Navbar.Brand className="text-white" href="#home">
           <img src="../../../public/images/logotipo2.png"></img>
         </Navbar.Brand>
-        <Navbar.Brand className="text-white nav-text" href="#home">
+        <Navbar.Brand className="text-white nav-text textNav" href="#home">
           Home
         </Navbar.Brand>
-        <Navbar.Brand className="text-white nav-text" href="#home">
+        <Navbar.Brand className="text-white nav-text textNav" href="#home">
           Quem somos
         </Navbar.Brand>
-        <Navbar.Brand className="text-white nav-text" href="#home">
+        <Navbar.Brand className="text-white nav-text textNav" href="#home">
           Benefícios
         </Navbar.Brand>
         <Navbar.Toggle />
@@ -28,7 +28,7 @@ export default function HeaderHome() {
               Fazer login
             </Link>
           </Button>
-          <Button className="btn-success py-1 px-4 rounded-1 text-dark fw-bold" >
+          <Button className="btn-success py-1 px-4 rounded-1 text-dark fw-bold">
             <Link className="button-header" to={"/cadastro"}>
               Cadastrar-se
             </Link>
