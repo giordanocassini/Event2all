@@ -48,10 +48,8 @@ export default function FormSignUp() {
 
   return (
     <div className="vh-100">
-      <div
-        className="formCadastro h-100 
-      d-flex align-items-center justify-content-center"
-      >
+      <div className="h-100 d-flex align-items-center justify-content-center">
+      <Header />
         <Form onSubmit={submit} className="formulario text-center">
           <h3>Crie sua conta!</h3>
           <span>Preencha seus dados e programe seu evento já!</span>
@@ -147,11 +145,7 @@ export default function FormSignUp() {
             </p>
           </FormGroup>
         </Form>
-        <Footer
-          backgroundColor="#E5E5E5"
-          color="#000000"
-          logotipo="logotipo.png"
-        />
+      <Footer backgroundColor="#E5E5E5" color="#000000" logotipo="logotipo.png" />
       </div>
     </div>
   );
