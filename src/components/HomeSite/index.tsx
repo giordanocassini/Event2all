@@ -76,31 +76,6 @@ export default function HomeSite() {
             </Card.Body>
             </Card>
 
-
-            {/* <Card.Body>
-              <Card.Img
-                src="../../../public/images/mood.png"
-                alt="Mood"
-                className="mood pt-5"
-              />
-              <h3 className="text-center">Prático</h3>
-              <span>
-                Em poucos cliques, adicione orçamento, tarefas e convidados.
-              </span>
-            </Card.Body>
-            <Card.Body>
-              <Card.Img
-                src="../../../public/images/mood.png"
-                alt="Mood"
-                className="mood pt-5"
-              />
-              <h3 className="text-center">Prático</h3>
-              <span>
-                Em poucos cliques, adicione orçamento, tarefas e convidados.
-              </span>
-            </Card.Body> */}
-          
-        {/* </div> */}
       </div>
       <Footer backgroundColor="#191933" color="#FBFBFB" logotipo="logotipo2.png"/>
     </div>
