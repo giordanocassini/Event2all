@@ -7,25 +7,24 @@ export default function HomeSite() {
   return (
     <div className="vh-100 vw-100">
       <HeaderHome />
-      <div className="d-flex justify-content-center align-items-center">
+      <div className="d-flex flex-wrap justify-content-center align-items-center w-100">
         <img
-          className="img-home w-50"
+          className="img-home me-5"
           src="../../../public/images/home-site.png"
           alt="imagem da home"
         />
-        <div className="content-home d-flex justify-content-center flex-column w-25">
-          <div className="d-flex justify-content-center flex-column">
+        <div className="d-flex flex-wrap justify-content-center flex-column content-home ms-5">
             <h3>
-              O gerenciador de <br /> eventos mais completo <br /> do mercado.
+              O gerenciador de <br /> eventos mais completo<br /> do mercado.
             </h3>
-            <span>Fácil, prático e com tudo que você precisa.</span>
-          </div>
+            <br />
+            <span className="sub-text">Fácil, prático e com tudo que você precisa.</span>
         </div>
       </div>
       
       {/* C A R D S  */}
 
-      <div id="cards" className="d-flex justify-content-center align-items-center">
+      <div id="cards" className="d-flex flex-wrap justify-content-center align-items-center">
         {/* <div className="d-flex"> */}
           <Card
             id="card"

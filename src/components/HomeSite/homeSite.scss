@@ -2,13 +2,12 @@
 
 .img-home {
   margin-top: 3.75rem;
-  width: 30rem !important;
-  height: 30rem;
+  width: 36rem !important;
+  height: 36rem;
 }
 
-.content-home {
-  width: 45% !important;
-  padding-left: 7rem;
+.sub-text{
+  font-size: 1.65rem;
 }
 
 div > h3 {
@@ -28,7 +27,7 @@ div > h3 {
 }
 
 #cards{
-  height: 47vh;
+  height: 40vh;
   background-color: $green-primary;
   margin-top: 3.75rem;
 }
@@ -42,4 +41,12 @@ h4{
   font-weight: 700;
   line-height: 4.375rem;
   color: #0D6EFD;
+}
+
+@media only screen and (max-width: 1150px){
+  .content-home,
+  .img-home{
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
 }
