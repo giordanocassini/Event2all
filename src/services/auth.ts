@@ -7,6 +7,7 @@ interface LoginPayload {
 interface RegisterUser {
   name: string;
   email: string;
+  birth_date: string;
   password: string;
 }
 
