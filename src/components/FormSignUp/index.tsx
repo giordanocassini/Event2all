@@ -12,7 +12,7 @@ export default function FormSignUp() {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [confirmarPassword, setConfirmarPassword] = useState<string>("");
-  const [birthday, setBirthday] = useState<string>("");
+  const [birth_date, setBirthday] = useState<string>("");
   const [wrongPass, setWrongPass] = useState<string>("");
 
   const navigate = useNavigate();
@@ -27,7 +27,7 @@ export default function FormSignUp() {
         await register({
           name,
           email,
-          //birthday,
+          birth_date,
           password,
         });
         alert("Usuário cadastrado com sucesso");
@@ -97,7 +97,7 @@ export default function FormSignUp() {
               type="date"
               // placeholder="DD/MM/AAAA"
               onfocus="(this.type='date')"
-              value={birthday}
+              value={birth_date}
               onChange={(e) => setBirthday(e.target.value)}
               //required
             />
