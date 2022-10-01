@@ -1,17 +1,5 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faHome,
-  faBriefcase,
-  faPaperPlane,
-  faQuestion,
-  faImage,
-  faCopy,
-  faTimes,
-} from "@fortawesome/free-solid-svg-icons";
-// import SubMenu from "./SubMenu";
-import { Nav, Button } from "react-bootstrap";
-import classNames from "classnames";
+import { InputGroup, Form, Button } from "react-bootstrap";
 import "./sideBar.scss";
 
 class SideBar extends React.Component<any, any> {
@@ -23,79 +11,50 @@ class SideBar extends React.Component<any, any> {
     return (
       <div className="vh-100">
         <div className="h-100 d-flex">
-          <div className="h-100 stylesidebar">
-            <div
-              className={classNames("sidebar", "h-100", {
-                "is-open": this.props.isOpen,
-              })}
-            >
-              <div className="sidebar-header p-3 m-4 ">
-                <img
-                  src="./images/logotipo2.png"
-                  alt="logo"
-                  className="p-4 aligh-itens-center justify-content-center"
-                />
-                <br />
-                <img src="./images/mood.png" className="p-3" alt="logo" />
-                <span style={{ color: "white" }}>Thalita Pereira</span>
-                {/* <Button
-                  variant="link"
-                  onClick={this.props.toggle}
-                  style={{ color: "#fff" }}
-                  className="mt-4"
-                >
-                  <FontAwesomeIcon icon={faTimes} pull="right" size="xs" />
-                </Button> */}
-                {/* <h3>react-bootstrap sidebar</h3> */}
-              </div>
-
-              <Nav className="flex-column ">
-                {/* <p className="ml-3">Heading</p> */}
-
-                <Nav.Item className="active p-2">
-                  <Nav.Link href="/">
-                    <FontAwesomeIcon icon={faHome} className="px-2" />
-                    Home
-                  </Nav.Link>
-                </Nav.Item>
-
-                {/* <SubMenu
-            title="Pages"
-            icon={faCopy}
-            items={["Link", "Link2", "Active"]}
-          /> */}
-
-                <Nav.Item className="p-2">
-                  <Nav.Link href="/">
-                    <FontAwesomeIcon icon={faBriefcase} className="px-2" />
-                    About
-                  </Nav.Link>
-                </Nav.Item>
-
-                <Nav.Item className="p-2">
-                  <Nav.Link href="/">
-                    <FontAwesomeIcon icon={faImage} className="p-2" />
-                    Portfolio
-                  </Nav.Link>
-                </Nav.Item>
-
-                <Nav.Item className="p-2">
-                  <Nav.Link href="/">
-                    <FontAwesomeIcon icon={faQuestion} className="px-2" />
-                    FAQ
-                  </Nav.Link>
-                </Nav.Item>
-
-                <Nav.Item className="p-2">
-                  <Nav.Link href="/">
-                    <FontAwesomeIcon icon={faPaperPlane} className="px-2" />
-                    Contact
-                  </Nav.Link>
-                </Nav.Item>
-              </Nav>
+          <div className="d-flex flex-column align-items-center stylesidebar">
+            <div className="">
+              <img
+                src="./images/logotipo2.png"
+                alt="logo"
+                className="mt-5 mb-4"
+              />
             </div>
+            <div className="me-auto">
+              <br />
+              <br />
+              <img src="./images/mood.png" className="" alt="logo" />
+              <span className="ms-3" style={{ color: "white" }}>
+                Thalita Pereira
+              </span>
+            </div>
+            <InputGroup className="mt-4 me-auto">
+              <Form.Control
+                placeholder="Recipient's username"
+                aria-label="Recipient's username"
+                aria-describedby="basic-addon2"
+              />
+              <Button variant="outline-secondary" id="button-addon2">
+                Button
+              </Button>
+            </InputGroup>
+            <span className="mt-5 me-auto" style={{ color: "white" }}>
+              🗒️ Meus Eventos
+            </span>
+            <hr />
+
+            <div id="test-asd" className="d-flex flex-column p-4">
+              <h5>Você não tem nenhum evento adicionado.</h5>
+              <p className="text-white">Para adicionar, clique no botão abaixo ou no '+'</p>
+              <hr />
+              <Button variant="success">+ Criar novo evento</Button>
+            </div>
+
           </div>
-          <div className="h-100">asd</div>
+          <div className="h-100">
+            asd
+            <hr />
+            asd
+          </div>
         </div>
       </div>
     );

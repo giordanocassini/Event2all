@@ -30,13 +30,12 @@ export default function HomeSite() {
         id="cards"
         className="d-flex flex-wrap justify-content-center align-items-center"
       >
-        {/* <div className="d-flex"> */}
         <Card id="card" className="rounded text-center">
           <Card.Body>
             <Card.Img
               src="../../../public/images/mood.png"
               alt="mood"
-              className="mood mt-4"
+              className="mood mt-4 mb-3"
             />
             <h4 className="text-center">Prático</h4>
             <span>
@@ -49,7 +48,7 @@ export default function HomeSite() {
             <Card.Img
               src="../../../public/images/thumb.png"
               alt="money"
-              className="mood mt-4"
+              className="mood mt-4 mb-3"
             />
             <h4 className="text-center">Fácil</h4>
             <span>
@@ -62,7 +61,7 @@ export default function HomeSite() {
             <Card.Img
               src="../../../public/images/money.png"
               alt="thumb"
-              className="mood mt-4"
+              className="mood mt-4 mb-3"
             />
             <h4 className="text-center">Sem custos</h4>
             <span>
