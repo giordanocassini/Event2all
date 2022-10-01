@@ -1,7 +1,24 @@
 @import "../../assets/styles/variables.scss";
 
 .stylesidebar {
-  // display: inline;
-  width: 25vw !important;
+  width: 378px !important;
   background-color: $dark-blue;
+  padding: 0 32px;
+}
+
+#asd{
+  height: 30vh;
+}
+
+#test-asd{
+  background-color: #0D0D1A;
+  width: 100%;
+  height: 257px;
+  border-radius: 8px;
+}
+
+h5{
+  color: white;
+  font-weight: 700;
+  font-size: 21px;
 }
