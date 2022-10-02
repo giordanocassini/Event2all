@@ -9,9 +9,8 @@ class SideBar extends React.Component<any, any> {
 
   render() {
     return (
-      <div className="vh-100">
-        <div className="h-100 d-flex">
-          <div className="d-flex flex-column align-items-center stylesidebar">
+      <div className="vh-100 d-flex">
+        <div className="d-flex flex-column align-items-center stylesidebar">
             <div className="">
               <img
                 src="./images/logotipo2.png"
@@ -48,15 +47,10 @@ class SideBar extends React.Component<any, any> {
               <hr />
               <Button variant="success">+ Criar novo evento</Button>
             </div>
-
-          </div>
-          <div className="h-100">
-            asd
-            <hr />
-            asd
-          </div>
         </div>
       </div>
+      
+      
     );
   }
 }
