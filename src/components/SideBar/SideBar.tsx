@@ -47,6 +47,7 @@ export default function SideBar() {
               <hr />
               <Button variant="success">+ Criar novo evento</Button>
             </div>
+            
         </div>
       </div>
     );
