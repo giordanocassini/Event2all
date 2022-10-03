@@ -1,7 +1,7 @@
-import React from "react";
 import { InputGroup, Form, Button } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { RootStore } from "../../store";
+import EventLogo from "../../../public/images/dashboard.png"
 import "./sideBar.scss";
 
 export default function SideBar() {
@@ -22,26 +22,26 @@ export default function SideBar() {
               <br />
               <br />
               <img src="./images/mood.png" className="" alt="logo" />
-              <span className="ms-3" style={{ color: "white" }}>
+              <span className="ms-3 text-bold" style={{ color: "white" }}>
                 {user.name}
               </span>
             </div>
             <InputGroup className="mt-4 me-auto">
               <Form.Control
-                placeholder="Recipient's username"
-                aria-label="Recipient's username"
+                placeholder="Buscar..."
+                aria-label="Buscar"
                 aria-describedby="basic-addon2"
               />
-              <Button variant="outline-secondary" id="button-addon2">
-                Button
+              <Button className="bg-primary">
+                🔍
               </Button>
             </InputGroup>
-            <span className="mt-5 me-auto" style={{ color: "white" }}>
-              🗒️ Meus Eventos
+            <span className="mt-5 me-auto events-font" style={{ color: "white" }}>
+              <img className="mb-2" src={EventLogo} alt="Logo" /> &zwnj;  Meus Eventos
             </span>
-            <hr />
+            <hr className="mb-4"/>
 
-            <div id="test-asd" className="d-flex flex-column p-4">
+            <div id="test-asd" className="d-flex flex-column p-4 mt-3">
               <h5>Você não tem nenhum evento adicionado.</h5>
               <p className="text-white">Para adicionar, clique no botão abaixo ou no '+'</p>
               <hr />
