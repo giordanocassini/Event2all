@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function Footer(props: any) {
   return (
     <Navbar
-      id="asd"
+      id="asd2"
       style={{
         backgroundColor: props.backgroundColor,
         position: props.position,
