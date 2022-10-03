@@ -1,36 +1,40 @@
 import { FormEvent, useState } from "react";
 import { Form, Button, FormGroup } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { login } from "../../services/auth";
-import Footer from "../Footer";
-import Header from "../Header";
-// import { useDispatch } from "react-redux";
-// import { getUser, setUser } from "../../store/modules/users";
-// import { Dispatch } from "@reduxjs/toolkit";
+import { useDispatch } from "react-redux";
+import { getUser, setUser } from "../../store/modules/users";
+import { Dispatch } from "@reduxjs/toolkit";
 import "./formLogin.scss";
+
 
 export default function FormLogin() {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const dispatch: Dispatch<any> = useDispatch();
+  const navigate = useNavigate();
+
   const submit = async (event: FormEvent) => {
     event.preventDefault();
+    
     try {
       const response = await login({ email, password });
 
       window.localStorage.setItem("token", response.data.token);
       window.localStorage.setItem("id", response.data.user.id);
-      // dispatch(getUser());
+      dispatch(getUser());
 
       console.log("logado com:", response.data.user);
       console.log("token", response.data.token);
 
-      alert("Opa! Logado com sucesso!");
+      alert("Logado com sucesso!");
 
-      //navigate("/")
+      navigate("/dashboard")
     } catch (error) {
       alert("Opa! Deu algo errado!");
     }
   };
+
   return (
     <div className="vh-100">
       <div className="form-login h-100 d-flex align-items-center justify-content-center">

@@ -1,13 +1,13 @@
 import React from "react";
 import { InputGroup, Form, Button } from "react-bootstrap";
+import { useSelector } from "react-redux";
+import { RootStore } from "../../store";
 import "./sideBar.scss";
 
-class SideBar extends React.Component<any, any> {
-  constructor(props: any) {
-    super(props);
-  }
+export default function SideBar() {
 
-  render() {
+  const user = useSelector((store: RootStore)=> store.userReduce)
+  
     return (
       <div className="vh-100 d-flex">
         <div className="d-flex flex-column align-items-center stylesidebar">
@@ -23,7 +23,7 @@ class SideBar extends React.Component<any, any> {
               <br />
               <img src="./images/mood.png" className="" alt="logo" />
               <span className="ms-3" style={{ color: "white" }}>
-                Thalita Pereira
+                {user.name}
               </span>
             </div>
             <InputGroup className="mt-4 me-auto">
@@ -49,9 +49,6 @@ class SideBar extends React.Component<any, any> {
             </div>
         </div>
       </div>
-      
-      
     );
-  }
+  
 }
-export default SideBar;
