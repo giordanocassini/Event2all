@@ -1,6 +1,4 @@
 import { Card, Container } from "react-bootstrap";
-import HeaderHome from "../HeaderHome";
-import Footer from "../Footer";
 import "./homeSite.scss";
 
 export default function HomeSite() {
