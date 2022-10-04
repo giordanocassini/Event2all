@@ -1,0 +1,45 @@
+#card {
+  background-color: #F6F6F6;
+  width: 19.125rem;
+  height: 21.25rem;
+  box-shadow: 0px 4px 0px 0px #47475C (0, 0, 0, 0.5) !important;
+  border-bottom: 4px #47475C;
+  border-radius: 0.5rem;
+}
+.cardImage {
+  width: 23% !important;
+}
+.cardContent{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center !important;
+  padding: 2rem;
+  margin: none;
+}
+
+h4 {
+  font-size: 2.375rem !important;
+  font-weight: 700 !important;
+  line-height: 4.375rem !important;
+  color: #0D6EFD;
+}
+span{
+  font-size: 1.25rem;
+  font-weight: 400;
+  color:#353535 ;
+}
+
+hr {
+  background-color: white;
+  height: 1px;
+  width: 100%;
+}
+
+@media only screen and (max-width: 1150px) {
+  .content-home,
+  .img-home {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
