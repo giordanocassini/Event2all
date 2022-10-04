@@ -10,7 +10,7 @@ export default function EventInfo() {
       <div className="info-event">
         <div>
           <p>DATA</p>
-          <p>12, mai,p 2022</p>
+          <p>12, maio 2022</p>
         </div>
         <div>
           <p>LOCAL</p>
