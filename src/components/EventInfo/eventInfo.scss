@@ -1,0 +1,17 @@
+.event{
+    background-image: linear-gradient(#0F9767, #053222);
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+    color: #FFFFFF;
+    height: 13.5rem;
+    padding: 3.68rem;
+}
+.event >h3{
+    font-family: nunito;
+}
+.info-event{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+}
