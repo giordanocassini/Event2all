@@ -1,8 +1,10 @@
 import { InputGroup, Form, Button } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { RootStore } from "../../store";
+import Avatar from 'react-avatar';
 import EventLogo from "../../../public/images/dashboard.png"
 import "./sideBar.scss";
+import { unmountComponentAtNode } from "react-dom";
 
 export default function SideBar() {
 
@@ -21,7 +23,8 @@ export default function SideBar() {
             <div className="me-auto">
               <br />
               <br />
-              <img src="./images/mood.png" className="" alt="logo" />
+              <Avatar name={user.name} round={true} size="64" textSizeRatio={3.9}/>
+              {/* <img src="./images/mood.png" className="" alt="logo" /> */}
               <span className="ms-3 text-bold" style={{ color: "white" }}>
                 {user.name}
               </span>
@@ -47,7 +50,7 @@ export default function SideBar() {
               <hr />
               <Button variant="success">+ Criar novo evento</Button>
             </div>
-            
+
         </div>
       </div>
     );
