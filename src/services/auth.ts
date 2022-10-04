@@ -11,10 +11,20 @@ interface RegisterUser {
   password: string;
 }
 
+interface RegisterEvent{
+  event_name: string;
+  event_description: string;
+  event_date: string;
+}
+
 export function login(payload: LoginPayload) {
   return baseApi.post("/login", payload);
 }
 
 export function register(payload: RegisterUser) {
   return baseApi.post("/user", payload);
+}
+
+export function cadastroEvent(payload: RegisterEvent){
+  return baseApi.post("/event", payload);
 }

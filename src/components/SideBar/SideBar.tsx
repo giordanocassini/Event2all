@@ -5,6 +5,7 @@ import Avatar from 'react-avatar';
 import EventLogo from "../../../public/images/dashboard.png"
 import "./sideBar.scss";
 import { unmountComponentAtNode } from "react-dom";
+import CreateEvent from "./modal";
 
 export default function SideBar() {
 
@@ -48,7 +49,8 @@ export default function SideBar() {
               <h5>Você não tem nenhum evento adicionado.</h5>
               <p className="text-white">Para adicionar, clique no botão abaixo ou no '+'</p>
               <hr />
-              <Button variant="success">+ Criar novo evento</Button>
+              {/* <Button variant="success">+ Criar novo evento</Button> */}
+              <CreateEvent />
             </div>
 
         </div>

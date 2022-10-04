@@ -7,6 +7,7 @@ import Footer from "../Footer";
 import "./formSignUp.scss";
 //import { cadastro } from "../../services/userServices";
 import { useNavigate } from "react-router-dom";
+
 export default function FormSignUp() {
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
