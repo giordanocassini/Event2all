@@ -15,6 +15,7 @@ interface RegisterEvent{
   event_name: string;
   event_description: string;
   event_date: string;
+  place: string;
 }
 
 export function login(payload: LoginPayload) {
