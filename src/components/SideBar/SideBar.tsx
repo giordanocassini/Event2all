@@ -5,7 +5,8 @@ import Avatar from 'react-avatar';
 import EventLogo from "../../../public/images/dashboard.png"
 import "./sideBar.scss";
 import { unmountComponentAtNode } from "react-dom";
-import CreateEvent from "./modal";
+import EventList from "./eventList";
+// import CreateEvent from "./modal";
 
 export default function SideBar() {
 
@@ -44,14 +45,13 @@ export default function SideBar() {
               <img className="mb-2" src={EventLogo} alt="Logo" /> &zwnj;  Meus Eventos
             </span>
             <hr className="mb-4"/>
-
-            <div id="test-asd" className="d-flex flex-column p-4 mt-3">
+            <EventList />
+            {/* <div id="test-asd" className="d-flex flex-column p-4 mt-3">
               <h5>Você não tem nenhum evento adicionado.</h5>
               <p className="text-white">Para adicionar, clique no botão abaixo ou no '+'</p>
               <hr />
-              {/* <Button variant="success">+ Criar novo evento</Button> */}
               <CreateEvent />
-            </div>
+            </div> */}
 
         </div>
       </div>

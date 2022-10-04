@@ -7,6 +7,7 @@ export default function CreateEvent() {
   const [event_name, setEvent] = useState<string>("");
   const [event_description, setEventDescription] = useState<string>("");
   const [event_date, setEventDate] = useState<string>("");
+  const [place, setPlace] = useState<string>("");
 
   const submitEvent = async (event: FormEvent) => {
     event.preventDefault();
@@ -15,6 +16,7 @@ export default function CreateEvent() {
         event_name,
         event_description,
         event_date,
+        place,
       });
       alert("Evento criado com sucesso");
     } catch (error) {
@@ -78,6 +80,19 @@ export default function CreateEvent() {
                 required
               />
             </Form.Group>
+            <Form.Group className=" boxform p-1 text-start mb-2">
+              <Form.Label>
+                Local do evento <span className="obligatory">*</span>
+              </Form.Label>
+              <Form.Control
+                className="inputTexto"
+                type="text"
+                placeholder="Digite o local do evento"
+                value={place}
+                onChange={(e) => setPlace(e.target.value)}
+                required
+              />
+            </Form.Group>
             <Button variant="primary" type="submit">
               Salvar Evento
             </Button>
@@ -88,6 +103,5 @@ export default function CreateEvent() {
     </>
   );
 }
-
-
 // Alinhar com o pessoal de backend sobre os parametros e pedir pra adicionar/alterar
+
