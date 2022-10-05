@@ -3,7 +3,7 @@ import { StringOptions } from "sass";
 import "./cardEvent.scss";
 
 type CardEventProps = {
-  tittle: string;
+  title: string;
   description: string;
   cardImage: string;
 };
@@ -17,7 +17,7 @@ export default function CardEvent(props: CardEventProps) {
           alt={props.cardImage}
           className="cardImage mt-4 mb-3"
         />
-        <h4 className="text-center">{props.tittle}</h4>
+        <h4 className="text-center">{props.title}</h4>
         <span>{props.description}</span>
       </Card.Body>
     </Card>

@@ -15,9 +15,9 @@ export default function EventName() {
             </div>
           </div>
           <div className="d-flex flex-row justify-content-center">
-              <CardEvent tittle="Orçamento" description="Faça o planejamento de custos" cardImage="paid"/>
-              <CardEvent tittle="Convidados" description="Gerencie seus convidados" cardImage="group"/>
-              <CardEvent tittle="Tarefas" description="Crie tarefas" cardImage="check_circle"/>
+              <CardEvent title="Orçamento" description="Faça o planejamento de custos" cardImage="paid"/>
+              <CardEvent title="Convidados" description="Gerencie seus convidados" cardImage="group"/>
+              <CardEvent title="Tarefas" description="Crie tarefas" cardImage="check_circle"/>
           </div>
         </div>
       </div>

@@ -35,7 +35,7 @@ export default function CreateEvent() {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <Button onClick={handleShow}>
         + Criar evento
       </Button>
 
