@@ -5,18 +5,23 @@ import { cadastroEvent } from "../../services/auth";
 
 export default function CreateEvent() {
   const [event_name, setEvent] = useState<string>("");
-  const [event_description, setEventDescription] = useState<string>("");
   const [event_date, setEventDate] = useState<string>("");
   const [place, setPlace] = useState<string>("");
+  const [invite_number, setInviteNumber] = useState<string>("");
+  const [managers, setManagers] = useState<string>("");
+  const [event_budget, setEventBudget] = useState<string>("");
+
 
   const submitEvent = async (event: FormEvent) => {
     event.preventDefault();
     try {
       await cadastroEvent({
         event_name,
-        event_description,
         event_date,
         place,
+        invite_number,
+        managers,
+        event_budget,
       });
       alert("Evento criado com sucesso");
     } catch (error) {
@@ -37,18 +42,18 @@ export default function CreateEvent() {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Crie seu evento</Modal.Title>
+          <Modal.Title>Criar Evento</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={submitEvent} className="asd">
             <Form.Group className=" boxform p-1 text-start mb-2">
               <Form.Label>
-                Nome do evento <span className="obligatory">*</span>
+                Nome do Evento <span className="obligatory">*</span>
               </Form.Label>
               <Form.Control
                 className="inputTexto"
                 type="text"
-                placeholder="Digite o nome do evento"
+                placeholder="Digite o nome do evento..."
                 value={event_name}
                 onChange={(e) => setEvent(e.target.value)}
                 required
@@ -56,25 +61,11 @@ export default function CreateEvent() {
             </Form.Group>
             <Form.Group className=" boxform p-1 text-start mb-2">
               <Form.Label>
-                Descrição do evento <span className="obligatory">*</span>
-              </Form.Label>
-              <Form.Control
-                className="inputTexto"
-                type="text"
-                placeholder="Digite o nome do evento"
-                value={event_description}
-                onChange={(e) => setEventDescription(e.target.value)}
-                required
-              />
-            </Form.Group>
-            <Form.Group className=" boxform p-1 text-start mb-2">
-              <Form.Label>
-                Data do evento <span className="obligatory">*</span>
+                Data<span className="obligatory">*</span>
               </Form.Label>
               <Form.Control
                 className="inputTexto"
                 type="date"
-                placeholder="Digite o nome do evento"
                 value={event_date}
                 onChange={(e) => setEventDate(e.target.value)}
                 required
@@ -82,21 +73,59 @@ export default function CreateEvent() {
             </Form.Group>
             <Form.Group className=" boxform p-1 text-start mb-2">
               <Form.Label>
-                Local do evento <span className="obligatory">*</span>
+                Local<span className="obligatory">*</span>
               </Form.Label>
               <Form.Control
                 className="inputTexto"
                 type="text"
-                placeholder="Digite o local do evento"
+                placeholder="Rua Exemplo, N°, Bairro, Cidade, CEP"
                 value={place}
                 onChange={(e) => setPlace(e.target.value)}
                 required
               />
             </Form.Group>
+            <Form.Group className=" boxform p-1 text-start mb-2">
+              <Form.Label>
+                Número de Convidados<span className="obligatory">*</span>
+              </Form.Label>
+              <Form.Control
+                className="inputTexto"
+                type="text"
+                placeholder="250 convidados"
+                value={invite_number}
+                onChange={(e) => setInviteNumber(e.target.value)}
+                required
+              />
+            </Form.Group>
+            <Form.Group className=" boxform p-1 text-start mb-2">
+              <Form.Label>
+                Responsáveis<span className="obligatory">*</span>
+              </Form.Label>
+              <Form.Control
+                className="inputTexto"
+                type="text"
+                placeholder=""
+                value={managers}
+                onChange={(e) => setManagers(e.target.value)}
+                required
+              />
+            </Form.Group>
+            <Form.Group className=" boxform p-1 text-start mb-2">
+              <Form.Label>
+                Orçamento Previsto<span className="obligatory">*</span>
+              </Form.Label>
+              <Form.Control
+                className="inputTexto"
+                type="number"
+                placeholder="R$00,00"
+                value={event_budget}
+                onChange={(e) => setEventBudget(e.target.value)}
+                required
+              />
+            </Form.Group>
             <Button variant="primary" type="submit">
-              Salvar Evento
+              Criar Evento
             </Button>
-            <Button onClick={handleClose}>Fechar</Button>
           </Form>
         </Modal.Body>
       </Modal>

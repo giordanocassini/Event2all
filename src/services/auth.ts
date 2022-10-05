@@ -13,9 +13,11 @@ interface RegisterUser {
 
 interface RegisterEvent{
   event_name: string;
-  event_description: string;
   event_date: string;
   place: string;
+  invite_number: string;
+  managers: string;
+  event_budget: string;
 }
 
 export function login(payload: LoginPayload) {
