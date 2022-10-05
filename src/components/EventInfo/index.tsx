@@ -1,5 +1,12 @@
 import "./eventInfo.scss";
 
+interface Props {
+  dataEvent: Date;
+  localEvent: string;
+  budget: number;
+  guests: number;
+}
+
 export default function EventInfo() {
   return (
     <div className="event">
