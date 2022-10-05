@@ -21,7 +21,7 @@ export default function FormLogin() {
       const response = await login({ email, password });
 
       window.localStorage.setItem("token", response.data.token);
-      window.localStorage.setItem("id", response.data.user.id);
+      window.localStorage.setItem("user", response.data.user);
       dispatch(getUser());
 
       console.log("logado com:", response.data.user);
