@@ -7,7 +7,12 @@ interface Props {
   guests: number;
 }
 
-export default function EventInfo() {
+export default function EventInfo({
+  dataEvent,
+  localEvent,
+  budget,
+  guests,
+}: Props) {
   return (
     <div className="event">
       {/* vai pegar as infos do backend */}
