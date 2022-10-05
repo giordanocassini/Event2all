@@ -1,6 +1,7 @@
 import "./eventInfo.scss";
 
 interface Props {
+  eventName: string;
   dataEvent: Date;
   localEvent: string;
   budget: number;
@@ -8,6 +9,7 @@ interface Props {
 }
 
 export default function EventInfo({
+  eventName,
   dataEvent,
   localEvent,
   budget,

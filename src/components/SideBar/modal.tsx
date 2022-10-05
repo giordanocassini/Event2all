@@ -11,7 +11,6 @@ export default function CreateEvent() {
   const [managers, setManagers] = useState<string>("");
   const [event_budget, setEventBudget] = useState<string>("");
 
-
   const submitEvent = async (event: FormEvent) => {
     event.preventDefault();
     try {
@@ -45,7 +44,7 @@ export default function CreateEvent() {
           <Modal.Title>Criar Evento</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form onSubmit={submitEvent} className="asd">
+          <Form onSubmit={submitEvent} className="asd ">
             <Form.Group className=" boxform p-1 text-start mb-2">
               <Form.Label>
                 Nome do Evento <span className="obligatory">*</span>
@@ -123,7 +122,11 @@ export default function CreateEvent() {
                 required
               />
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button
+              className=" m-3 d-flex  aligh-items-end justify-content-end "
+              variant="primary"
+              type="submit"
+            >
               Criar Evento
             </Button>
           </Form>
@@ -133,4 +136,3 @@ export default function CreateEvent() {
   );
 }
 // Alinhar com o pessoal de backend sobre os parametros e pedir pra adicionar/alterar
-
