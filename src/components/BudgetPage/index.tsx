@@ -1,22 +1,35 @@
 import SideBar from "../SideBar/SideBar";
-import { Card } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
+import "./BudgetPage.scss"
 
 export default function BudgetPage() {
   return (
     <>
-      <div className="vh-100 d-flex">
+      <div className="h-100 d-flex">
         <SideBar />
-        <Card id="card" className="rounded text-center cards m-4">
-          <Card.Body className="cardContent">
-            <Card.Img
-              src={`../../../public/images/mood.png`}
-              alt=""
-              className="cardImage mt-4 mb-3"
-            />
-            <h4 className="text-center">asd</h4>
-            <span>descrição</span>
-          </Card.Body>
-        </Card>
+        <div className="vh-100 d-flex justify-content-center flex-row w-100">
+          <div>
+            <Card id="card-budget" className="rounded text-center m-4">
+              <Card.Body className="mt-2">
+                <Card.Title className="text-black">Previsto: asdasdasd</Card.Title>
+              </Card.Body>
+            </Card>
+          </div>
+          <div>
+            <Card id="card-budget2" className="rounded text-center m-4">
+              <Card.Body className="mt-2">
+              <Card.Title className="text-black">Atual:</Card.Title>
+              </Card.Body>
+            </Card>
+          </div>
+          <div>
+            <Card id="card-budget3" className="rounded text-center m-4">
+              <Card.Body className="mt-2">
+              <Card.Title className="text-black">Restante:</Card.Title>
+              </Card.Body>
+            </Card>
+          </div>
+        </div>
       </div>
     </>
   );
