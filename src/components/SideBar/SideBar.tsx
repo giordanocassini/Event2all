@@ -36,7 +36,7 @@ export default function SideBar() {
           <Button className="bg-primary">🔍</Button>
         </InputGroup>
         <span className="mt-5 me-auto events-font" style={{ color: "white" }}>
-          <Link className="linkEvent" to={"/event"}>
+          <Link className="linkEvent" to={"/evento"}>
             <img className="mb-2 px-2" src={EventLogo} alt="Logo" />
             Meus Eventos
           </Link>

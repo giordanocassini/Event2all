@@ -1,6 +1,6 @@
 import React, { useState, FormEvent } from "react";
-import { Button, Form } from "react-bootstrap";
-import Modal from "react-bootstrap/Modal";
+import { Button, Form, Modal } from "react-bootstrap";
+
 import { cadastroEvent } from "../../services/auth";
 
 export default function CreateEvent() {
@@ -24,7 +24,7 @@ export default function CreateEvent() {
       });
       alert("Evento criado com sucesso");
     } catch (error) {
-      alert("Algo de certo não está certo!");
+      alert("Algo deu errado!");
     }
   };
 
@@ -35,9 +35,7 @@ export default function CreateEvent() {
 
   return (
     <>
-      <Button onClick={handleShow}>
-        + Criar evento
-      </Button>
+      <Button onClick={handleShow}>+ Criar evento</Button>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
