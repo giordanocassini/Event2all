@@ -23,16 +23,16 @@ export default function HeaderHome() {
         </Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
-          <Button className="btn-light py-1 px-4 me-2 rounded-1 text-dark fw-bold">
             <Link className="button-header" to={"/login"}>
+          <Button className="btn-light py-1 px-4 me-2 rounded-1 text-dark fw-bold">
               Fazer login
-            </Link>
           </Button>
-          <Button className="btn-success py-1 px-4 rounded-1 text-dark fw-bold">
+            </Link>
             <Link className="button-header" to={"/cadastro"}>
+          <Button className="btn-success py-1 px-4 rounded-1 text-dark fw-bold">
               Cadastrar-se
-            </Link>
           </Button>
+            </Link>
         </Navbar.Collapse>
       </Container>
     </Navbar>
