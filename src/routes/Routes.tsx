@@ -4,7 +4,7 @@ import SignUp from "../view/SignUp";
 import Home from "../view/Home";
 import Dashboard from "../view/Dashboard";
 import EventName from "../view/EventName";
-import BudgetPage from "../components/BudgetPage";
+import BudgetPage from "../view/BudgetPage";
 import Guests from "../view/Guests";
 
 export default function AppRoutes() {

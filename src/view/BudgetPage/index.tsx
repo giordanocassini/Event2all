@@ -1,4 +1,4 @@
-import SideBar from "../SideBar/SideBar";
+import SideBar from "../../components/SideBar/SideBar";
 import { Card, Table, InputGroup, Form } from "react-bootstrap";
 import "./BudgetPage.scss";
 import CreateBudget from "./modal";
