@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import BreadCrumbs from "../../components/BreadCrumbs";
 import CardEvent from "../../components/CardEvent";
 import EventInfo from "../../components/EventInfo";
 import SideBar from "../../components/SideBar/SideBar";
@@ -10,7 +11,9 @@ export default function EventName() {
         <SideBar />
         <div className="w-100 vh-100">
           <div>
-            <div>{/* componente breadcrumbs */}</div>
+            <div> 
+              <BreadCrumbs />
+            </div>
             <div>
               <EventInfo />
             </div>
