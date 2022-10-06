@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import BreadCrumbs from "../../components/BreadCrumbs";
 import SideBar from "../../components/SideBar/SideBar";
-import { Card } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
+import "./guests.scss";
 //import "./eventName.scss";
 export default function Guests() {
   const breadCrumbsItem = [
@@ -22,9 +23,15 @@ export default function Guests() {
             <div className="d-flex align items center justify-content-center">
               <Card id="card-budget" className=" text-center m-4">
                 <Card.Body className="mt-2">
-                  <Card.Title className="text-black">Previsto:</Card.Title>
+                  <Card.Title className="text-black">
+                    Total de convidados:
+                  </Card.Title>
                 </Card.Body>
               </Card>
+            </div>
+            <div className="d-flex align-items-center justify-content-between m-4">
+              <span className="spanConvidados"># Convidados</span>
+              <Button> + Adicionar convidado</Button>
             </div>
             <div>{/* Add lista dos convidados */}</div>
           </div>
