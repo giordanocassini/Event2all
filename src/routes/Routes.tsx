@@ -5,6 +5,7 @@ import Home from "../view/Home";
 import Dashboard from "../view/Dashboard";
 import EventName from "../view/EventName";
 import BudgetPage from "../components/BudgetPage";
+import Guests from "../view/Guests";
 
 export default function AppRoutes() {
   return (
@@ -16,6 +17,7 @@ export default function AppRoutes() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/evento" element={<EventName />} />
         <Route path="/orcamento" element={<BudgetPage />} />
+        <Route path="/convidados" element={<Guests />} />
       </Routes>
     </Router>
   );
