@@ -39,11 +39,13 @@ export default function EventName() {
                 cardImage="group"
               />
             </Link>
-            <CardEvent
-              title="Tarefas"
-              description="Crie tarefas"
-              cardImage="check_circle"
-            />
+            <Link className="eventLinkStyle" to={"/tarefas"}>
+              <CardEvent
+                title="Tarefas"
+                description="Crie tarefas"
+                cardImage="check_circle"
+              />
+            </Link>
           </div>
         </div>
       </div>
