@@ -1,6 +1,7 @@
 import SideBar from "../SideBar/SideBar";
 import { Card, Button, Table, InputGroup, Form } from "react-bootstrap";
 import "./BudgetPage.scss";
+import CreateBudget from "./modal";
 
 export default function BudgetPage() {
   return (
@@ -32,18 +33,17 @@ export default function BudgetPage() {
             </div>
           </div>
           <div className="d-flex align-items-center justify-content-between">
-          <span>
-              $ Orçamento
-            </span>
-            <Button className="primary m-4">+ Adicionar Despesa</Button>
+            <span>$ Orçamento</span>
+
+            <CreateBudget />
           </div>
           <InputGroup className="mt-4 me-auto">
-          <Form.Control
-            placeholder="Buscar..."
-            aria-label="Buscar"
-            aria-describedby="basic-addon2"
-          />
-        </InputGroup>
+            <Form.Control
+              placeholder="Buscar..."
+              aria-label="Buscar"
+              aria-describedby="basic-addon2"
+            />
+          </InputGroup>
           <div className="vh-100 d-flex justify-content-center flex-row w-100 m-4">
             <Table className="m-4 ">
               <thead>
