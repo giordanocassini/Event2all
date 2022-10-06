@@ -6,6 +6,7 @@ import Dashboard from "../view/Dashboard";
 import EventName from "../view/EventName";
 import BudgetPage from "../view/BudgetPage";
 import Guests from "../view/Guests";
+import ToDoList from "../view/ToDoList";
 
 export default function AppRoutes() {
   return (
@@ -18,6 +19,7 @@ export default function AppRoutes() {
         <Route path="/evento" element={<EventName />} />
         <Route path="/orcamento" element={<BudgetPage />} />
         <Route path="/convidados" element={<Guests />} />
+        <Route path="/tarefas" element={<ToDoList />} />
       </Routes>
     </Router>
   );
