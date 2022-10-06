@@ -5,6 +5,13 @@ import EventInfo from "../../components/EventInfo";
 import SideBar from "../../components/SideBar/SideBar";
 import "./eventName.scss";
 export default function EventName() {
+
+  const breadCrumbsItem = [
+    { name: 'Home', link:'/' },
+    { name: 'Dashboard', link:'/dashboard' },
+    { name: 'Nome do evento', link:'/evento' }
+  ]
+
   return (
     <>
       <div className="h-100 d-flex">
@@ -12,7 +19,7 @@ export default function EventName() {
         <div className="w-100 vh-100">
           <div>
             <div> 
-              <BreadCrumbs />
+              <BreadCrumbs items={breadCrumbsItem}/>
             </div>
             <div>
               <EventInfo />
