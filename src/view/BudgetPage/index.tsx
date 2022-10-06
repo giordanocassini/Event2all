@@ -1,5 +1,6 @@
 import SideBar from "../../components/SideBar/SideBar";
 import { Card, Table, InputGroup, Form } from "react-bootstrap";
+import { MdPaid } from "react-icons/md";
 import "./BudgetPage.scss";
 import CreateBudget from "./modal";
 
@@ -33,7 +34,7 @@ export default function BudgetPage() {
             </div>
           </div>
           <div className="d-flex align-items-center justify-content-between m-4">
-            <span className="">$ Orçamento</span>
+            <span className=""><MdPaid /> Orçamento</span>
 
             <CreateBudget />
           </div>
