@@ -5,12 +5,11 @@ import EventInfo from "../../components/EventInfo";
 import SideBar from "../../components/SideBar/SideBar";
 import "./eventName.scss";
 export default function EventName() {
-
   const breadCrumbsItem = [
-    { name: 'Home', link:'/' },
-    { name: 'Dashboard', link:'/dashboard' },
-    { name: 'Nome do evento', link:'/evento' }
-  ]
+    { name: "Home", link: "/" },
+    { name: "Dashboard", link: "/dashboard" },
+    { name: "Nome do evento", link: "/evento" },
+  ];
 
   return (
     <>
@@ -18,8 +17,8 @@ export default function EventName() {
         <SideBar />
         <div className="w-100 vh-100">
           <div>
-            <div> 
-              <BreadCrumbs items={breadCrumbsItem}/>
+            <div>
+              <BreadCrumbs items={breadCrumbsItem} />
             </div>
             <div>
               <EventInfo />
@@ -33,11 +32,13 @@ export default function EventName() {
                 cardImage="paid"
               />
             </Link>
-            <CardEvent
-              title="Convidados"
-              description="Gerencie seus convidados"
-              cardImage="group"
-            />
+            <Link className="eventLinkStyle" to={"/convidados"}>
+              <CardEvent
+                title="Convidados"
+                description="Gerencie seus convidados"
+                cardImage="group"
+              />
+            </Link>
             <CardEvent
               title="Tarefas"
               description="Crie tarefas"
