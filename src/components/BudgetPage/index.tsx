@@ -1,5 +1,5 @@
 import SideBar from "../SideBar/SideBar";
-import { Card, Button, Table, InputGroup, Form } from "react-bootstrap";
+import { Card, Table, InputGroup, Form } from "react-bootstrap";
 import "./BudgetPage.scss";
 import CreateBudget from "./modal";
 
@@ -32,12 +32,12 @@ export default function BudgetPage() {
               </Card>
             </div>
           </div>
-          <div className="d-flex align-items-center justify-content-between">
-            <span>$ Orçamento</span>
+          <div className="d-flex align-items-center justify-content-between m-4">
+            <span className="">$ Orçamento</span>
 
             <CreateBudget />
           </div>
-          <InputGroup className="mt-4 me-auto">
+          <InputGroup className="mt-4 me-auto m-3">
             <Form.Control
               placeholder="Buscar..."
               aria-label="Buscar"

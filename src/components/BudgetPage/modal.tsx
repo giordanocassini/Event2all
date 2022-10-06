@@ -1,7 +1,7 @@
-import React, { useState, FormEvent } from "react";
+import { useState, FormEvent } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 
-import { cadastroBudget, cadastroEvent } from "../../services/auth";
+import { cadastroBudget } from "../../services/auth";
 
 export default function CreateBudget() {
   const [budget_name, setBudget] = useState<string>("");
