@@ -33,7 +33,9 @@ export default function SideBar() {
             aria-label="Buscar"
             aria-describedby="basic-addon2"
           />
-          <Button className="bg-primary">🔍</Button>
+          <Button className="bg-primary">
+          <img src="../../../public/images/lupa.png"></img>
+          </Button>
         </InputGroup>
         <span className="mt-5 me-auto events-font" style={{ color: "white" }}>
           <Link className="linkEvent" to={"/evento"}>

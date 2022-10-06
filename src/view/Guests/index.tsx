@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import BreadCrumbs from "../../components/BreadCrumbs";
 import SideBar from "../../components/SideBar/SideBar";
 import { Card, Button } from "react-bootstrap";
+import { MdPeopleAlt } from "react-icons/md";
 import "./guests.scss";
 //import "./eventName.scss";
 export default function Guests() {
@@ -30,7 +31,7 @@ export default function Guests() {
               </Card>
             </div>
             <div className="d-flex align-items-center justify-content-between m-4">
-              <span className="spanConvidados"># Convidados</span>
+              <span className="spanConvidados"><MdPeopleAlt className="me-2"/>Convidados</span>
               <Button> + Adicionar convidado</Button>
             </div>
             <div>{/* Add lista dos convidados */}</div>
