@@ -1,5 +1,5 @@
 import { Button, Form, Modal } from "react-bootstrap";
-import React, { useState, FormEvent } from "react";
+import { useState, FormEvent } from "react";
 import "./eventButton.scss";
 import { cadastroEvent } from "../../services/auth";
 
@@ -38,13 +38,13 @@ export default function EventButton() {
       </Button>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Criar Evento</Modal.Title>
+         <span className="modal-title">Criar Evento</span> 
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={submitEvent} className="asd ">
             <Form.Group className=" boxform p-1 text-start mb-2">
               <Form.Label>
-                Nome do Evento <span className="obligatory">*</span>
+                Nome do Evento 
               </Form.Label>
               <Form.Control
                 className="inputTexto"
@@ -57,7 +57,7 @@ export default function EventButton() {
             </Form.Group>
             <Form.Group className=" boxform p-1 text-start mb-2">
               <Form.Label>
-                Data<span className="obligatory">*</span>
+                Data
               </Form.Label>
               <Form.Control
                 className="inputTexto"
@@ -69,7 +69,7 @@ export default function EventButton() {
             </Form.Group>
             <Form.Group className=" boxform p-1 text-start mb-2">
               <Form.Label>
-                Local<span className="obligatory">*</span>
+                Local
               </Form.Label>
               <Form.Control
                 className="inputTexto"
@@ -82,11 +82,11 @@ export default function EventButton() {
             </Form.Group>
             <Form.Group className=" boxform p-1 text-start mb-2">
               <Form.Label>
-                Número de Convidados<span className="obligatory">*</span>
+                Número de Convidados
               </Form.Label>
               <Form.Control
                 className="inputTexto"
-                type="text"
+                type="number"
                 placeholder="250 convidados"
                 value={invite_number}
                 onChange={(e) => setInviteNumber(e.target.value)}
@@ -95,7 +95,7 @@ export default function EventButton() {
             </Form.Group>
             <Form.Group className=" boxform p-1 text-start mb-2">
               <Form.Label>
-                Responsáveis<span className="obligatory">*</span>
+                Responsáveis
               </Form.Label>
               <Form.Control
                 className="inputTexto"
@@ -106,21 +106,23 @@ export default function EventButton() {
                 required
               />
             </Form.Group>
-            <Form.Group className=" boxform p-1 text-start mb-2">
+            <Form.Group className=" boxform p-1 text-start mb-5">
               <Form.Label>
-                Orçamento Previsto<span className="obligatory">*</span>
+                Orçamento Previsto
               </Form.Label>
               <Form.Control
                 className="inputTexto"
                 type="number"
                 placeholder="R$00,00"
+                // mask=""
                 value={event_budget}
                 onChange={(e) => setEventBudget(e.target.value)}
                 required
               />
             </Form.Group>
+            <hr />
             <Button
-              className=" m-3 d-flex  aligh-items-end justify-content-end "
+              className="w-100"
               variant="primary"
               type="submit"
             >

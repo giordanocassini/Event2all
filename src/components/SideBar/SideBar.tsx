@@ -7,7 +7,7 @@ import EventLogo from "../../../public/images/dashboard.png";
 import "./sideBar.scss";
 import { unmountComponentAtNode } from "react-dom";
 import EventList from "./eventList";
-// import CreateEvent from "./modal";
+import { BsSearch } from 'react-icons/bs'
 
 export default function SideBar() {
   const user = useSelector((store: RootStore) => store.userReduce);
@@ -34,7 +34,7 @@ export default function SideBar() {
             aria-describedby="basic-addon2"
           />
           <Button className="bg-primary">
-          <img src="../../../public/images/lupa.png"></img>
+          <BsSearch />
           </Button>
         </InputGroup>
         <span className="mt-5 me-auto events-font" style={{ color: "white" }}>
@@ -45,12 +45,6 @@ export default function SideBar() {
         </span>
         <hr className="mb-4" />
         <EventList />
-        {/* <div id="test-asd" className="d-flex flex-column p-4 mt-3">
-              <h5>Você não tem nenhum evento adicionado.</h5>
-              <p className="text-white">Para adicionar, clique no botão abaixo ou no '+'</p>
-              <hr />
-              <CreateEvent />
-            </div> */}
       </div>
     </div>
   );
