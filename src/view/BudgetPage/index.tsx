@@ -34,17 +34,12 @@ export default function BudgetPage() {
             </div>
           </div>
           <div className="d-flex align-items-center justify-content-between m-4">
-            <span className=""><MdPaid /> Orçamento</span>
+            <span className="">
+              <MdPaid /> Orçamento
+            </span>
 
             <CreateBudget />
           </div>
-          <InputGroup className="mt-4 me-auto m-3">
-            <Form.Control
-              placeholder="Buscar..."
-              aria-label="Buscar"
-              aria-describedby="basic-addon2"
-            />
-          </InputGroup>
           <div className="vh-100 d-flex justify-content-center flex-row w-100 m-4">
             <Table className="m-4 ">
               <thead>
@@ -59,6 +54,15 @@ export default function BudgetPage() {
                   <th>STATUS</th>
                 </tr>
               </thead>
+              <td colspan="8">
+              <InputGroup className="mt-4 me-auto m-3">
+                <Form.Control
+                  placeholder="Buscar..."
+                  aria-label="Buscar"
+                  aria-describedby="basic-addon2"
+                />
+              </InputGroup>
+              </td>
               <tbody>
                 <tr>
                   <td>1</td>

@@ -13,7 +13,7 @@ export default function SideBar() {
   const user = useSelector((store: RootStore) => store.userReduce);
 
   return (
-    <div className="vh-100 d-flex">
+    <div className="d-flex">
       <div className="d-flex flex-column align-items-center stylesidebar">
         <div className="">
           <img src="./images/logotipo2.png" alt="logo" className="mt-5 mb-4" />
