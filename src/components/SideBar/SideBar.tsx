@@ -7,7 +7,7 @@ import EventLogo from "../../../public/images/dashboard.png";
 import "./sideBar.scss";
 import { unmountComponentAtNode } from "react-dom";
 import EventList from "./eventList";
-import { TbSearch } from 'react-icons/tb'
+import { BsSearch } from 'react-icons/bs'
 
 export default function SideBar() {
   const user = useSelector((store: RootStore) => store.userReduce);
@@ -34,7 +34,7 @@ export default function SideBar() {
             aria-describedby="basic-addon2"
           />
           <Button className="bg-primary">
-          <TbSearch />
+          <BsSearch />
           </Button>
         </InputGroup>
         <span className="mt-5 me-auto events-font" style={{ color: "white" }}>

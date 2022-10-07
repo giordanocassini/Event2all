@@ -41,8 +41,11 @@ export default function BudgetPage() {
             <CreateBudget />
           </div>
           <div className="vh-100 d-flex justify-content-center flex-row w-100 m-4">
-            <Table className="m-4 ">
-              <thead>
+            {/* o vh-100 aqui ta conflitando com a table estar muita espaçada verticalmente,
+             porem, se tirar o vh, o sidebar ta com o align stretch e vai acompanhar
+              a table menor, não pensei numa solução ainda */}
+            <Table hover>
+              <thead className="thead-bg">
                 <tr>
                   <th>DESCRIÇÃO</th>
                   <th>FORNECEDOR</th>
@@ -55,7 +58,7 @@ export default function BudgetPage() {
                 </tr>
               </thead>
               <td colspan="8">
-              <InputGroup className="mt-4 me-auto m-3">
+              <InputGroup className="mt-1 px-1">
                 <Form.Control
                   placeholder="Buscar..."
                   aria-label="Buscar"
