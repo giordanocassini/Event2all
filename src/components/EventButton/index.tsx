@@ -1,5 +1,5 @@
 import { Button, Form, Modal } from "react-bootstrap";
-import React, { useState, FormEvent } from "react";
+import { useState, FormEvent } from "react";
 import "./eventButton.scss";
 import { cadastroEvent } from "../../services/auth";
 
