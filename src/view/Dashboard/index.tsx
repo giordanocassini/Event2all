@@ -5,7 +5,7 @@ import './dashboard.scss';
 export default function Dashboard() {
   return (
     <>
-      <div className="h-100 d-flex">
+      <div className="h-100 d-flex align-items-stretch">
         <SideBar />
         <div className="dashboard vh-100">
           <div className="empty-dash">

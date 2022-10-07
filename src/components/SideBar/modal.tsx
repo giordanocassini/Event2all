@@ -87,7 +87,7 @@ export default function CreateEvent() {
               </Form.Label>
               <Form.Control
                 className="inputTexto"
-                type="text"
+                type="number"
                 placeholder="250 convidados"
                 value={invite_number}
                 onChange={(e) => setInviteNumber(e.target.value)}
@@ -115,6 +115,7 @@ export default function CreateEvent() {
                 className="inputTexto"
                 type="number"
                 placeholder="R$00,00"
+                // mask=""
                 value={event_budget}
                 onChange={(e) => setEventBudget(e.target.value)}
                 required
