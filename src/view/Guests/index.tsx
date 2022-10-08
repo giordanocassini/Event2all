@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import BreadCrumbs from "../../components/BreadCrumbs";
 import SideBar from "../../components/SideBar/SideBar";
-import { Card, Button } from "react-bootstrap";
+import { Card, Button, Table, InputGroup, Form } from "react-bootstrap";
 import { MdPeopleAlt } from "react-icons/md";
 import "./guests.scss";
-//import "./eventName.scss";
+
 export default function Guests() {
   const breadCrumbsItem = [
     { name: "Home", link: "/" },
@@ -16,7 +16,7 @@ export default function Guests() {
     <>
       <div className="h-100 d-flex">
         <SideBar />
-        <div className="w-100 vh-100">
+        <div className="d-flex flex-column">
           <div>
             <div>
               <BreadCrumbs items={breadCrumbsItem} />
@@ -34,7 +34,41 @@ export default function Guests() {
               <span className="spanConvidados"><MdPeopleAlt className="me-2"/>Convidados</span>
               <Button> + Adicionar convidado</Button>
             </div>
-            <div>{/* Add lista dos convidados */}</div>
+            <div className="d-flex w-100 m-4">
+            <Table id="width-table" hover>
+              <thead className="thead-bg">
+                <tr>
+                  <th>NOME</th>
+                  <th>CONTATO</th>
+                  <th>CONVITE ENVIADO?</th>
+                  <th>CONFIRMADO?</th>
+                </tr>
+              </thead>
+              <td colspan="8">
+              <InputGroup className="mt-2 px-1 mb-1">
+                <Form.Control
+                  placeholder="Buscar..."
+                  aria-label="Buscar"
+                  aria-describedby="basic-addon2"
+                />
+              </InputGroup>
+              </td>
+              <tbody className="tbody-bg">
+                <tr>
+                  <td className="text-primary">Título do Item</td>
+                  <td>Nome</td>
+                  <td>email@email.com</td>
+                  <td>R$ 5.000,00</td>
+                </tr>
+                <tr>
+                  <td className="text-primary">Título do Item</td>
+                  <td>Nome</td>
+                  <td>email@email.com</td>
+                  <td>R$ 5.000,00</td>
+                </tr>
+              </tbody>
+            </Table>
+          </div>
           </div>
         </div>
       </div>
