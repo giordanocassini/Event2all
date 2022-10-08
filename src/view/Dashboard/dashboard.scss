@@ -1,30 +1,24 @@
-.dashboard{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 5.625rem 10rem;
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5.625rem 10rem;
 }
 
-.empty-dash{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
+.empty-dash {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
-.image-dash{
-    width: 40rem;
-    height: 34rem;
-    margin-top: 4.5rem;
+.image-dash {
+  width: 40rem;
+  height: 34rem;
+  margin-top: 4.5rem;
 }
 
-.button-event{
-    margin-left: 9rem;
-}
-
-
-.text-dash > p{
-    font-size: 21px;
-    font-weight: 400;
+.text-dash > p {
+  font-size: 21px;
+  font-weight: 400;
 }
