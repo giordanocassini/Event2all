@@ -49,7 +49,6 @@ export default function ModalGuests() {
                 required
               />
             </Form.Group>
-
             <Form.Group className=" boxform p-1 text-start mb-2">
               <Form.Label>Contato</Form.Label>
               <Form.Control
@@ -65,9 +64,18 @@ export default function ModalGuests() {
               <FormControlLabel
                 control={<Switch defaultChecked />}
                 label="Convite enviado?"
+                className="px-3 mb-2"
               />
             </FormGroup>
-
+            <Form.Label className="px-2">Confirmado?</Form.Label>
+            <div className="mx-4  d-flex justify-content-evenly ">
+              <Button className="d-flex px-3">Sim</Button>
+              <Button className="d-flex px-3 ">Não</Button>
+              <Button className="d-flex px-3">Talvez</Button>
+            </div>
+            <Button className="d-flex align-items-center justify-content-center m-4 p-2">
+              Adicionar Convidado
+            </Button>
             <hr />
           </Form>
         </Modal.Body>
