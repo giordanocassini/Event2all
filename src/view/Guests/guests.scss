@@ -2,6 +2,21 @@
   font-weight: 700;
 }
 
-#width-table{
+#width-table {
   min-width: 966px;
+}
+.greencolor {
+  background-color: #a5f0d4;
+  color: black;
+  border: 5px #3ee7a9;
+}
+.redcolor {
+  background-color: rgba(201, 92, 92, 0.767);
+  color: black;
+  border: 5px rgba(218, 19, 19, 0.767);
+}
+.yellowcolor {
+  background-color: rgba(252, 170, 47, 0.12);
+  color: black;
+  border: 5px rgba(248, 245, 36, 0.12);
 }

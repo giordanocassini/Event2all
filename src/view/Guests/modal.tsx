@@ -3,6 +3,7 @@ import { useState, FormEvent } from "react";
 import { cadastroGuest } from "../../services/auth";
 import { Switch } from "@mui/material";
 import FormControlLabel from "@mui/material/FormControlLabel";
+import "./guests.scss";
 
 export default function ModalGuests() {
   const [name_guest, setNameGuest] = useState<string>("");
@@ -69,9 +70,9 @@ export default function ModalGuests() {
             </FormGroup>
             <Form.Label className="px-2">Confirmado?</Form.Label>
             <div className="mx-4  d-flex justify-content-evenly ">
-              <Button className="d-flex px-3">Sim</Button>
-              <Button className="d-flex px-3 ">Não</Button>
-              <Button className="d-flex px-3">Talvez</Button>
+              <Button className="d-flex px-3 greencolor">Sim</Button>
+              <Button className="d-flex px-3 redcolor">Não</Button>
+              <Button className="d-flex px-3 yellowcolor">Talvez</Button>
             </div>
             <Button className="d-flex align-items-center justify-content-center m-4 p-2">
               Adicionar Convidado
