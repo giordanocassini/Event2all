@@ -1,8 +1,8 @@
 import SideBar from "../../components/SideBar/SideBar";
 import { Card, Table, InputGroup, Form } from "react-bootstrap";
 import { MdPaid } from "react-icons/md";
-import "./BudgetPage.scss";
 import CreateBudget from "./modal";
+import "./BudgetPage.scss";
 
 export default function BudgetPage() {
   return (
@@ -35,15 +35,12 @@ export default function BudgetPage() {
           </div>
           <div className="d-flex align-items-center justify-content-between m-4">
             <span className="">
-              <MdPaid /> Orçamento
+              <MdPaid className="mb-1" /> Orçamento
             </span>
 
             <CreateBudget />
           </div>
-          <div className="vh-100 d-flex justify-content-center flex-row w-100 m-4">
-            {/* o vh-100 aqui ta conflitando com a table estar muita espaçada verticalmente,
-             porem, se tirar o vh, o sidebar ta com o align stretch e vai acompanhar
-              a table menor, não pensei numa solução ainda */}
+          <div className="d-flex w-100 m-4">
             <Table hover>
               <thead className="thead-bg">
                 <tr>
@@ -58,7 +55,7 @@ export default function BudgetPage() {
                 </tr>
               </thead>
               <td colspan="8">
-              <InputGroup className="mt-1 px-1">
+              <InputGroup className="mt-2 px-1 mb-1">
                 <Form.Control
                   placeholder="Buscar..."
                   aria-label="Buscar"
@@ -66,46 +63,26 @@ export default function BudgetPage() {
                 />
               </InputGroup>
               </td>
-              <tbody>
+              <tbody className="tbody-bg">
                 <tr>
-                  <td>1</td>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                  <td>1</td>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
+                  <td className="text-primary">Título do Item</td>
+                  <td>Nome</td>
+                  <td>email@email.com</td>
+                  <td>R$ 5.000,00</td>
+                  <td>R$ 5.000,00</td>
+                  <td>R$ 5.000,00</td>
+                  <td>R$ 5.000,00</td>
+                  <td>Pago/Em Aberto</td>
                 </tr>
                 <tr>
-                  <td>2</td>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                  <td>2</td>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                  <td>2</td>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                  <td>2</td>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
+                  <td className="text-primary">Título do Item</td>
+                  <td>Nome</td>
+                  <td>email@email.com</td>
+                  <td>R$ 5.000,00</td>
+                  <td>R$ 5.000,00</td>
+                  <td>R$ 5.000,00</td>
+                  <td>R$ 5.000,00</td>
+                  <td>Pago/Em Aberto</td>
                 </tr>
               </tbody>
             </Table>

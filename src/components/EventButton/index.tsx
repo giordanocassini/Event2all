@@ -36,7 +36,7 @@ export default function EventButton() {
       <Button onClick={handleShow} className="event-button">
         <img className="image-button" src={"public/images/add.svg"}></img>
       </Button>
-      <Modal show={show} onHide={handleClose}>
+      <Modal id="width-modal" className="d-flex align-items-center" show={show} onHide={handleClose}>
         <Modal.Header closeButton>
          <span className="modal-title">Criar Evento</span> 
         </Modal.Header>
