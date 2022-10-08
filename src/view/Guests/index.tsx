@@ -4,6 +4,7 @@ import SideBar from "../../components/SideBar/SideBar";
 import { Card, Button, Table, InputGroup, Form } from "react-bootstrap";
 import { MdPeopleAlt } from "react-icons/md";
 import "./guests.scss";
+import ModalGuests from "./modal";
 
 export default function Guests() {
   const breadCrumbsItem = [
@@ -35,7 +36,7 @@ export default function Guests() {
                 <MdPeopleAlt className="me-2" />
                 Convidados
               </span>
-              <Button> + Adicionar convidado</Button>
+              <ModalGuests />
             </div>
             <div className="d-flex w-100 m-4">
               <Table id="width-table" hover>

@@ -11,7 +11,7 @@ interface RegisterUser {
   password: string;
 }
 
-interface RegisterEvent{
+interface RegisterEvent {
   event_name: string;
   event_date: string;
   place: string;
@@ -20,13 +20,22 @@ interface RegisterEvent{
   event_budget: string;
 }
 
-interface RegisterBudget{
+interface RegisterBudget {
   budget_name: string;
   budget_provider: string;
   contact: string;
   predicted_budget: string;
   contracted_budget: string;
   paid_budget: string;
+}
+
+interface GuestAdd {
+  name_guest: string;
+  contact_guest: string;
+}
+
+export function cadastroGuest(payload: GuestAdd) {
+  return baseApi.post("/");
 }
 
 export function login(payload: LoginPayload) {
@@ -37,10 +46,10 @@ export function register(payload: RegisterUser) {
   return baseApi.post("/user", payload);
 }
 
-export function cadastroEvent(payload: RegisterEvent){
+export function cadastroEvent(payload: RegisterEvent) {
   return baseApi.post("/event", payload);
 }
 
-export function cadastroBudget(payload: RegisterBudget){
+export function cadastroBudget(payload: RegisterBudget) {
   return baseApi.post("/event", payload);
 }

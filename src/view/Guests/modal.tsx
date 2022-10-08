@@ -1,16 +1,27 @@
 import { Button, Form, Modal } from "react-bootstrap";
 import { useState, FormEvent } from "react";
-
-const [show, setShow] = useState(false);
-const handleClose = () => setShow(false);
-const handleShow = () => setShow(true);
+import { cadastroGuest } from "../../services/auth";
 
 export default function ModalGuests() {
   const [name_guest, setNameGuest] = useState<string>("");
   const [contact_guest, setContactGuest] = useState<string>("");
   // será que esses botões que vem vão ter que dar States? Vai pro back?
-const submitAddGuest= async (event:)
+  const submitAddGuest = async (event: FormEvent) => {
+    event.preventDefault();
+    try {
+      await cadastroGuest({
+        name_guest,
+        contact_guest,
+      });
+      alert("Convidado adicionado com sucesso");
+    } catch (error) {
+      alert("Algo deu errado!");
+    }
+  };
 
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return (
     <>
       <Button onClick={handleShow}> Adicionar Convidados</Button>
@@ -21,80 +32,35 @@ const submitAddGuest= async (event:)
         onHide={handleClose}
       >
         <Modal.Header closeButton>
-          <span className="modal-title">Criar Evento</span>
+          <span className="modal-title">Adicionar Convidado</span>
         </Modal.Header>
         <Modal.Body>
-          <Form onSubmit={submitEvent} className="asd ">
+          <Form onSubmit={submitAddGuest} className="asd ">
             <Form.Group className=" boxform p-1 text-start mb-2">
-              <Form.Label>Nome do Evento</Form.Label>
+              <Form.Label>Nome </Form.Label>
               <Form.Control
                 className="inputTexto"
                 type="text"
-                placeholder="Digite o nome do evento..."
-                value={event_name}
-                onChange={(e) => setEvent(e.target.value)}
+                placeholder="Nome do convidado"
+                value={name_guest}
+                onChange={(e) => setNameGuest(e.target.value)}
                 required
               />
             </Form.Group>
+
             <Form.Group className=" boxform p-1 text-start mb-2">
-              <Form.Label>Data</Form.Label>
-              <Form.Control
-                className="inputTexto"
-                type="date"
-                value={event_date}
-                onChange={(e) => setEventDate(e.target.value)}
-                required
-              />
-            </Form.Group>
-            <Form.Group className=" boxform p-1 text-start mb-2">
-              <Form.Label>Local</Form.Label>
+              <Form.Label>Contato</Form.Label>
               <Form.Control
                 className="inputTexto"
                 type="text"
-                placeholder="Rua Exemplo, N°, Bairro, Cidade, CEP"
-                value={place}
-                onChange={(e) => setPlace(e.target.value)}
+                placeholder="Inserir contato (Opcional)"
+                value={contact_guest}
+                onChange={(e) => setContactGuest(e.target.value)}
                 required
               />
             </Form.Group>
-            <Form.Group className=" boxform p-1 text-start mb-2">
-              <Form.Label>Número de Convidados</Form.Label>
-              <Form.Control
-                className="inputTexto"
-                type="number"
-                placeholder="250 convidados"
-                value={invite_number}
-                onChange={(e) => setInviteNumber(e.target.value)}
-                required
-              />
-            </Form.Group>
-            <Form.Group className=" boxform p-1 text-start mb-2">
-              <Form.Label>Responsáveis</Form.Label>
-              <Form.Control
-                className="inputTexto"
-                type="text"
-                placeholder=""
-                value={managers}
-                onChange={(e) => setManagers(e.target.value)}
-                required
-              />
-            </Form.Group>
-            <Form.Group className=" boxform p-1 text-start mb-5">
-              <Form.Label>Orçamento Previsto</Form.Label>
-              <Form.Control
-                className="inputTexto"
-                type="number"
-                placeholder="R$00,00"
-                // mask=""
-                value={event_budget}
-                onChange={(e) => setEventBudget(e.target.value)}
-                required
-              />
-            </Form.Group>
+
             <hr />
-            <Button className="w-100" variant="primary" type="submit">
-              Criar Evento
-            </Button>
           </Form>
         </Modal.Body>
       </Modal>
