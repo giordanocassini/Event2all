@@ -1,6 +1,8 @@
-import { Button, Form, Modal } from "react-bootstrap";
+import { Button, Form, FormGroup, Modal } from "react-bootstrap";
 import { useState, FormEvent } from "react";
 import { cadastroGuest } from "../../services/auth";
+import { Switch } from "@mui/material";
+import FormControlLabel from "@mui/material/FormControlLabel";
 
 export default function ModalGuests() {
   const [name_guest, setNameGuest] = useState<string>("");
@@ -59,6 +61,12 @@ export default function ModalGuests() {
                 required
               />
             </Form.Group>
+            <FormGroup>
+              <FormControlLabel
+                control={<Switch defaultChecked />}
+                label="Convite enviado?"
+              />
+            </FormGroup>
 
             <hr />
           </Form>
