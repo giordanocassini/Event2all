@@ -7,11 +7,11 @@ import EventLogo from "../../../public/images/dashboard.png";
 import "./sideBar.scss";
 import { unmountComponentAtNode } from "react-dom";
 import EventList from "./eventList";
-import { BsSearch } from 'react-icons/bs'
+import { BsSearch } from "react-icons/bs";
 
 export default function SideBar() {
   const user = useSelector((store: RootStore) => store.userReduce);
-
+  console.log("sidebar", user);
   return (
     <div className="vh-100 d-flex">
       <div className="d-flex flex-column align-items-center stylesidebar">
@@ -34,7 +34,7 @@ export default function SideBar() {
             aria-describedby="basic-addon2"
           />
           <Button className="bg-primary">
-          <BsSearch />
+            <BsSearch />
           </Button>
         </InputGroup>
         <span className="mt-5 me-auto events-font" style={{ color: "white" }}>

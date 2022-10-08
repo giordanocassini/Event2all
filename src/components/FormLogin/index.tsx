@@ -7,7 +7,6 @@ import { getUser, setUser } from "../../store/modules/users";
 import { Dispatch } from "@reduxjs/toolkit";
 import "./formLogin.scss";
 
-
 export default function FormLogin() {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -16,12 +15,12 @@ export default function FormLogin() {
 
   const submit = async (event: FormEvent) => {
     event.preventDefault();
-    
+
     try {
       const response = await login({ email, password });
 
       window.localStorage.setItem("token", response.data.token);
-      window.localStorage.setItem("user", response.data.user);
+      window.localStorage.setItem("user", JSON.stringify(response.data.user));
       dispatch(getUser());
 
       console.log("logado com:", response.data.user);
@@ -29,7 +28,7 @@ export default function FormLogin() {
 
       alert("Logado com sucesso!");
 
-      navigate("/dashboard")
+      navigate("/dashboard");
     } catch (error) {
       alert("Opa! Deu algo errado!");
     }

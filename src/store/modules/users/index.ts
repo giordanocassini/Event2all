@@ -6,7 +6,6 @@ interface UserState {
   id: number;
   name: string;
   email: string;
-  apartment: number;
   isLogged: boolean;
   isLoading: boolean;
   isFail: boolean;
@@ -24,7 +23,6 @@ const userReduce = createSlice({
         id: undefined,
         name: undefined,
         email: undefined,
-        apartment: undefined,
         isLogged: false,
         isLoading: true,
         isFail: false,
@@ -36,7 +34,6 @@ const userReduce = createSlice({
         id: action.payload.id,
         name: action.payload.name,
         email: action.payload.email,
-        apartment: action.payload.apartment,
         isLogged: true,
         isLoading: false,
         isFail: false,
@@ -48,7 +45,6 @@ const userReduce = createSlice({
         id: undefined,
         name: undefined,
         email: undefined,
-        apartment: undefined,
         isLogged: false,
         isLoading: false,
         isFail: false,
@@ -60,7 +56,6 @@ const userReduce = createSlice({
         id: undefined,
         name: undefined,
         email: undefined,
-        apartment: undefined,
         isLogged: false,
         isLoading: false,
         isFail: true,
@@ -76,16 +71,17 @@ export default userReduce.reducer;
 export const getUser = () => async (dispatch: Dispatch) => {
   dispatch(getRequestUser());
   const token = window.localStorage.getItem("token");
-  const userId = window.localStorage.getItem("id");
+  const userId = JSON.parse(window.localStorage.getItem("user")!).id;
   try {
     const response = await pegaUsuarioPorId(userId, token);
+    console.log(response);
+
     dispatch(
       setUser({
         token,
         id: response.data.id,
         name: response.data.name,
         email: response.data.email,
-        apartment: response.data.apartment,
       })
     );
   } catch (error) {
