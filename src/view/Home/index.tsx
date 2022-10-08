@@ -7,12 +7,14 @@ export default function Home() {
     <>
       <HeaderHome />
       <HomeSite />
-      <Footer
-        backgroundColor="#191933"
-        color="#FBFBFB"
-        logotipo="logotipo2.png"
-        position="static"
-      />
+      <div className="">
+        <Footer
+          backgroundColor="#191933"
+          color="#FBFBFB"
+          logotipo="logotipo2.png"
+          position="static"
+        />
+      </div>
     </>
   );
 }

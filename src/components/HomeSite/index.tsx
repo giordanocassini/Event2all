@@ -4,7 +4,7 @@ import "./homeSite.scss";
 export default function HomeSite() {
   return (
     <div className="">
-      <Container className="d-flex flex-wrap justify-content-center align-items-center w-100">
+      <Container className="d-flex flex-wrap justify-content-center align-items-center w-100 ">
         <img
           className="img-home me-5"
           src="../../../public/images/home-site.png"
@@ -26,7 +26,7 @@ export default function HomeSite() {
 
       <div
         id="cards"
-        className="d-flex flex-wrap justify-content-center align-items-center"
+        className="d-flex flex-wrap justify-content-center align-items-center p-4 h-100"
       >
         <Card id="card" className="rounded text-center">
           <Card.Body>
