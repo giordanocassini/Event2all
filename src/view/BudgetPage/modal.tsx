@@ -36,16 +36,15 @@ export default function CreateBudget() {
   return (
     <>
       <Button onClick={handleShow}>+ Adicionar Despesa</Button>
-
-      <Modal show={show} onHide={handleClose}>
+      <Modal id="width-modal" className="d-flex align-items-center" show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Adicionar Despesa</Modal.Title>
+        <span className="modal-title">Criar Evento</span> 
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={submitEvent} className="asd ">
             <Form.Group className=" boxform p-1 text-start mb-2">
               <Form.Label>
-                Descrição <span className="obligatory">*</span>
+                Descrição 
               </Form.Label>
               <Form.Control
                 className="inputTexto"
@@ -58,7 +57,7 @@ export default function CreateBudget() {
             </Form.Group>
             <Form.Group className=" boxform p-1 text-start mb-2">
               <Form.Label>
-                Fornecedor<span className="obligatory">*</span>
+                Fornecedor
               </Form.Label>
               <Form.Control
                 className="inputTexto"
@@ -71,7 +70,7 @@ export default function CreateBudget() {
             </Form.Group>
             <Form.Group className=" boxform p-1 text-start mb-2">
               <Form.Label>
-                Contato<span className="obligatory">*</span>
+                Contato
               </Form.Label>
               <Form.Control
                 className="inputTexto"
@@ -84,7 +83,7 @@ export default function CreateBudget() {
             </Form.Group>
             <Form.Group className=" boxform p-1 text-start mb-2">
               <Form.Label>
-                Valor Previsto<span className="obligatory">*</span>
+                Valor Previsto
               </Form.Label>
               <Form.Control
                 className="inputTexto"
@@ -97,7 +96,7 @@ export default function CreateBudget() {
             </Form.Group>
             <Form.Group className=" boxform p-1 text-start mb-2">
               <Form.Label>
-                Valor Contratado<span className="obligatory">*</span>
+                Valor Contratado
               </Form.Label>
               <Form.Control
                 className="inputTexto"
@@ -110,7 +109,7 @@ export default function CreateBudget() {
             </Form.Group>
             <Form.Group className=" boxform p-1 text-start mb-2">
               <Form.Label>
-                Valor Pago<span className="obligatory">*</span>
+                Valor Pago
               </Form.Label>
               <Form.Control
                 className="inputTexto"
