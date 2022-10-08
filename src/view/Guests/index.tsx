@@ -3,6 +3,7 @@ import BreadCrumbs from "../../components/BreadCrumbs";
 import SideBar from "../../components/SideBar/SideBar";
 import { Card, Button, Table, InputGroup, Form } from "react-bootstrap";
 import { MdPeopleAlt } from "react-icons/md";
+import { Pagination } from "@mui/material";
 import "./guests.scss";
 import ModalGuests from "./modal";
 
@@ -71,6 +72,11 @@ export default function Guests() {
                     <td>R$ 5.000,00</td>
                   </tr>
                 </tbody>
+                <Pagination
+                  className="d-flex w-100 align-items-center justify-content-center"
+                  count={10}
+                  color="primary"
+                />
               </Table>
             </div>
           </div>

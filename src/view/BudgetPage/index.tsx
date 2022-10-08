@@ -2,6 +2,7 @@ import SideBar from "../../components/SideBar/SideBar";
 import { Card, Table, InputGroup, Form } from "react-bootstrap";
 import { MdPaid } from "react-icons/md";
 import CreateBudget from "./modal";
+import { Pagination } from "@mui/material";
 import "./BudgetPage.scss";
 
 export default function BudgetPage() {
@@ -55,13 +56,13 @@ export default function BudgetPage() {
                 </tr>
               </thead>
               <td colspan="8">
-              <InputGroup className="mt-2 px-1 mb-1">
-                <Form.Control
-                  placeholder="Buscar..."
-                  aria-label="Buscar"
-                  aria-describedby="basic-addon2"
-                />
-              </InputGroup>
+                <InputGroup className="mt-2 px-1 mb-1">
+                  <Form.Control
+                    placeholder="Buscar..."
+                    aria-label="Buscar"
+                    aria-describedby="basic-addon2"
+                  />
+                </InputGroup>
               </td>
               <tbody className="tbody-bg">
                 <tr>
@@ -85,6 +86,11 @@ export default function BudgetPage() {
                   <td>Pago/Em Aberto</td>
                 </tr>
               </tbody>
+              <Pagination
+                className="d-flex w-100 align-items-center justify-content-center"
+                count={10}
+                color="primary"
+              />
             </Table>
           </div>
         </div>
