@@ -1,16 +1,26 @@
 import { InputGroup, Form, Button } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { RootStore } from "../../store";
+import { useDispatch } from "react-redux";
 import Avatar from "react-avatar";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import EventLogo from "../../../public/images/dashboard.png";
 import "./sideBar.scss";
 import { unmountComponentAtNode } from "react-dom";
 import EventList from "./eventList";
 import { BsSearch } from "react-icons/bs";
+import { removeUser } from "../../store/modules/users";
 
 export default function SideBar() {
   const user = useSelector((store: RootStore) => store.userReduce);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const exit = () => {
+    window.localStorage.clear();
+    dispatch(removeUser());
+    navigate("/");
+  };
   console.log("sidebar", user);
   return (
     <div className="vh-100 d-flex">
@@ -46,6 +56,7 @@ export default function SideBar() {
         <hr className="mb-4" />
         <EventList />
       </div>
+      <Button onClick={exit}> Sair </Button>
     </div>
   );
 }
