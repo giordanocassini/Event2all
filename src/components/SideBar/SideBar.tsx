@@ -55,8 +55,10 @@ export default function SideBar() {
         </span>
         <hr className="mb-4" />
         <EventList />
+        <Button className="m-4 " onClick={exit}>
+          Sair
+        </Button>
       </div>
-      <Button onClick={exit}> Sair </Button>
     </div>
   );
 }
