@@ -40,10 +40,7 @@ export default function BudgetPage() {
 
             <CreateBudget />
           </div>
-          <div className="vh-100 d-flex justify-content-center flex-row w-100 m-4">
-            {/* o vh-100 aqui ta conflitando com a table estar muita espaçada verticalmente,
-             porem, se tirar o vh, o sidebar ta com o align stretch e vai acompanhar
-              a table menor, não pensei numa solução ainda */}
+          <div className="d-flex justify-content-center flex-row w-100 m-4">
             <Table hover>
               <thead className="thead-bg">
                 <tr>
