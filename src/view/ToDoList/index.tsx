@@ -15,20 +15,19 @@ export default function ToDoList() {
     <>
       <div className="h-100 d-flex">
         <SideBar />
-        <div className="w-100 vh-100">
-          <div>
-            <div>
-              <BreadCrumbs items={breadCrumbsItem} />
-            </div>
+        <div className="w-100 vh-100 ">
+          <BreadCrumbs className="" items={breadCrumbsItem} />
+          <div className="mt-4">
+            <h2 className="d-flex align-items-center justify-content-center">
+              Lista de Tarefas
+            </h2>
+            <TasksProvider>
+              <NewTask />
+              <TaskList />
+            </TasksProvider>
           </div>
         </div>
       </div>
-      <div className="w-100 vh-100">
-      <TasksProvider>
-      <NewTask />
-      <TaskList />
-    </TasksProvider>
-    </div>
     </>
   );
 }
