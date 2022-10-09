@@ -1,0 +1,36 @@
+#new-task {
+    background: #F6F6F6;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    div {
+        width: 100%;
+        max-width: 500px;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+
+        input {
+            flex: 70%;
+            padding: 12px 20px;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    #new-task {
+        div {
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+    
+            input {
+                flex: 100%;
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
