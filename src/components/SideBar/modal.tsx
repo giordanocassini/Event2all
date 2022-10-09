@@ -114,7 +114,8 @@ export default function CreateEvent() {
                 Orçamento Previsto
               </Form.Label>
               <Form.Control
-                className="inputTexto"
+              // <NumericFormat
+                className="inputTexto d-flex"
                 // type="number"
                 placeholder="R$ 00,00"
                 value={event_budget}
@@ -124,6 +125,7 @@ export default function CreateEvent() {
                 onChange={(e) => setEventBudget(e.target.value)}
                 required
                 />
+                {/* /> */}
             </Form.Group>
             <hr />
             <Button

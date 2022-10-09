@@ -74,10 +74,17 @@ export default function ModalGuests() {
               <Button className="d-flex px-3 redcolor">Não</Button>
               <Button className="d-flex px-3 yellowcolor">Talvez</Button>
             </div>
-            <Button className="d-flex align-items-center justify-content-center m-4 p-2">
+            {/* <Button className="w-75 d-flex align-items-center justify-content-center m-4 p-2">
+              Adicionar Convidado
+            </Button> */}
+              <hr />
+            <Button
+              className="w-100"
+              variant="primary"
+              type="submit"
+            >
               Adicionar Convidado
             </Button>
-            <hr />
           </Form>
         </Modal.Body>
       </Modal>
