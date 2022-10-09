@@ -1,4 +1,5 @@
 import React, { useState, FormEvent } from "react";
+import { NumericFormat } from 'react-number-format';
 import { Button, Form, Modal } from "react-bootstrap";
 import "./modal.scss"
 
@@ -114,13 +115,15 @@ export default function CreateEvent() {
               </Form.Label>
               <Form.Control
                 className="inputTexto"
-                type="number"
-                placeholder="R$00,00"
-                // mask=""
+                // type="number"
+                placeholder="R$ 00,00"
                 value={event_budget}
+                decimalScale={2} 
+                prefix={'R$'}
+                thousandSeparator=","
                 onChange={(e) => setEventBudget(e.target.value)}
                 required
-              />
+                />
             </Form.Group>
             <hr />
             <Button
