@@ -1,4 +1,4 @@
-#asd2 {
+#footer {
     position: fixed;
     bottom: 0;
     width: 100vw;
@@ -9,11 +9,34 @@
     flex-direction: row;
 }
 .logoFooter{
-    margin-left: 4.5rem;
+    margin-left: 72px;
 }
 .copyright{
     display: flex;
     justify-content: end;
     margin-right: 4.5rem;
+}
+
+@media only screen and (max-width: 500px){
+ .logo-footer{
+    display: none;
+ }
+
+ .logoFooter{
+    margin: 0;
+ }
+
+ .copyright{
+    display: none;
+ }
+ 
+ .parent-footer{
+    background-color: black !important;
+ }
+ #footer{
+    justify-content: center !important;
+    margin: 0;
+    padding: 0;
+ }
 }
 
