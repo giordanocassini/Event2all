@@ -1,15 +1,16 @@
 import { InputGroup, Form, Button } from "react-bootstrap";
 import { useSelector } from "react-redux";
-import { RootStore } from "../../store";
 import { useDispatch } from "react-redux";
 import Avatar from "react-avatar";
 import { Link, useNavigate } from "react-router-dom";
-import EventLogo from "../../../public/images/dashboard.png";
-import "./sideBar.scss";
 import { unmountComponentAtNode } from "react-dom";
-import EventList from "./eventList";
 import { BsSearch } from "react-icons/bs";
+import { IoExitOutline } from "react-icons/io5";
 import { removeUser } from "../../store/modules/users";
+import EventLogo from "../../../public/images/dashboard.png";
+import { RootStore } from "../../store";
+import EventList from "./eventList";
+import "./sideBar.scss";
 
 export default function SideBar() {
   const user = useSelector((store: RootStore) => store.userReduce);
@@ -55,8 +56,9 @@ export default function SideBar() {
         </span>
         <hr className="mb-4" />
         <EventList />
-        <Button className="m-4 " onClick={exit}>
-          Sair
+        <Button className="logoff-botao w-100 m-4 " onClick={exit}>
+          <IoExitOutline className="me-2"/>
+          Fazer Logoff
         </Button>
       </div>
     </div>
