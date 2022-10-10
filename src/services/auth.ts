@@ -33,7 +33,12 @@ interface GuestAdd {
   name_guest: string;
   contact_guest: string;
 }
-
+const token= window.localStorage.getItem("token");
+  const config = {
+    headers: {
+      'Authorization': 'Bearer ' + token
+    }
+}
 export function cadastroGuest(payload: GuestAdd) {
   return baseApi.post("/");
 }
@@ -51,5 +56,5 @@ export function cadastroEvent(payload: RegisterEvent) {
 }
 
 export function cadastroBudget(payload: RegisterBudget) {
-  return baseApi.post("/event", payload);
+  return baseApi.post("/event", payload, config);
 }
