@@ -1,13 +1,13 @@
 import EventButton from "../../components/EventButton";
 import SideBar from "../../components/SideBar/SideBar";
-import './dashboard.scss';
+import "./dashboard.scss";
 
 export default function Dashboard() {
   return (
     <>
       <div className="h-100 d-flex">
         <SideBar />
-        <div className="dashboard vh-100">
+        <div className="dashboard vh-100 m-4">
           <div className="empty-dash">
             <div className="text-dash">
               <p>Voce não possui um evento criado.</p>
@@ -18,7 +18,10 @@ export default function Dashboard() {
             </div>
           </div>
           <div>
-            <img className="image-dash" src={"../../../public/images/empty.png"} />
+            <img
+              className="image-dash"
+              src={"../../../public/images/empty.png"}
+            />
           </div>
         </div>
       </div>

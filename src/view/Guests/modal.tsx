@@ -1,5 +1,5 @@
 import { Button, Form, FormGroup, Modal } from "react-bootstrap";
-import { useState, FormEvent } from "react";
+import { useState, FormEvent, useEffect } from "react";
 import { cadastroGuest } from "../../services/auth";
 import { Switch } from "@mui/material";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -8,13 +8,19 @@ import "./guests.scss";
 export default function ModalGuests() {
   const [name_guest, setNameGuest] = useState<string>("");
   const [contact_guest, setContactGuest] = useState<string>("");
-  // será que esses botões que vem vão ter que dar States? Vai pro back?
+  const [checkGuest, setCheckGuest] = useState<string>("");
+
+  const handleInputChanges = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setCheckGuest(e.target.value);
+  };
+
   const submitAddGuest = async (event: FormEvent) => {
     event.preventDefault();
     try {
       await cadastroGuest({
         name_guest,
         contact_guest,
+        checkGuest,
       });
       alert("Convidado adicionado com sucesso");
     } catch (error) {
@@ -69,20 +75,32 @@ export default function ModalGuests() {
               />
             </FormGroup>
             <Form.Label className="px-2">Confirmado?</Form.Label>
-            <div className="mx-4  d-flex justify-content-evenly ">
-              <Button className="d-flex px-3 greencolor">Sim</Button>
-              <Button className="d-flex px-3 redcolor">Não</Button>
-              <Button className="d-flex px-3 yellowcolor">Talvez</Button>
-            </div>
-            {/* <Button className="w-75 d-flex align-items-center justify-content-center m-4 p-2">
-              Adicionar Convidado
-            </Button> */}
-              <hr />
-            <Button
-              className="w-100"
-              variant="primary"
-              type="submit"
-            >
+            <FormGroup className="mx-4  d-flex justify-content-evenly ">
+              <Form.Check
+                type="radio"
+                name="group1"
+                onChange={(e) => handleInputChanges(e)}
+                value="sim"
+                label="Sim"
+              />
+              <Form.Check
+                type="radio"
+                name="group1"
+                onChange={(e) => handleInputChanges(e)}
+                value="nao"
+                label="Não"
+              />
+              <Form.Check
+                type="radio"
+                name="group1"
+                onChange={(e) => handleInputChanges(e)}
+                value="talvez"
+                label="Talvez"
+              />
+            </FormGroup>
+
+            <hr />
+            <Button className="w-100" variant="primary" type="submit">
               Adicionar Convidado
             </Button>
           </Form>

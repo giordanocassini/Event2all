@@ -32,7 +32,7 @@ export default function SideBar() {
           <br />
           <br />
           <Avatar name={user.name} round={true} size="64" textSizeRatio={3.9} />
-          {/* <img src="./images/mood.png" className="" alt="logo" /> */}
+
           <span className="ms-3 text-bold" style={{ color: "white" }}>
             {user.name}
           </span>
