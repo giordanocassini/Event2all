@@ -17,11 +17,8 @@ export default function Dashboard() {
               <EventButton />
             </div>
           </div>
-          <div>
-            <img
-              className="image-dash"
-              src={"../../../public/images/empty.png"}
-            />
+          <div className="image-dash">
+            <img src={"../../../public/images/empty.png"} />
           </div>
         </div>
       </div>

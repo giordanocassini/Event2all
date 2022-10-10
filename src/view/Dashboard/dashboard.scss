@@ -13,9 +13,10 @@
 }
 
 .image-dash {
-  width: 40rem;
-  height: 34rem;
+  width: 100%;
   margin-top: 4.5rem;
+  display: flex;
+  align-items: center;
 }
 
 .text-dash > p {
