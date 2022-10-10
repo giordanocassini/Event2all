@@ -1,4 +1,6 @@
-button.botaoToDoList {
+import styled from "styled-components";
+
+export const ButtonToDo = styled.button`
   width: 100%;
   max-width: 170px;
   padding: 10px 20px;
@@ -11,15 +13,11 @@ button.botaoToDoList {
   font-size: 1.12rem;
   font-weight: 500;
   transition: filter 0.2s;
+`;
 
-  // &:hover {
-  //     filter: brightness(0.8);
-  // }
-}
-
-@media (max-width: 576px) {
-  button.btn {
-    width: 100%;
-    max-width: 100%;
-  }
-}
+// @media (max-width: 576px) {
+//   button.btn {
+//     width: 100%;
+//     max-width: 100%;
+//   }
+//

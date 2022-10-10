@@ -1,17 +1,18 @@
 import { useContext } from "react";
 import { TasksContext } from "../../contexts/TasksContext";
-import "./button.scss";
+import { ButtonToDo } from "./styleButton";
+("./styleButton.ts");
 
 export function Button() {
   const { handleAddTasks } = useContext(TasksContext);
   return (
-    <button
+    <ButtonToDo
       className="botaoToDoList"
       onClick={() => {
         handleAddTasks();
       }}
     >
       Salvar
-    </button>
+    </ButtonToDo>
   );
 }
