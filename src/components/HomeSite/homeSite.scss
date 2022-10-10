@@ -55,3 +55,20 @@ hr{
     margin-right: 0 !important;
   }
 }
+
+@media only screen and (max-width: 780px){
+  .img-home {
+    display: none;
+  }
+
+  .home-text {
+    text-align: center !important;
+    font-size: 2rem;
+  }
+
+  .home-subtext {
+    font-size: 1.5rem !important;
+    text-align: center !important;
+  }
+
+}
