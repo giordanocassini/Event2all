@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 import { register } from "../../services/auth";
 import Header from "../Header";
 import Footer from "../Footer";
-import "./formSignUp.scss";
 //import { cadastro } from "../../services/userServices";
 import { useNavigate } from "react-router-dom";
+import "./formSignUp.scss";
 
 export default function FormSignUp() {
   const [name, setName] = useState<string>("");
@@ -48,12 +48,12 @@ export default function FormSignUp() {
   }, [confirmarPassword]);
 
   return (
-    <div className="vh-100">
-      <div className="h-100 d-flex align-items-center justify-content-center">
-      <Header />
-        <Form onSubmit={submit} className="formulario text-center">
+    <div className="vh-100 d-flex justify-content-center align-items-center px-2">
+      <div className="h-100 d-flex flex-column align-items-center justify-content-center parent-signup">
+      {/* <Header /> */}
           <h3>Crie sua conta!</h3>
           <span>Preencha seus dados e programe seu evento já!</span>
+        <Form onSubmit={submit} className="text-center">
           <Form.Group
             className=" boxform p-1 text-start mb-2"
             controlId="formBasicEmail"
@@ -141,12 +141,12 @@ export default function FormSignUp() {
             Cadastrar-se
           </Button>
           <FormGroup className="cadastrarLink">
-            <p className="p-4">
+            <p className="pt-4">
               Já tem cadastro? <Link to={"/login"}>Login</Link>
             </p>
           </FormGroup>
         </Form>
-      <Footer backgroundColor="#E5E5E5" color="#000000" logotipo="logotipo.png" />
+      {/* <Footer backgroundColor="#E5E5E5" color="#000000" logotipo="logotipo.png" /> */}
       </div>
     </div>
   );
