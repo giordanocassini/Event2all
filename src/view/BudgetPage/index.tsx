@@ -3,14 +3,23 @@ import { Card, Table, InputGroup, Form } from "react-bootstrap";
 import { MdPaid } from "react-icons/md";
 import CreateBudget from "./modal";
 import { Pagination } from "@mui/material";
+import BreadCrumbs from "../../components/BreadCrumbs";
 import "./BudgetPage.scss";
 
 export default function BudgetPage() {
+  const breadCrumbsItem = [
+    { name: "Nome do Evento", link: "/evento" },
+    { name: "Orçamento", link: "/orcamento" },
+  ];
+  
   return (
     <>
       <div className="h-100 d-flex">
         <SideBar />
         <div className="d-flex flex-column">
+          <div>
+            <BreadCrumbs items={breadCrumbsItem} />
+          </div>
           <div className="m-5 d-flex justify-content-center flex-row w-100">
             <div>
               <Card id="card-budget" className="rounded text-center m-4">
