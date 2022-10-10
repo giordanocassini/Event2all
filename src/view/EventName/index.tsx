@@ -6,7 +6,6 @@ import SideBar from "../../components/SideBar/SideBar";
 import "./eventName.scss";
 export default function EventName() {
   const breadCrumbsItem = [
-    { name: "Home", link: "/" },
     { name: "Dashboard", link: "/dashboard" },
     { name: "Nome do evento", link: "/evento" },
   ];
