@@ -6,8 +6,8 @@ import "./modal.scss"
 import { cadastroEvent } from "../../services/auth";
 
 export default function CreateEvent() {
-  const [event_name, setEvent] = useState<string>("");
-  const [event_date, setEventDate] = useState<string>("");
+  const [name, setEvent] = useState<string>("");
+  const [date, setEventDate] = useState<string>("");
   const [place, setPlace] = useState<string>("");
   const [invite_number, setInviteNumber] = useState<string>("");
   const [managers, setManagers] = useState<string>("");
@@ -17,8 +17,8 @@ export default function CreateEvent() {
     event.preventDefault();
     try {
       await cadastroEvent({
-        event_name,
-        event_date,
+        name,
+        date,
         place,
         invite_number,
         managers,
@@ -53,7 +53,7 @@ export default function CreateEvent() {
                 className="inputTexto"
                 type="text"
                 placeholder="Digite o nome do evento..."
-                value={event_name}
+                value={name}
                 onChange={(e) => setEvent(e.target.value)}
                 required
               />
@@ -65,7 +65,7 @@ export default function CreateEvent() {
               <Form.Control
                 className="inputTexto"
                 type="date"
-                value={event_date}
+                value={date}
                 onChange={(e) => setEventDate(e.target.value)}
                 required
               />

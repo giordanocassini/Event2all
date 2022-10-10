@@ -12,8 +12,8 @@ interface RegisterUser {
 }
 
 interface RegisterEvent {
-  event_name: string;
-  event_date: string;
+  name: string;
+  date: string;
   place: string;
   invite_number: string;
   managers: string;
