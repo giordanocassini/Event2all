@@ -11,12 +11,12 @@ export default function HomeSite() {
           alt="imagem da home"
         />
         <div className="d-flex flex-wrap justify-content-center flex-column content-home ms-5">
-          <h3>
+          <h3 className="home-text">
             O gerenciador de <br /> eventos mais completo
             <br /> do mercado.
           </h3>
           <br />
-          <span className="sub-text">
+          <span className="sub-text home-subtext">
             Fácil, prático e com tudo que você precisa.
           </span>
         </div>
