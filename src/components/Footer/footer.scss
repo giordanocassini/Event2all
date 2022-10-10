@@ -1,5 +1,5 @@
 #footer {
-    position: fixed;
+    position: static !important;
     bottom: 0;
     width: 100vw;
     justify-content: space-between !important;
@@ -39,4 +39,12 @@
     padding: 0;
  }
 }
+
+@media only screen and (min-height: 1000px){
+   #footer{
+     position: fixed !important;
+   }
+ }
+
+
 

@@ -11,7 +11,7 @@ export default function SignUp() {
       backgroundColor="#E5E5E5" 
       color="#000000" 
       logotipo="logotipo.png"
-      position="static" />
+      />
     </>
   );
 }

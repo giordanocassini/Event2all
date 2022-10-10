@@ -141,7 +141,7 @@ export default function FormSignUp() {
             Cadastrar-se
           </Button>
           <FormGroup className="cadastrarLink">
-            <p className="pt-4">
+            <p className="pt-4 mb-1">
               Já tem cadastro? <Link to={"/login"}>Login</Link>
             </p>
           </FormGroup>

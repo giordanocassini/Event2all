@@ -1,6 +1,12 @@
 .backgroundHeader {
   background-color: #191933;
-  // position: fixed !important;
+  position: static !important;
   top: 0;
   width: 100vw;
+}
+
+@media only screen and (min-height: 1000px){
+  .backgroundHeader{
+    position: fixed !important;
+  }
 }
