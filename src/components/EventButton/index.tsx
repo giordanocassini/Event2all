@@ -1,8 +1,7 @@
 import { Button, Form, Modal } from "react-bootstrap";
 import { useState, FormEvent } from "react";
-import "./eventButton.scss";
 import { cadastroEvent } from "../../services/auth";
-
+import { ButtonModal } from "./eventButton";
 export default function EventButton() {
   const [event_name, setEvent] = useState<string>("");
   const [event_date, setEventDate] = useState<string>("");
@@ -33,19 +32,22 @@ export default function EventButton() {
 
   return (
     <>
-      <Button onClick={handleShow} className="event-button">
+      <ButtonModal onClick={handleShow} className="event-button">
         <img className="image-button" src={"public/images/add.svg"}></img>
-      </Button>
-      <Modal id="width-modal" className="d-flex align-items-center" show={show} onHide={handleClose}>
+      </ButtonModal>
+      <Modal
+        id="width-modal"
+        className="d-flex align-items-center"
+        show={show}
+        onHide={handleClose}
+      >
         <Modal.Header closeButton>
-         <span className="modal-title">Criar Evento</span> 
+          <span className="modal-title">Criar Evento</span>
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={submitEvent} className="asd ">
             <Form.Group className=" boxform p-1 text-start mb-2">
-              <Form.Label>
-                Nome do Evento 
-              </Form.Label>
+              <Form.Label>Nome do Evento</Form.Label>
               <Form.Control
                 className="inputTexto"
                 type="text"
@@ -56,9 +58,7 @@ export default function EventButton() {
               />
             </Form.Group>
             <Form.Group className=" boxform p-1 text-start mb-2">
-              <Form.Label>
-                Data
-              </Form.Label>
+              <Form.Label>Data</Form.Label>
               <Form.Control
                 className="inputTexto"
                 type="date"
@@ -68,9 +68,7 @@ export default function EventButton() {
               />
             </Form.Group>
             <Form.Group className=" boxform p-1 text-start mb-2">
-              <Form.Label>
-                Local
-              </Form.Label>
+              <Form.Label>Local</Form.Label>
               <Form.Control
                 className="inputTexto"
                 type="text"
@@ -81,9 +79,7 @@ export default function EventButton() {
               />
             </Form.Group>
             <Form.Group className=" boxform p-1 text-start mb-2">
-              <Form.Label>
-                Número de Convidados
-              </Form.Label>
+              <Form.Label>Número de Convidados</Form.Label>
               <Form.Control
                 className="inputTexto"
                 type="number"
@@ -94,9 +90,7 @@ export default function EventButton() {
               />
             </Form.Group>
             <Form.Group className=" boxform p-1 text-start mb-2">
-              <Form.Label>
-                Responsáveis
-              </Form.Label>
+              <Form.Label>Responsáveis</Form.Label>
               <Form.Control
                 className="inputTexto"
                 type="text"
@@ -107,9 +101,7 @@ export default function EventButton() {
               />
             </Form.Group>
             <Form.Group className=" boxform p-1 text-start mb-5">
-              <Form.Label>
-                Orçamento Previsto
-              </Form.Label>
+              <Form.Label>Orçamento Previsto</Form.Label>
               <Form.Control
                 className="inputTexto"
                 type="number"
@@ -121,11 +113,7 @@ export default function EventButton() {
               />
             </Form.Group>
             <hr />
-            <Button
-              className="w-100"
-              variant="primary"
-              type="submit"
-            >
+            <Button className="w-100" variant="primary" type="submit">
               Criar Evento
             </Button>
           </Form>
