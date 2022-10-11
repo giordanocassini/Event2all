@@ -1,5 +1,6 @@
 @import "../../assets/styles/variables.scss";
 
+
 .form-login {
   display: flex;
   flex-direction: column;
@@ -9,10 +10,7 @@
     font-weight: 700;
     font-size: 60px;
   }
-  p {
-    font-weight: 400;
-    color: $text-details;
-  }
+
   .button-login {
     display: flex;
     justify-content: center;
