@@ -31,9 +31,8 @@ export default function FormSignUp() {
           birth_date,
           password,
         });
-      } catch (error) {
-        alert("Opa! Deu algo errado!");
-      }
+        navigate("/login");
+      } catch (error) {}
     }
   };
 
@@ -48,7 +47,6 @@ export default function FormSignUp() {
   return (
     <div className="vh-100 d-flex justify-content-center align-items-center px-2">
       <div className="h-100 d-flex flex-column align-items-center justify-content-center parent-signup">
-        {/* <Header /> */}
         <h3>Crie sua conta!</h3>
         <span>Preencha seus dados e programe seu evento já!</span>
         <Form onSubmit={submit} className="text-center">
@@ -94,11 +92,9 @@ export default function FormSignUp() {
             <Form.Control
               className="inputTexto"
               type="date"
-              // placeholder="DD/MM/AAAA"
               onfocus="(this.type='date')"
               value={birth_date}
               onChange={(e) => setBirthday(e.target.value)}
-              //required
             />
           </Form.Group>
 
@@ -144,7 +140,6 @@ export default function FormSignUp() {
             </p>
           </FormGroup>
         </Form>
-        {/* <Footer backgroundColor="#E5E5E5" color="#000000" logotipo="logotipo.png" /> */}
       </div>
     </div>
   );
