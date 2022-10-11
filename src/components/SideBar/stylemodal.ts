@@ -7,4 +7,5 @@ export const ButtonCreateModal = styled.button`
   width: 15.2rem;
   font-size: 21px;
   font-weight: 700;
+  color: #191933;
 `;
