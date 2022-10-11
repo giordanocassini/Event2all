@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { getUser, setUser } from "../../store/modules/users";
 import { Dispatch } from "@reduxjs/toolkit";
 import "./formLogin.scss";
+import { PLogin } from "./style";
 
 export default function FormLogin() {
   const [email, setEmail] = useState<string>("");
@@ -32,9 +33,9 @@ export default function FormLogin() {
 
   return (
     <div className="vh-100">
-      <div className="form-login h-100 d-flex align-items-center justify-content-center">
+      <div className="form-login h-75 d-flex align-items-center justify-content-center">
         <h3>Login</h3>
-        <p>Preencha seus dados e programe seu evento já!</p>
+        <PLogin>Preencha seus dados e programe seu evento já!</PLogin>
         <Form onSubmit={submit}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>E-mail</Form.Label>
@@ -59,8 +60,8 @@ export default function FormLogin() {
           <Button className="button-login" variant="primary" type="submit">
             Fazer login
           </Button>
-          <FormGroup className="cadastrarLink">
-            <span className="d-flex aligh-itens-center justify-content-center pt-4">
+          <FormGroup>
+            <span className="d-flex aligh-items-center justify-content-center pt-4">
               Não tem login?
               <Link className="px-2" to={"/cadastro"}>
                 Cadastre-se
