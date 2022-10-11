@@ -26,12 +26,8 @@ export default function FormLogin() {
       console.log("logado com:", response.data.user);
       console.log("token", response.data.token);
 
-      alert("Logado com sucesso!");
-
       navigate("/dashboard");
-    } catch (error) {
-      alert("Opa! Deu algo errado!");
-    }
+    } catch (error) {}
   };
 
   return (

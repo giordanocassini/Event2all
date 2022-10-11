@@ -31,8 +31,6 @@ export default function FormSignUp() {
           birth_date,
           password,
         });
-        alert("Usuário cadastrado com sucesso");
-        navigate("/login");
       } catch (error) {
         alert("Opa! Deu algo errado!");
       }
@@ -50,9 +48,9 @@ export default function FormSignUp() {
   return (
     <div className="vh-100 d-flex justify-content-center align-items-center px-2">
       <div className="h-100 d-flex flex-column align-items-center justify-content-center parent-signup">
-      {/* <Header /> */}
-          <h3>Crie sua conta!</h3>
-          <span>Preencha seus dados e programe seu evento já!</span>
+        {/* <Header /> */}
+        <h3>Crie sua conta!</h3>
+        <span>Preencha seus dados e programe seu evento já!</span>
         <Form onSubmit={submit} className="text-center">
           <Form.Group
             className=" boxform p-1 text-start mb-2"
@@ -146,7 +144,7 @@ export default function FormSignUp() {
             </p>
           </FormGroup>
         </Form>
-      {/* <Footer backgroundColor="#E5E5E5" color="#000000" logotipo="logotipo.png" /> */}
+        {/* <Footer backgroundColor="#E5E5E5" color="#000000" logotipo="logotipo.png" /> */}
       </div>
     </div>
   );
