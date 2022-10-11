@@ -2,23 +2,24 @@ import { Button, Form, Modal } from "react-bootstrap";
 import { useState, FormEvent } from "react";
 import { cadastroEvent } from "../../services/auth";
 import { ButtonModal } from "./eventButton";
+
 export default function EventButton() {
-  const [event_name, setEvent] = useState<string>("");
-  const [event_date, setEventDate] = useState<string>("");
+  const [name, setEvent] = useState<string>("");
+  const [date, setEventDate] = useState<string>("");
   const [place, setPlace] = useState<string>("");
-  const [invite_number, setInviteNumber] = useState<string>("");
+  const [invite_number, setInviteNumber] = useState<number>(0);
   const [managers, setManagers] = useState<string>("");
-  const [event_budget, setEventBudget] = useState<string>("");
+  const [event_budget, setEventBudget] = useState<number>(0);
 
   const submitEvent = async (event: FormEvent) => {
     event.preventDefault();
     try {
       await cadastroEvent({
-        event_name,
-        event_date,
+        name,
+        date,
         place,
         invite_number,
-        managers,
+        managers: managers === "" ? [] : managers.split(","),
         event_budget,
       });
       alert("Evento criado com sucesso");
@@ -52,7 +53,7 @@ export default function EventButton() {
                 className="inputTexto"
                 type="text"
                 placeholder="Digite o nome do evento..."
-                value={event_name}
+                value={name}
                 onChange={(e) => setEvent(e.target.value)}
                 required
               />
@@ -62,7 +63,7 @@ export default function EventButton() {
               <Form.Control
                 className="inputTexto"
                 type="date"
-                value={event_date}
+                value={date}
                 onChange={(e) => setEventDate(e.target.value)}
                 required
               />
@@ -85,7 +86,7 @@ export default function EventButton() {
                 type="number"
                 placeholder="250 convidados"
                 value={invite_number}
-                onChange={(e) => setInviteNumber(e.target.value)}
+                onChange={(e) => setInviteNumber(Number(e.target.value))}
                 required
               />
             </Form.Group>
@@ -97,7 +98,6 @@ export default function EventButton() {
                 placeholder=""
                 value={managers}
                 onChange={(e) => setManagers(e.target.value)}
-                required
               />
             </Form.Group>
             <Form.Group className=" boxform p-1 text-start mb-5">
@@ -106,9 +106,9 @@ export default function EventButton() {
                 className="inputTexto"
                 type="number"
                 placeholder="R$00,00"
-                // mask=""
+                //
                 value={event_budget}
-                onChange={(e) => setEventBudget(e.target.value)}
+                onChange={(e) => setEventBudget(Number(e.target.value))}
                 required
               />
             </Form.Group>

@@ -1,8 +1,6 @@
-import React, { useState, FormEvent } from "react";
-import { NumericFormat } from "react-number-format";
+import { useState, FormEvent } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 import "./modal.scss";
-
 import { cadastroEvent } from "../../services/auth";
 
 export default function CreateEvent() {
@@ -107,9 +105,7 @@ export default function CreateEvent() {
             <Form.Group className=" boxform p-1 text-start mb-5">
               <Form.Label>Orçamento Previsto</Form.Label>
               <Form.Control
-                // <NumericFormat
                 className="inputTexto d-flex"
-                // type="number"
                 placeholder="R$ 00,00"
                 value={event_budget}
                 decimalScale={2}
@@ -118,7 +114,6 @@ export default function CreateEvent() {
                 onChange={(e) => setEventBudget(Number(e.target.value))}
                 required
               />
-              {/* /> */}
             </Form.Group>
             <hr />
             <Button className="w-100" variant="primary" type="submit">
@@ -130,4 +125,3 @@ export default function CreateEvent() {
     </>
   );
 }
-// Alinhar com o pessoal de backend sobre os parametros e pedir pra adicionar/alterar
