@@ -2,8 +2,6 @@ import { Link } from "react-router-dom";
 import BreadCrumbs from "../../components/BreadCrumbs";
 import SideBar from "../../components/SideBar/SideBar";
 import { Card, Table, InputGroup, Form, FormGroup } from "react-bootstrap";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import { Switch } from "@mui/material";
 import { MdPeopleAlt } from "react-icons/md";
 import { Pagination } from "@mui/material";
 import "./guests.scss";
