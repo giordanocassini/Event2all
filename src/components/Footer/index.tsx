@@ -17,16 +17,16 @@ export default function Footer(props: any) {
             <img className="logo-footer" src={`../../../public/images/${props.logotipo}`}></img>
           </Link>
         </Navbar.Brand>
-        <Navbar.Brand href="#facebook">
+        <Navbar.Brand href="#facebook" className="social-network">
           <img src="../../../public/images/face.png"></img>
         </Navbar.Brand>
-        <Navbar.Brand href="#instagram">
+        <Navbar.Brand href="#instagram" className="social-network">
           <img src="../../../public/images/insta.png"></img>
         </Navbar.Brand>
-        <Navbar.Brand href="#google">
+        <Navbar.Brand href="#google" className="social-network">
           <img src="../../../public/images/img.png"></img>
         </Navbar.Brand>
-        <Navbar.Brand href="#ios">
+        <Navbar.Brand href="#ios" className="social-network">
           <img src="../../../public/images/ios.png" />
         </Navbar.Brand>
       </div>
