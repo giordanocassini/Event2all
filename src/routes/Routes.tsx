@@ -16,7 +16,7 @@ export default function AppRoutes() {
         <Route path="/cadastro" element={<SignUp />} />
         <Route path="/" element={<Home />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/evento" element={<EventName />} />
+        <Route path="/evento/:id" element={<EventName />} />
         <Route path="/orcamento" element={<BudgetPage />} />
         <Route path="/convidados" element={<Guests />} />
         <Route path="/tarefas" element={<ToDoList />} />

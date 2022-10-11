@@ -1,10 +1,26 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { useState } from "react";
 import BreadCrumbs from "../../components/BreadCrumbs";
 import CardEvent from "../../components/CardEvent";
 import EventInfo from "../../components/EventInfo";
 import SideBar from "../../components/SideBar/SideBar";
 import "./eventName.scss";
+import { getUserEvents } from "../../services/auth";
+
 export default function EventName() {
+  const [event, setEvent] = useState()
+  const params = useParams();
+  const user = window.localStorage.getItem("user")
+
+  if(user){
+    const userId = JSON.parse(user).id
+    getUserEvents(userId).then((response) => {
+      const userEvents = response.data;
+      const event = userEvents.find((e: any) => e.id = params.id);
+      setEvent(event);
+    })
+  }
+
   const breadCrumbsItem = [
     { name: "Dashboard", link: "/dashboard" },
     { name: "Nome do evento", link: "/evento" },
@@ -20,7 +36,7 @@ export default function EventName() {
               <BreadCrumbs items={breadCrumbsItem} />
             </div>
             <div>
-              <EventInfo />
+              <EventInfo event={event}/>
             </div>
           </div>
           <div className="d-flex flex-row justify-content-center">
