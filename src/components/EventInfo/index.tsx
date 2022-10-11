@@ -1,42 +1,43 @@
 import "./eventInfo.scss";
 
-interface Props {
-  eventName: string;
-  dataEvent: Date;
-  localEvent: string;
-  budget: number;
-  guests: number;
+interface Event {
+  id: number;
+  place: string;
+  name: string;
+  date: string;
+  event_budget: number;
+  invite_number: number;
+}
+
+interface EventInfoProps {
+  event: Event | undefined;
 }
 
 export default function EventInfo({
-  eventName,
-  dataEvent,
-  localEvent,
-  budget,
-  guests,
-}: Props) {
+  event
+}: EventInfoProps) {
   return (
     <div className="event">
       {/* vai pegar as infos do backend */}
       <div>
-        <h3>Nome do evento</h3>
+        <h3>{event?.name}</h3>
       </div>
       <div className="info-event">
         <div>
           <p>DATA</p>
-          <p>12, maio 2022</p>
+          <p>{event?.date}</p>
         </div>
         <div>
           <p>LOCAL</p>
-          <p>Rua 123, Nº 123, São Paulo</p>
+          <p>{event?.place}</p>
         </div>
         <div>
           <p>ORÇAMENTO</p>
-          <p>R$ 24.000,00</p>
+          <p>{event?.event_budget}</p>
         </div>
         <div>
           <p>CONVIDADOS</p>
-          <p>250</p>
+          <p>{event?.invite_number}</p>
         </div>
       </div>
     </div>
