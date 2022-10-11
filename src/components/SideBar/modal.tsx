@@ -1,7 +1,9 @@
 import { useState, FormEvent } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
-import "./modal.scss";
+import "./stylemodal.ts";
 import { cadastroEvent } from "../../services/auth";
+import { ButtonCreateModal } from "./stylemodal";
+ButtonCreateModal;
 
 export default function CreateEvent() {
   const [name, setEvent] = useState<string>("");
@@ -35,7 +37,7 @@ export default function CreateEvent() {
 
   return (
     <>
-      <Button onClick={handleShow}>+ Criar evento</Button>
+      <ButtonCreateModal onClick={handleShow}>+ Criar evento</ButtonCreateModal>
 
       <Modal
         id="width-modal"
