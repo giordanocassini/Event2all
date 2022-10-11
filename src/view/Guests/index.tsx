@@ -41,8 +41,8 @@ export default function Guests() {
             <ModalGuests />
           </div>
           <div className="w-100 m-4">
-            <Table id="width-table" className="text-center" hover>
-              <thead className="thead-bg text-center">
+            <Table id="width-table" className="text-left" hover>
+              <thead className="thead-bg">
                 <tr>
                   <th>NOME</th>
                   <th>CONTATO</th>
