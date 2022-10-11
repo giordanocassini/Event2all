@@ -95,13 +95,13 @@ export default function BudgetPage() {
                   <td>Pago/Em Aberto</td>
                 </tr>
               </tbody>
+            </Table>
+          </div>
               <Pagination
                 className="d-flex w-100 align-items-center justify-content-center"
                 count={10}
                 color="primary"
               />
-            </Table>
-          </div>
         </div>
       </div>
     </>
