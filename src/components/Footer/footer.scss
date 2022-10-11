@@ -17,7 +17,7 @@
     margin-right: 4.5rem;
 }
 
-@media only screen and (max-width: 500px){
+@media only screen and (max-width: 768px){
  .logo-footer{
     display: none;
  }
@@ -38,6 +38,9 @@
     margin: 0;
     padding: 0;
  }
+ .social-network {
+   filter: brightness(2)
+ }
 }
 
 @media only screen and (min-height: 1000px){
@@ -45,21 +48,3 @@
      position: fixed !important;
    }
  }
-
-@media only screen and (max-width: 780px) {
-   .logo-footer {
-      display: none;
-   }
-
-   .footer {
-      align-items: center !important;
-   }
-
-
-   .copyright { 
-      display: none;
-
-   }
-}
-
-

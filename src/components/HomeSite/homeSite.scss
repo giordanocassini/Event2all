@@ -76,6 +76,8 @@ hr{
     flex-wrap: nowrap !important;
     justify-content: flex-start !important;
     align-items: center;
+    
+    height: 50rem;
 
     overflow-x: auto !important;
 
@@ -83,8 +85,6 @@ hr{
 
   #card {
     flex: 0 0 75%;
-
   }
-
-
 }
+
