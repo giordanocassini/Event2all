@@ -15,9 +15,9 @@ interface RegisterEvent {
   name: string;
   date: string;
   place: string;
-  invite_number: string;
-  managers: string;
-  event_budget: string;
+  invite_number: number;
+  managers: string[];
+  event_budget: number;
 }
 
 interface RegisterBudget {
@@ -33,12 +33,12 @@ interface GuestAdd {
   name_guest: string;
   contact_guest: string;
 }
-const token= window.localStorage.getItem("token");
-  const config = {
-    headers: {
-      'Authorization': 'Bearer ' + token
-    }
-}
+const token = window.localStorage.getItem("token");
+const config = {
+  headers: {
+    Authorization: "Bearer " + token,
+  },
+};
 export function cadastroGuest(payload: GuestAdd) {
   return baseApi.post("/");
 }
@@ -52,7 +52,7 @@ export function register(payload: RegisterUser) {
 }
 
 export function cadastroEvent(payload: RegisterEvent) {
-  return baseApi.post("/event", payload);
+  return baseApi.post("/event", payload, config);
 }
 
 export function cadastroBudget(payload: RegisterBudget) {

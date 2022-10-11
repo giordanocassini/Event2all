@@ -1,7 +1,7 @@
 import React, { useState, FormEvent } from "react";
-import { NumericFormat } from 'react-number-format';
+import { NumericFormat } from "react-number-format";
 import { Button, Form, Modal } from "react-bootstrap";
-import "./modal.scss"
+import "./modal.scss";
 
 import { cadastroEvent } from "../../services/auth";
 
@@ -9,9 +9,9 @@ export default function CreateEvent() {
   const [name, setEvent] = useState<string>("");
   const [date, setEventDate] = useState<string>("");
   const [place, setPlace] = useState<string>("");
-  const [invite_number, setInviteNumber] = useState<string>("");
+  const [invite_number, setInviteNumber] = useState<number>(0);
   const [managers, setManagers] = useState<string>("");
-  const [event_budget, setEventBudget] = useState<string>("");
+  const [event_budget, setEventBudget] = useState<number>(0);
 
   const submitEvent = async (event: FormEvent) => {
     event.preventDefault();
@@ -21,7 +21,7 @@ export default function CreateEvent() {
         date,
         place,
         invite_number,
-        managers,
+        managers: managers === "" ? [] : managers.split(","),
         event_budget,
       });
       alert("Evento criado com sucesso");
@@ -39,16 +39,19 @@ export default function CreateEvent() {
     <>
       <Button onClick={handleShow}>+ Criar evento</Button>
 
-      <Modal id="width-modal" className="d-flex align-items-center" show={show} onHide={handleClose}>
+      <Modal
+        id="width-modal"
+        className="d-flex align-items-center"
+        show={show}
+        onHide={handleClose}
+      >
         <Modal.Header closeButton>
-         <span className="modal-title">Criar Evento</span> 
+          <span className="modal-title">Criar Evento</span>
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={submitEvent} className="asd ">
             <Form.Group className=" boxform p-1 text-start mb-2">
-              <Form.Label>
-                Nome do Evento 
-              </Form.Label>
+              <Form.Label>Nome do Evento</Form.Label>
               <Form.Control
                 className="inputTexto"
                 type="text"
@@ -59,9 +62,7 @@ export default function CreateEvent() {
               />
             </Form.Group>
             <Form.Group className=" boxform p-1 text-start mb-2">
-              <Form.Label>
-                Data
-              </Form.Label>
+              <Form.Label>Data</Form.Label>
               <Form.Control
                 className="inputTexto"
                 type="date"
@@ -71,9 +72,7 @@ export default function CreateEvent() {
               />
             </Form.Group>
             <Form.Group className=" boxform p-1 text-start mb-2">
-              <Form.Label>
-                Local
-              </Form.Label>
+              <Form.Label>Local</Form.Label>
               <Form.Control
                 className="inputTexto"
                 type="text"
@@ -84,55 +83,45 @@ export default function CreateEvent() {
               />
             </Form.Group>
             <Form.Group className=" boxform p-1 text-start mb-2">
-              <Form.Label>
-                Número de Convidados
-              </Form.Label>
+              <Form.Label>Número de Convidados</Form.Label>
               <Form.Control
                 className="inputTexto"
                 type="number"
                 placeholder="250 convidados"
                 value={invite_number}
-                onChange={(e) => setInviteNumber(e.target.value)}
+                onChange={(e) => setInviteNumber(Number(e.target.value))}
                 required
               />
             </Form.Group>
             <Form.Group className=" boxform p-1 text-start mb-2">
-              <Form.Label>
-                Responsáveis
-              </Form.Label>
+              <Form.Label>Responsáveis</Form.Label>
               <Form.Control
                 className="inputTexto"
                 type="text"
                 placeholder=""
                 value={managers}
                 onChange={(e) => setManagers(e.target.value)}
-                required
+                // required
               />
             </Form.Group>
             <Form.Group className=" boxform p-1 text-start mb-5">
-              <Form.Label>
-                Orçamento Previsto
-              </Form.Label>
+              <Form.Label>Orçamento Previsto</Form.Label>
               <Form.Control
-              // <NumericFormat
+                // <NumericFormat
                 className="inputTexto d-flex"
                 // type="number"
                 placeholder="R$ 00,00"
                 value={event_budget}
-                decimalScale={2} 
-                prefix={'R$'}
+                decimalScale={2}
+                prefix={"R$"}
                 thousandSeparator=","
-                onChange={(e) => setEventBudget(e.target.value)}
+                onChange={(e) => setEventBudget(Number(e.target.value))}
                 required
-                />
-                {/* /> */}
+              />
+              {/* /> */}
             </Form.Group>
             <hr />
-            <Button
-              className="w-100"
-              variant="primary"
-              type="submit"
-            >
+            <Button className="w-100" variant="primary" type="submit">
               Criar Evento
             </Button>
           </Form>

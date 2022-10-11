@@ -10,7 +10,7 @@ type CardEventProps = {
 
 export default function CardEvent(props: CardEventProps) {
   return (
-    <Card id="card" className="rounded text-center cards m-4">
+    <Card className=" card-event rounded text-center cards m-4">
       <Card.Body className="cardContent">
         <Card.Img
           src={`../../../public/images/${props.cardImage}.png`}
