@@ -11,6 +11,8 @@ import EventList from "./eventList";
 import { useEffect, useState, useCallback } from "react";
 import baseAPI from "../../services/api";
 import "./sideBar.scss";
+import CreateEvent from "./modal";
+import {BsThreeDotsVertical} from "react-icons/bs"
 
 export default function SideBar() {
   const user = useSelector((store: RootStore) => store.userReduce);
@@ -88,15 +90,21 @@ useEffect(() => {
         </span>
         <hr className="mb-4" />
         
+        
         {events.map((event) => (
 
-        <span>{event.name}</span>
+
+          <div className="d-flex justify-content-between text-white fs-5 w-100 mb-4">
+            <div className="">{event.name}</div>
+            <div className=""><Button ><BsThreeDotsVertical /></Button></div>
+          </div>
 
         ))}
 
 
-        <span className="text-white">{"asd"}</span>
         <EventList />
+        <hr />
+        <CreateEvent />
         <Button className="logoff-botao w-100 m-4 " onClick={exit}>
           <IoExitOutline className="me-2"/>
           Fazer Logoff
