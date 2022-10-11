@@ -71,4 +71,19 @@ hr{
     text-align: center !important;
   }
 
+  #cards {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center;
+
+    overflow-x: auto !important;
+
+  }
+
+  #card {
+    flex: 0 0 75%;
+    
+  }
+
+
 }
