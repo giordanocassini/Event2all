@@ -1,15 +1,15 @@
 import { InputGroup, Form, Button } from "react-bootstrap";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import Avatar from "react-avatar";
 import { Link, useNavigate } from "react-router-dom";
-import { unmountComponentAtNode } from "react-dom";
 import { BsSearch } from "react-icons/bs";
 import { IoExitOutline } from "react-icons/io5";
 import { removeUser } from "../../store/modules/users";
 import EventLogo from "../../../public/images/dashboard.png";
 import { RootStore } from "../../store";
 import EventList from "./eventList";
+import { useEffect, useState, useCallback } from "react";
+import baseAPI from "../../services/api";
 import "./sideBar.scss";
 
 export default function SideBar() {
@@ -22,7 +22,39 @@ export default function SideBar() {
     dispatch(removeUser());
     navigate("/");
   };
-  console.log("sidebar", user);
+  // console.log("sidebar", user);
+
+  // console.log(`este é meu id: ${user.id}`)
+
+const token = window.localStorage.getItem("token");
+const config = {
+  headers: {
+    Authorization: "Bearer " + token,
+  },
+};
+const [events, setEvents] = useState<any[]>([]);
+
+const fetchUser = useCallback(async () => {
+  const response = await baseAPI.get(`/event/${user.id}`, config).then((res) => {
+    return res.data;
+  })
+
+  console.log(response);
+  
+
+  setEvents(response);
+}, [setEvents, user.id]);
+
+useEffect(() => {
+  fetchUser()
+}, [fetchUser]);
+
+// console.log(`aaaaaa ${event.length} asd`)
+
+
+
+
+
   return (
     <div className="vh-100 d-flex">
       <div className="d-flex flex-column align-items-center stylesidebar">
@@ -55,6 +87,15 @@ export default function SideBar() {
           </Link>
         </span>
         <hr className="mb-4" />
+        
+        {events.map((event) => (
+
+        <span>{event.name}</span>
+
+        ))}
+
+
+        <span className="text-white">{"asd"}</span>
         <EventList />
         <Button className="logoff-botao w-100 m-4 " onClick={exit}>
           <IoExitOutline className="me-2"/>

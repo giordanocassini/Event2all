@@ -4,6 +4,7 @@ import "./stylemodal.ts";
 import { cadastroEvent } from "../../services/auth";
 import { ButtonCreateModal } from "./stylemodal";
 ButtonCreateModal;
+import "./modal.scss"
 
 export default function CreateEvent() {
   const [name, setEvent] = useState<string>("");
