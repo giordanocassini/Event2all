@@ -7,8 +7,8 @@ import { Link } from "react-router-dom";
 
 export default function HeaderHome() {
   return (
-    <Navbar className="dark-blue p-4">
-      <Container>
+    <Navbar className="d-flex dark-blue p-4">
+      <Container id="mediaImg">
         <Navbar.Brand className="text-white" href="#home">
           <img className="logo-header" src="../../../public/images/logotipo2.png"></img>
         </Navbar.Brand>
@@ -22,7 +22,7 @@ export default function HeaderHome() {
           Benefícios
         </Navbar.Brand>
         <Navbar.Toggle />
-        <Navbar.Collapse className="justify-content-end">
+        <Navbar.Collapse id="media" className="justify-content-end">
             <Link className="button-header" to={"/login"}>
           <Button className="btn-light py-1 px-4 me-2 rounded-1 text-dark fw-bold button-login">
               Fazer login
