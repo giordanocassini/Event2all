@@ -31,7 +31,7 @@ export default function HomeSite() {
         <Card id="card" className="rounded text-center">
           <Card.Body>
             <Card.Img
-              src="../../../public/images/mood.png"
+              src="/images/mood.png"
               alt="mood"
               className="mood mt-4 mb-3"
             />
@@ -44,7 +44,7 @@ export default function HomeSite() {
         <Card id="card" className="rounded text-center">
           <Card.Body>
             <Card.Img
-              src="../../../public/images/thumb.png"
+              src="/images/thumb.png"
               alt="money"
               className="mood mt-4 mb-3"
             />
@@ -57,7 +57,7 @@ export default function HomeSite() {
         <Card id="card" className="rounded text-center">
           <Card.Body>
             <Card.Img
-              src="../../../public/images/money.png"
+              src="/images/money.png"
               alt="thumb"
               className="mood mt-4 mb-3"
             />
