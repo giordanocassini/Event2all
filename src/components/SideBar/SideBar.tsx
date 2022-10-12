@@ -9,20 +9,15 @@ import EventLogo from "../../../public/images/dashboard.png";
 import { RootStore } from "../../store";
 import EventList from "./eventList";
 import { useEffect, useState, useCallback } from "react";
-import baseAPI from "../../services/api";
 import "./sideBar.scss";
 import CreateEvent from "./modal";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import Dropdown from "react-bootstrap/Dropdown";
-import DropdownButton from "react-bootstrap/Dropdown";
 import { getEventListByUser } from "../../services/userServices";
+import { Event } from "../../utils/types";
 
-interface Props {
-  events: any[];
-  setEvents: React.Dispatch<React.SetStateAction<any[]>>;
-}
-
-export default function SideBar({ events, setEvents }: Props) {
+export default function SideBar() {
+  const [events, setEvents] = useState<Event[]>([]);
   const user = useSelector((store: RootStore) => store.userReduce);
   const navigate = useNavigate();
   const dispatch = useDispatch();

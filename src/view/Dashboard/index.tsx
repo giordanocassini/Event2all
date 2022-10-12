@@ -8,7 +8,7 @@ export default function Dashboard() {
   return (
     <>
       <div className="h-100 d-flex">
-        <SideBar setEvents={setEvents} events={events} />
+        <SideBar />
         <div className="dashboard vh-100 m-4">
           <div className="empty-dash">
             <div className="text-dash">
