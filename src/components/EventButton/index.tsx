@@ -18,9 +18,9 @@ export default function EventButton() {
         name,
         date,
         place,
-        invite_number,
+        invite_number: invite_number ? invite_number : 0,
         managers: managers === "" ? [] : managers.split(","),
-        event_budget,
+        event_budget: event_budget ? event_budget : 0,
       });
       alert("Evento criado com sucesso");
     } catch (error) {
