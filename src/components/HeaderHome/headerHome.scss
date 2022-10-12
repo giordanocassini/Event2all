@@ -49,7 +49,7 @@
     display: none;
   }
 
-  nav{
+  nav {
     flex-wrap: wrap !important;
   }
 
@@ -67,14 +67,14 @@
   }
 }
 
-@media only screen and (max-width: 450px){
-  #media{
-    margin-top: .625rem;
+@media only screen and (max-width: 450px) {
+  #media {
+    margin-top: 0.625rem;
     justify-content: center !important;
     align-items: center !important;
   }
 
-  #mediaImg{
+  #mediaImg {
     justify-content: center !important;
     align-items: center !important;
     margin: 0 !important;

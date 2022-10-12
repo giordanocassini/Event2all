@@ -1,6 +1,10 @@
 import CreateEvent from "./modal";
 
-export default function EventList() {
+interface Props {
+  setEvents: React.Dispatch<React.SetStateAction<any[]>>;
+}
+
+export default function EventList({ setEvents }: Props) {
   return (
     <div id="test-asd" className="d-flex flex-column p-4 mt-3">
       <h5>Você não tem nenhum evento adicionado.</h5>
@@ -9,7 +13,7 @@ export default function EventList() {
       </p>
       <hr />
 
-      <CreateEvent />
+      <CreateEvent setEvents={setEvents} />
     </div>
   );
 }

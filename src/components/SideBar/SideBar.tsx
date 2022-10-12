@@ -17,7 +17,12 @@ import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/Dropdown";
 import { getEventListByUser } from "../../services/userServices";
 
-export default function SideBar() {
+interface Props {
+  events: any[];
+  setEvents: React.Dispatch<React.SetStateAction<any[]>>;
+}
+
+export default function SideBar({ events, setEvents }: Props) {
   const user = useSelector((store: RootStore) => store.userReduce);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -27,7 +32,6 @@ export default function SideBar() {
     dispatch(removeUser());
     navigate("/");
   };
-  const [events, setEvents] = useState<any[]>([]);
 
   const fetchUser = useCallback(async () => {
     const response = await getEventListByUser(user.id).then((res) => {
@@ -100,7 +104,7 @@ export default function SideBar() {
             </div>
           ))
         ) : (
-          <EventList />
+          <EventList setEvents={setEvents} />
         )}
 
         <hr />
