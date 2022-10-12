@@ -7,7 +7,7 @@ export default function HomeSite() {
       <Container className="d-flex flex-wrap justify-content-center align-items-center w-100 ">
         <img
           className="img-home me-5"
-          src="/images/home-site.png"
+          src="/images/homepage.png"
           alt="imagem da home"
         />
         <div className="d-flex flex-wrap justify-content-center flex-column content-home ms-5">
