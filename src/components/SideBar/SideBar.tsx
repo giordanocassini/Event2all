@@ -63,7 +63,7 @@ useEffect(() => {
     <div className="vh-100 d-flex">
       <div className="d-flex flex-column align-items-center stylesidebar">
         <div className="">
-          <img src="./images/logotipo2.png" alt="logo" className="mt-5 mb-4" />
+          <img src="/images/logotipo2.png" alt="logo" className="mt-5 mb-4" />
         </div>
         <div className="me-auto">
           <br />
