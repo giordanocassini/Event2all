@@ -18,7 +18,7 @@ export default function Dashboard() {
             </div>
           </div>
           <div className="image-dash">
-            <img src={"/images/empty.png"} />
+            <img src={"/images/festa2.png"} />
           </div>
         </div>
       </div>
