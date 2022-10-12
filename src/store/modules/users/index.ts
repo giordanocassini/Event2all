@@ -73,7 +73,7 @@ export const getUser = () => async (dispatch: Dispatch) => {
   const token = window.localStorage.getItem("token");
   const userId = JSON.parse(window.localStorage.getItem("user")!).id;
   try {
-    const response = await pegaUsuarioPorId(userId, token);
+    const response = await pegaUsuarioPorId(userId);
     console.log(response);
 
     dispatch(

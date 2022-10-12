@@ -12,9 +12,10 @@ import { useEffect, useState, useCallback } from "react";
 import baseAPI from "../../services/api";
 import "./sideBar.scss";
 import CreateEvent from "./modal";
-import {BsThreeDotsVertical} from "react-icons/bs"
-import Dropdown from 'react-bootstrap/Dropdown'
-import DropdownButton from 'react-bootstrap/Dropdown'
+import { BsThreeDotsVertical } from "react-icons/bs";
+import Dropdown from "react-bootstrap/Dropdown";
+import DropdownButton from "react-bootstrap/Dropdown";
+import { getEventListByUser } from "../../services/userServices";
 
 export default function SideBar() {
   const user = useSelector((store: RootStore) => store.userReduce);
@@ -26,38 +27,23 @@ export default function SideBar() {
     dispatch(removeUser());
     navigate("/");
   };
-  // console.log("sidebar", user);
+  const [events, setEvents] = useState<any[]>([]);
 
-  // console.log(`este é meu id: ${user.id}`)
+  const fetchUser = useCallback(async () => {
+    const response = await getEventListByUser(user.id).then((res) => {
+      return res.data;
+    });
 
-const token = window.localStorage.getItem("token");
-const config = {
-  headers: {
-    Authorization: "Bearer " + token,
-  },
-};
-const [events, setEvents] = useState<any[]>([]);
+    console.log(response);
+    setEvents(response);
+    console.log("events", events);
+  }, [setEvents, user.id]);
 
-const fetchUser = useCallback(async () => {
-  const response = await baseAPI.get(`/event/${user.id}`, config).then((res) => {
-    return res.data;
-  })
+  useEffect(() => {
+    fetchUser();
+  }, [fetchUser]);
 
-  console.log(response);
-  
-
-  setEvents(response);
-}, [setEvents, user.id]);
-
-useEffect(() => {
-  fetchUser()
-}, [fetchUser]);
-
-// console.log(`aaaaaa ${event.length} asd`)
-
-
-
-
+  // console.log(`aaaaaa ${event.length} asd`)
 
   return (
     <div className="vh-100 d-flex">
@@ -91,35 +77,36 @@ useEffect(() => {
           </Link>
         </span>
         <hr className="mb-4" />
-        
-        
-        {events.map((event) => (
+        {events.length > 0 ? (
+          events.map((event) => (
+            <div className="d-flex justify-content-between text-white fs-5 w-100 mb-4">
+              <div className="">{event.name}</div>
+              <div className="">
+                <Dropdown>
+                  <Dropdown.Toggle
+                    variant="sucess"
+                    id="dropdown-basic"
+                    className="dropdown-img"
+                  >
+                    <BsThreeDotsVertical />
+                  </Dropdown.Toggle>
 
-
-          <div className="d-flex justify-content-between text-white fs-5 w-100 mb-4">
-            <div className="">{event.name}</div>
-            <div className="">
-              <Dropdown>
-                <Dropdown.Toggle variant="sucess" id="dropdown-basic" className="dropdown-img" >
-                  <BsThreeDotsVertical />
-                </Dropdown.Toggle>
-
-                <Dropdown.Menu>
-                  <Dropdown.Item href="#/action-1">Editar</Dropdown.Item>
-                  <Dropdown.Item href="#/action-2">Deletar</Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
+                  <Dropdown.Menu>
+                    <Dropdown.Item href="#/action-1">Editar</Dropdown.Item>
+                    <Dropdown.Item href="#/action-2">Deletar</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </div>
             </div>
-          </div>
+          ))
+        ) : (
+          <EventList />
+        )}
 
-        ))}
-
-
-        <EventList />
         <hr />
-        <CreateEvent />
+        {events.length > 0 && <CreateEvent setEvents={setEvents} />}
         <Button className="logoff-botao w-100 m-4 " onClick={exit}>
-          <IoExitOutline className="me-2"/>
+          <IoExitOutline className="me-2" />
           Fazer Logoff
         </Button>
       </div>

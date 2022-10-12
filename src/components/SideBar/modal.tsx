@@ -4,37 +4,52 @@ import "./stylemodal.ts";
 import { cadastroEvent } from "../../services/auth";
 import { ButtonCreateModal } from "./stylemodal";
 ButtonCreateModal;
-import "./modal.scss"
+import "./modal.scss";
 
-export default function CreateEvent() {
+interface Props {
+  setEvents: React.Dispatch<React.SetStateAction<any[]>>;
+}
+
+export default function CreateEvent({ setEvents }: Props) {
   const [name, setEvent] = useState<string>("");
   const [date, setEventDate] = useState<string>("");
   const [place, setPlace] = useState<string>("");
-  const [invite_number, setInviteNumber] = useState<number>(0);
+  const [invite_number, setInviteNumber] = useState<number>();
   const [managers, setManagers] = useState<string>("");
-  const [event_budget, setEventBudget] = useState<number>(0);
+  const [event_budget, setEventBudget] = useState<number>();
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const submitEvent = async (event: FormEvent) => {
     event.preventDefault();
     try {
-      await cadastroEvent({
+      const response = await cadastroEvent({
         name,
         date,
         place,
-        invite_number,
+        invite_number: invite_number ? invite_number : 0,
         managers: managers === "" ? [] : managers.split(","),
-        event_budget,
+        event_budget: event_budget ? event_budget : 0,
       });
+      console.log(response);
+      setEvents((prev) => [...prev, response.data]);
+
+      setEvent("");
+      setEventDate("");
+      setPlace("");
+      setInviteNumber(0);
+      setManagers("");
+      setEventBudget(0);
+
+      setShow(false);
+
       alert("Evento criado com sucesso");
     } catch (error) {
       alert("Algo deu errado!");
     }
   };
-
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 
   return (
     <>
