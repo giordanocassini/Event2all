@@ -2,14 +2,10 @@ import { Breadcrumb } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import "./breadCrumbs.scss";
-
-type Item = {
-  name: string;
-  link: string;
-};
+import { BreadcrumbItem } from "../../utils/types";
 
 type BreadProps = {
-  items: Item[];
+  items: BreadcrumbItem[];
 };
 
 export default function BreadCrumbs(props: BreadProps) {
@@ -19,7 +15,7 @@ export default function BreadCrumbs(props: BreadProps) {
         <AiOutlineArrowLeft className="mt-2 me-2" />
         {props.items.map((item) => (
           <Breadcrumb.Item>
-            <Link className="header-font " to={item.link}>
+            <Link className="header-font " to={item.link ?? ""}>
               {item.name}
             </Link>
           </Breadcrumb.Item>

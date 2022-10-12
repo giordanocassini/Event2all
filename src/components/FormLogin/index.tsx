@@ -28,7 +28,9 @@ export default function FormLogin() {
       console.log("token", response.data.token);
 
       navigate("/dashboard");
-    } catch (error) {}
+    } catch (error) {
+      alert("Erro no login!")
+    }
   };
 
   return (

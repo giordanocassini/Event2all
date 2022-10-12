@@ -61,8 +61,8 @@ export function cadastroEvent(payload: RegisterEvent) {
   return baseApi.post("/event", payload, getConfig());
 }
 
-export function getUserEvents(userId: string) {
-  return baseApi.get(`event/${userId}`, getConfig());
+export function getEvent(eventId: string) {
+  return baseApi.get(`event/getevent/${eventId}`, getConfig());
 }
 
 export function cadastroBudget(payload: RegisterBudget) {
