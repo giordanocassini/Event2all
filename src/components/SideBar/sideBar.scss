@@ -42,3 +42,13 @@ hr {
   font-size: 20px;
   color: #6EA8FE;
 }
+
+.dropdown-img {
+  color: white;
+  filter: brightness(10);
+
+}
+
+.dropdown-toggle::after {
+  display:none !important
+}
