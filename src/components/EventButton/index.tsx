@@ -29,6 +29,15 @@ export default function EventButton({ setEvents }: Props) {
 
       setEvents((prev) => [...prev, response.data]);
 
+      setEvent("");
+      setEventDate("");
+      setPlace("");
+      setInviteNumber(0);
+      setManagers("");
+      setEventBudget(0);
+
+      setShow(false);
+
       alert("Evento criado com sucesso");
     } catch (error) {
       alert("Algo deu errado!");
