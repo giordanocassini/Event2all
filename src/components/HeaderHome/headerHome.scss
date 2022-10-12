@@ -49,6 +49,10 @@
     display: none;
   }
 
+  nav{
+    flex-wrap: wrap !important;
+  }
+
   .button-login {
     background-color: $green-primary !important;
     border: none !important;
@@ -60,5 +64,19 @@
 
   .button-signup {
     display: none !important;
+  }
+}
+
+@media only screen and (max-width: 450px){
+  #media{
+    margin-top: .625rem;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  #mediaImg{
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 !important;
   }
 }

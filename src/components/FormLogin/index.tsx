@@ -33,7 +33,7 @@ export default function FormLogin() {
 
   return (
     <div className="vh-100">
-      <div className="form-login h-75  d-flex align-items-center justify-content-center">
+      <div className="form-login h-100 d-flex align-items-center justify-content-center">
         <h3>Login</h3>
         <PLogin>Preencha seus dados e programe seu evento já!</PLogin>
         <Form onSubmit={submit}>
