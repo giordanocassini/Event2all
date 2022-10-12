@@ -13,7 +13,7 @@ export default function CardEvent(props: CardEventProps) {
     <Card className=" card-event rounded text-center cards m-4">
       <Card.Body className="cardContent">
         <Card.Img
-          src={`../../../public/images/${props.cardImage}.png`}
+          src={`/images/${props.cardImage}.png`}
           alt={props.cardImage}
           className="cardImage mt-4 mb-3"
         />
