@@ -47,7 +47,7 @@ export default function CreateEvent({ setEvents }: Props) {
 
       alert("Evento criado com sucesso");
     } catch (error) {
-      alert("Algo deu errado!");
+      alert("Algo deu errado");
     }
   };
 
