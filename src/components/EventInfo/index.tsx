@@ -1,15 +1,10 @@
+import { Event } from "../../utils/types";
 import "./eventInfo.scss";
 
-interface Event {
-  id: number;
-  place: string;
-  name: string;
-  date: string;
-  event_budget: number;
-  invite_number: number;
-}
 
-interface EventInfoProps {
+
+
+type EventInfoProps = {
   event: Event | undefined;
 }
 
