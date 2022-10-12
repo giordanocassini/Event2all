@@ -26,7 +26,7 @@ export default function HomeSite() {
 
       <div
         id="cards"
-        className="d-flex flex-wrap justify-content-center align-items-center p-4 h-100"
+        className="d-flex justify-content-center align-items-center p-4 h-100"
       >
         <Card id="card" className="rounded text-center">
           <Card.Body>
@@ -36,7 +36,7 @@ export default function HomeSite() {
               className="mood mt-4 mb-3"
             />
             <h4 className="text-center">Prático</h4>
-            <span>
+            <span className="span-responsivity">
               Em poucos cliques, adicione orçamento, tarefas e convidados.
             </span>
           </Card.Body>
@@ -49,7 +49,7 @@ export default function HomeSite() {
               className="mood mt-4 mb-3"
             />
             <h4 className="text-center">Fácil</h4>
-            <span>
+            <span className="span-responsivity">
               Em poucos cliques, adicione orçamento, tarefas e convidados.
             </span>
           </Card.Body>
@@ -62,7 +62,7 @@ export default function HomeSite() {
               className="mood mt-4 mb-3"
             />
             <h4 className="text-center">Sem custos</h4>
-            <span>
+            <span className="span-responsivity">
               Em poucos cliques, adicione orçamento, tarefas e convidados.
             </span>
           </Card.Body>

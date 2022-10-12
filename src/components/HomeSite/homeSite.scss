@@ -56,6 +56,15 @@ hr{
   }
 }
 
+@media only screen and (max-width: 850px){
+  h4{
+    font-size: 25px !important;
+  }
+  .span-responsivity{
+    font-size: 18px !important;
+  }
+}
+
 @media only screen and (max-width: 768px){
   .img-home {
     width: 70% !important;
@@ -81,12 +90,19 @@ hr{
     height: 50rem;
 
     overflow-x: auto !important;
-
   }
 
   #card {
-    // flex: 0 0 100%;
+    flex: 0 0 55%;
     padding: 0;
   }
+}
+ @media only screen and (max-width: 450px){
+
+  #card {
+    flex: 0 0 80%;
+    padding: 0;
+  }
+
 }
 
