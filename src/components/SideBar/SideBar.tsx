@@ -80,7 +80,9 @@ export default function SideBar() {
         {events.length > 0 ? (
           events.map((event) => (
             <div className="d-flex justify-content-between text-white fs-5 w-100 mb-4">
-              <div className="">{event.name}</div>
+              <Link to={`/evento/${event.id}`}>
+                <div>{event.name}</div>
+              </Link>
               <div className="">
                 <Dropdown>
                   <Dropdown.Toggle
