@@ -16,10 +16,10 @@ export default function AppRoutes() {
         <Route path="/cadastro" element={<SignUp />} />
         <Route path="/" element={<Home />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/evento/:id" element={<EventName />} />
-        <Route path="/orcamento" element={<BudgetPage />} />
-        <Route path="/convidados" element={<Guests />} />
-        <Route path="/tarefas" element={<ToDoList />} />
+        <Route path="/evento/:idEvent" element={<EventName />} />
+        <Route path="/orcamento/:id" element={<BudgetPage />} />
+        <Route path="/convidados/:id" element={<Guests />} />
+        <Route path="/tarefas/:id" element={<ToDoList />} />
       </Routes>
     </Router>
   );
