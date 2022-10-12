@@ -1,16 +1,20 @@
 import { InputGroup, Form, Button } from "react-bootstrap";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import Avatar from "react-avatar";
 import { Link, useNavigate } from "react-router-dom";
-import { unmountComponentAtNode } from "react-dom";
 import { BsSearch } from "react-icons/bs";
 import { IoExitOutline } from "react-icons/io5";
 import { removeUser } from "../../store/modules/users";
 import EventLogo from "../../../public/images/dashboard.png";
 import { RootStore } from "../../store";
 import EventList from "./eventList";
+import { useEffect, useState, useCallback } from "react";
+import baseAPI from "../../services/api";
 import "./sideBar.scss";
+import CreateEvent from "./modal";
+import {BsThreeDotsVertical} from "react-icons/bs"
+import Dropdown from 'react-bootstrap/Dropdown'
+import DropdownButton from 'react-bootstrap/Dropdown'
 
 export default function SideBar() {
   const user = useSelector((store: RootStore) => store.userReduce);
@@ -22,7 +26,39 @@ export default function SideBar() {
     dispatch(removeUser());
     navigate("/");
   };
-  console.log("sidebar", user);
+  // console.log("sidebar", user);
+
+  // console.log(`este é meu id: ${user.id}`)
+
+const token = window.localStorage.getItem("token");
+const config = {
+  headers: {
+    Authorization: "Bearer " + token,
+  },
+};
+const [events, setEvents] = useState<any[]>([]);
+
+const fetchUser = useCallback(async () => {
+  const response = await baseAPI.get(`/event/${user.id}`, config).then((res) => {
+    return res.data;
+  })
+
+  console.log(response);
+  
+
+  setEvents(response);
+}, [setEvents, user.id]);
+
+useEffect(() => {
+  fetchUser()
+}, [fetchUser]);
+
+// console.log(`aaaaaa ${event.length} asd`)
+
+
+
+
+
   return (
     <div className="vh-100 d-flex">
       <div className="d-flex flex-column align-items-center stylesidebar">
@@ -55,7 +91,33 @@ export default function SideBar() {
           </Link>
         </span>
         <hr className="mb-4" />
+        
+        
+        {events.map((event) => (
+
+
+          <div className="d-flex justify-content-between text-white fs-5 w-100 mb-4">
+            <div className="">{event.name}</div>
+            <div className="">
+              <Dropdown>
+                <Dropdown.Toggle variant="sucess" id="dropdown-basic" className="dropdown-img" >
+                  <BsThreeDotsVertical />
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu>
+                  <Dropdown.Item href="#/action-1">Editar</Dropdown.Item>
+                  <Dropdown.Item href="#/action-2">Deletar</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </div>
+          </div>
+
+        ))}
+
+
         <EventList />
+        <hr />
+        <CreateEvent />
         <Button className="logoff-botao w-100 m-4 " onClick={exit}>
           <IoExitOutline className="me-2"/>
           Fazer Logoff

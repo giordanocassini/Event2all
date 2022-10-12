@@ -18,16 +18,16 @@ export default function Footer(props: any) {
           </Link>
         </Navbar.Brand>
         <Navbar.Brand href="#facebook">
-          <img src="../../../public/images/face.png"></img>
+          <img src="../../../public/images/face.png" className="social-network"></img>
         </Navbar.Brand>
         <Navbar.Brand href="#instagram">
-          <img src="../../../public/images/insta.png"></img>
+          <img src="../../../public/images/insta.png" className="social-network"></img>
         </Navbar.Brand>
         <Navbar.Brand href="#google">
-          <img src="../../../public/images/img.png"></img>
+          <img src="../../../public/images/img.png" className="social-network"></img>
         </Navbar.Brand>
         <Navbar.Brand href="#ios">
-          <img src="../../../public/images/ios.png" />
+          <img src="../../../public/images/ios.png" className="social-network"></img>
         </Navbar.Brand>
       </div>
 

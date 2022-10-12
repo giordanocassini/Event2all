@@ -44,9 +44,13 @@
   color: $dark-blue;
 }
 
-@media only screen and (max-width: 780px) {
+@media only screen and (max-width: 768px) {
   .header-resp {
     display: none;
+  }
+
+  nav{
+    flex-wrap: wrap !important;
   }
 
   .button-login {
@@ -60,5 +64,19 @@
 
   .button-signup {
     display: none !important;
+  }
+}
+
+@media only screen and (max-width: 450px){
+  #media{
+    margin-top: .625rem;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  #mediaImg{
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 !important;
   }
 }
