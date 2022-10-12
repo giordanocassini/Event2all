@@ -1,6 +1,6 @@
 import baseApi from "./api";
 
-function getConfig(){
+function getConfig() {
   const token = window.localStorage.getItem("token");
   const config = {
     headers: {

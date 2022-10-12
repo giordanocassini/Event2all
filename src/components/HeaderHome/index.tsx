@@ -12,24 +12,7 @@ export default function HeaderHome() {
         <Navbar.Brand className="text-white" href="#home">
           <img className="logo-header" src="/images/logotipo2.png"></img>
         </Navbar.Brand>
-        <Navbar.Brand
-          className="text-white nav-text textNav header-resp"
-          href="#home"
-        >
-          Home
-        </Navbar.Brand>
-        <Navbar.Brand
-          className="text-white nav-text textNav header-resp"
-          href="#home"
-        >
-          Quem somos
-        </Navbar.Brand>
-        <Navbar.Brand
-          className="text-white nav-text textNav header-resp"
-          href="#home"
-        >
-          Benefícios
-        </Navbar.Brand>
+
         <Navbar.Toggle />
         <Navbar.Collapse id="media" className="justify-content-end">
           <Link className="button-header" to={"/login"}>
