@@ -34,7 +34,7 @@ export default function EventButton() {
   return (
     <>
       <ButtonModal onClick={handleShow} className="event-button">
-        <img className="image-button" src={"public/images/add.svg"}></img>
+        <img className="image-button" src={"/images/add.svg"}></img>
       </ButtonModal>
       <Modal
         id="width-modal"
