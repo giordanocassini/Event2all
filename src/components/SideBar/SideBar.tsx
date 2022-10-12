@@ -13,6 +13,8 @@ import baseAPI from "../../services/api";
 import "./sideBar.scss";
 import CreateEvent from "./modal";
 import {BsThreeDotsVertical} from "react-icons/bs"
+import Dropdown from 'react-bootstrap/Dropdown'
+import DropdownButton from 'react-bootstrap/Dropdown'
 
 export default function SideBar() {
   const user = useSelector((store: RootStore) => store.userReduce);
@@ -96,7 +98,18 @@ useEffect(() => {
 
           <div className="d-flex justify-content-between text-white fs-5 w-100 mb-4">
             <div className="">{event.name}</div>
-            <div className=""><Button ><BsThreeDotsVertical /></Button></div>
+            <div className="">
+              <Dropdown>
+                <Dropdown.Toggle variant="sucess" id="dropdown-basic" className="dropdown-img" >
+                  <BsThreeDotsVertical />
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu>
+                  <Dropdown.Item href="#/action-1">Editar</Dropdown.Item>
+                  <Dropdown.Item href="#/action-2">Deletar</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </div>
           </div>
 
         ))}
