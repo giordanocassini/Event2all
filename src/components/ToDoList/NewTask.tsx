@@ -14,8 +14,8 @@ export function NewTask() {
           onChange={(e) => handleAddNewTask(e)}
           value={task}
           className="inputTask"
-        />
-        <Button />
+        />  
+        <Button/>
       </div>
     </section>
   );

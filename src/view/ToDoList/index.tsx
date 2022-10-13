@@ -5,19 +5,45 @@ import { TasksProvider } from "../../contexts/TasksContext";
 import { NewTask } from "../../components/ToDoList/NewTask";
 import { AiFillCheckCircle } from "react-icons/ai";
 import { Form, InputGroup } from "react-bootstrap";
+import "./toDo.scss";
+
+
 export default function ToDoList() {
   const breadCrumbsItem = [
+    { name: "Dashboard", link: "/dashboard" },
     { name: "Nome do Evento", link: "/evento" },
-    { name: "Convidados", link: "/convidados" },
+    { name: "Tarefas" },
   ];
 
   return (
-    <>
+    <div className="h-100 d-flex">
+      <SideBar />
+      <div className="w-100 vh-100 d-flex flex-column">
+          <BreadCrumbs className="" items={breadCrumbsItem} />
+        <div className="headerTarefas w-100">
+          <div className="listaTarefas">
+            <AiFillCheckCircle className="me-2" />
+            Lista de Tarefas
+          </div>
+          <div className="novasTarefas">
+            <NewTask />
+          </div>
+        </div>
+        <div>
+          <input></input>
+        </div>
+        <div>tasks</div>
+      </div>
+    </div>
+  );
+}
+
+
+{/* <>
       <div className="h-100 d-flex">
         <SideBar />
-        <div className="w-100 vh-100 ">
-          <BreadCrumbs className="" items={breadCrumbsItem} />
-          <div className="">
+        <div className="w-100 vh-100 "></div>
+            <div className="">
             <div className="d-flex align-items-center justify-content-center">
               <AiFillCheckCircle className="me-2" />
               Lista de Tarefas
@@ -29,13 +55,8 @@ export default function ToDoList() {
                 aria-describedby="basic-addon2"
               />
             </InputGroup> */}
-            <TasksProvider>
+           /*  <TasksProvider>
               <NewTask />
               <TaskList />
             </TasksProvider>
-          </div>
-        </div>
-      </div>
-    </>
-  );
-}
+            </> */
