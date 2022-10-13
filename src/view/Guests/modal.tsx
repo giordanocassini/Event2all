@@ -2,8 +2,6 @@ import { Button, Form, FormGroup, FormLabel, Modal } from "react-bootstrap";
 import { useState, FormEvent, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { cadastroGuest } from "../../services/auth";
-import { Switch } from "@mui/material";
-import FormControlLabel from "@mui/material/FormControlLabel";
 import "./guests.scss";
 
 export default function ModalGuests() {
@@ -87,14 +85,9 @@ export default function ModalGuests() {
               />
             </Form.Group>
             <FormGroup>
-              <FormControlLabel
-                control={<Switch defaultChecked />}
-                label="Convite enviado?"
-                className="px-3 mb-2"
-              />
+            <Form.Check className="ms-2" type="switch" id="custom-switch" label="Confirmado?" />
             </FormGroup>
-            <Form.Label className="px-2">Confirmado?</Form.Label>
-            <FormGroup className="mx-4  d-flex justify-content-evenly ">
+            <FormGroup className="mx-4 mt-2 d-flex justify-content-evenly ">
               <Form.Check
                 className="radio1"
                 type="radio"
