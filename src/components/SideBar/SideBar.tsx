@@ -68,10 +68,10 @@ export default function SideBar() {
           </Button>
         </InputGroup>
         <span className="mt-5 me-auto events-font" style={{ color: "white" }}>
-          <Link className="linkEvent" to={"/evento"}>
+          <div className="linkEvent">
             <img className="mb-2 px-2" src={EventLogo} alt="Logo" />
             Meus Eventos
-          </Link>
+          </div>
         </span>
         <hr className="mb-4" />
         {events.length > 0 ? (
