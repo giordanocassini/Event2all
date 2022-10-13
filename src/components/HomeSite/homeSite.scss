@@ -25,6 +25,11 @@ div > h3 {
   box-shadow: 0px 4px 0px 0px rgba(0, 0, 0, 0.5) !important;
 }
 
+#card:hover {
+  padding: 5px;
+  transform: translateY(0.2px);
+}
+
 #cards {
   height: 485px !important;
   background-color: $green-primary;
