@@ -59,7 +59,7 @@ export default function FormLogin() {
             />
           </Form.Group>
 
-          <Button className="button-login" variant="primary" type="submit">
+          <Button className="button-form-login" variant="primary" type="submit">
             Fazer login
           </Button>
           <FormGroup>

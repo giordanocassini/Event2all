@@ -3,7 +3,7 @@ import BreadCrumbs from "../../components/BreadCrumbs";
 import TaskList from "../../components/ToDoList/TaskList";
 import { TasksProvider } from "../../contexts/TasksContext";
 import { NewTask } from "../../components/ToDoList/NewTask";
-import { ToDoStyle } from "./style";
+import { AiFillCheckCircle } from "react-icons/ai";
 export default function ToDoList() {
   const breadCrumbsItem = [
     { name: "Nome do Evento", link: "/evento" },
@@ -17,9 +17,10 @@ export default function ToDoList() {
         <div className="w-100 vh-100 ">
           <BreadCrumbs className="" items={breadCrumbsItem} />
           <div className="">
-            <ToDoStyle className="d-flex align-items-center justify-content-center">
+            <div className="d-flex align-items-center justify-content-center">
+              <AiFillCheckCircle className="me-2" />
               Lista de Tarefas
-            </ToDoStyle>
+            </div>
             <TasksProvider>
               <NewTask />
               <TaskList />
