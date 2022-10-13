@@ -77,17 +77,17 @@ export default function SideBar() {
         {events.length > 0 ? (
           events.map((event) => (
             <div className="d-flex justify-content-between text-white fs-5 w-100 mb-4">
-              <Link to={`/evento/${event.id}`}>
+              <Link className="event-text mt-2" to={`/evento/${event.id}`}>
                 <div>{event.name}</div>
               </Link>
               <div className="">
                 <Dropdown>
                   <Dropdown.Toggle
-                    variant="sucess"
+                    variant=""
                     id="dropdown-basic"
                     className="dropdown-img"
                   >
-                    <BsThreeDotsVertical />
+                    <BsThreeDotsVertical color="white" />
                   </Dropdown.Toggle>
 
                   <Dropdown.Menu>
