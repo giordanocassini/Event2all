@@ -13,7 +13,7 @@ Este projeto necessita de alguns passos para rodar corretamente, conforme descri
    
 ## 🔧 Configurando o servidor
 
-    1. Via terminal, digite o comando "npm install" para instalar todas as dependências e libs do projeto.
+    1. Via terminal, digite o comando "npm install" para instalar todas as dependências do projeto.
     2. Rodar o comando "npm run dev"
 
 ## :floppy_disk: Tech stack
