@@ -6,6 +6,8 @@ export const ButtonToDo = styled.button`
   border-radius: 5px;
   font-weight: 700;
   color: #e6e6ee;
+  border: none;
+  background-color: #0D6EFD;
   cursor: pointer;
 
 `;
