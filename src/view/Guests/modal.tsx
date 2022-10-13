@@ -93,7 +93,7 @@ export default function ModalGuests() {
                 type="radio"
                 name="group1"
                 onChange={(e) => handleInputChanges(e)}
-                value="false"
+                value="sim"
                 label="Sim"
                 id="Sim"
               />
@@ -104,8 +104,18 @@ export default function ModalGuests() {
                 name="group1"
                 onChange={(e) => handleInputChanges(e)}
                 id="Não"
-                value="false"
+                value="nao"
                 label="Não"
+              />
+              
+              <Form.Check
+                className="radio3"
+                type="radio"
+                name="group1"
+                onChange={(e) => handleInputChanges(e)}
+                id="Talvez"
+                value="talvez"
+                label="Talvez"
               />
             </FormGroup>
 
