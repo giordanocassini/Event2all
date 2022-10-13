@@ -1,10 +1,15 @@
 import { useState, FormEvent } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 import { useParams } from "react-router-dom";
+import { IQuotation } from ".";
 
-import { cadastroBudget } from "../../services/auth";
+import { cadastroBudget, getQuotationByEventId } from "../../services/auth";
 
-export default function CreateBudget() {
+interface Props {
+  setQuotations: React.Dispatch<React.SetStateAction<IQuotation[]>>;
+}
+
+export default function CreateBudget({ setQuotations }: Props) {
   const [description, setDescription] = useState<string>("");
   const [provider, setProvider] = useState<string>("");
   const [contact, setContact] = useState<string>("");
@@ -30,6 +35,12 @@ export default function CreateBudget() {
         actual_expense: contractedBudget ? contractedBudget : 0,
         amount_already_paid: paidBudget ? paidBudget : 0,
       });
+
+      const response = await getQuotationByEventId(event_id!).then((res) => {
+        return res.data.reverse();
+      });
+      setQuotations(response);
+
       alert("Despesa criada com sucesso");
       setDescription("");
       setProvider("");
@@ -37,7 +48,7 @@ export default function CreateBudget() {
       setPredictedBudget(0);
       setContractedBudget(0);
       setPaidBudget(0);
-      //teste
+
       setShow(false);
     } catch (error) {
       alert("Algo deu errado!");
