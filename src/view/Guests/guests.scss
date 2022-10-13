@@ -3,31 +3,35 @@
 }
 
 #width-table {
-  min-width: 966px;
+  width: 966px;
   overflow-x: auto !important;
 }
 
+// .slash{
+//   width: ;
+// }
+
 .radio2 {
-  border-radius: 10px;
+  border-radius: .625rem;
   justify-content: center;
-  width: 3.8rem;
-  box-shadow: 0 0 4px rgba(218, 19, 19, 0.767);
+  width: 60.8px;
+  box-shadow: 0 0 .25rem rgba(218, 19, 19, 0.767);
   background-color: rgba(209, 84, 84, 0.767);
   color: black;
 }
 .radio3 {
-  border-radius: 10px;
+  border-radius: .625rem;
   justify-content: center;
-  width: 4.8rem;
-  box-shadow: 0 0 4px rgba(226, 213, 32, 0.767);
+  width: 76.8px;
+  box-shadow: 0 0 .25rem rgba(226, 213, 32, 0.767);
   background-color: rgba(240, 228, 68, 0.767);
   color: black;
 }
 .radio1 {
-  border-radius: 10px;
+  border-radius: .625rem;
   justify-content: center;
-  width: 3.8rem;
-  box-shadow: 0 0 4px rgba(82, 218, 19, 0.767);
+  width: 60.8px;
+  box-shadow: 0 0 .25rem rgba(82, 218, 19, 0.767);
   background-color: rgba(124, 219, 15, 0.767);
   color: black;
 }
