@@ -48,7 +48,7 @@ export default function BudgetPage() {
   const breadCrumbsItem: BreadcrumbItem[] = [
     { name: "Dashboard", link: "/dashboard" },
     { name: useQuery(search).get("event") ?? "", link: `/evento/${eventId}` },
-    { name: "Orçamento"},
+    { name: "Orçamento" },
   ];
 
   return (
@@ -100,7 +100,7 @@ export default function BudgetPage() {
                   <th>CONTRATO</th>
                   <th>PAGO</th>
                   <th>DIFERENÇA</th>
-                  <th>STATUS</th>
+                  <th>STATUS </th>
                 </tr>
               </thead>
               <td colspan="8">
@@ -126,7 +126,15 @@ export default function BudgetPage() {
                       {quotation.expected_expense -
                         quotation.amount_already_paid}
                     </td>
-                    <td>Pago/Em Aberto</td>
+                    <td>
+                      {" "}
+                      <Form.Check
+                        className="ms-2"
+                        type="switch"
+                        id="custom-switch"
+                        label="Pago/Em Aberto"
+                      />
+                    </td>
                   </tr>
                 ))}
               </tbody>
