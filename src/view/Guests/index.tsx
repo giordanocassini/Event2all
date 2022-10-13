@@ -3,7 +3,6 @@ import BreadCrumbs from "../../components/BreadCrumbs";
 import SideBar from "../../components/SideBar/SideBar";
 import { Card, Table, InputGroup, Form, Container } from "react-bootstrap";
 import { MdPeopleAlt } from "react-icons/md";
-import { Pagination } from "@mui/material";
 import { useEffect, useState, useCallback } from "react";
 import { getEvent, getGuest } from "../../services/auth";
 import "./guests.scss";
@@ -63,7 +62,7 @@ export default function Guests() {
     <>
       <div className="h-100 d-flex">
         {/* <SideBar /> */}
-        <div className="d-flex flex-column">
+        <div className="d-flex flex-column slash">
           <div>
             <BreadCrumbs items={breadCrumbsItem} />
           </div>
@@ -77,20 +76,18 @@ export default function Guests() {
               </Card.Body>
             </Card>
           </div>
-          <div className="d-flex align-items-center m-4">
-            {/* <Container className=""> */}
+          <div className="d-flex align-items-center justify-content-between m-4">
               
             <span className="spanConvidados">
               <MdPeopleAlt className="me-2" />
               Convidados
             </span>
-
-            <div className="ms-auto">
             <ModalGuests />
-            </div>
-            {/* </Container> */}
           </div>
-          <div className="w-100 m-4">
+          
+        </div>
+      </div>
+      <div className="m-4">
             <Table id="width-table" className="text-left" hover>
               <thead className="thead-bg">
                 <tr>
@@ -131,15 +128,7 @@ export default function Guests() {
                 </tr>
               </tbody>
             </Table>
-            <Pagination
-              className="d-flex justify-content-center"
-              count={10}
-              color="primary"
-              shape="rounded"
-            />
           </div>
-        </div>
-      </div>
     </>
   );
 }
