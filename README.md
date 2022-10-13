@@ -18,7 +18,7 @@ Este projeto necessita de alguns passos para rodar corretamente, conforme descri
 
 ## :floppy_disk: Tech stack
 
-Prjeto desenvolvido essencialmente em React, TypeScript, Bootstrap, Styled-Component, Sass, Redux, Axios.
+Projeto desenvolvido essencialmente em React, TypeScript, Bootstrap, Styled-Component, Sass, Redux, Axios.
 
 ## 📦 Backend do projeto
 
