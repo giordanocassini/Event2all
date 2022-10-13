@@ -15,55 +15,34 @@ export default function ToDoList() {
   ];
 
   return (
-    // <div className="h-100 d-flex">
-    //   <SideBar />
-    //   <div className="w-100 vh-100 d-flex flex-column">
-    //
-    //     <div className="headerTarefas w-100">
-    //       <div className="listaTarefas">
-    //         <AiFillCheckCircle className="me-2" />
-    //         Lista de Tarefas
-    //       </div>
-    //       <div className="novasTarefas">
-    //         <NewTask />
-    //       </div>
-    //     </div>
-    //     <div>
-    //       <input></input>
-    //     </div>
-    //     <div>tasks</div>
-    //   </div>
-    // </div>
-
-    <>
-      <div className="h-100 d-flex">
-        <SideBar />
-        <div className="d-flex flex-column w-100">
-          <div>
-            <BreadCrumbs items={breadCrumbsItem} />
+    <div className="h-100 d-flex">
+      <SideBar />
+      <div className="w-100 vh-100 d-flex flex-column">
+        <div>
+          <BreadCrumbs items={breadCrumbsItem} />
+        </div>
+        <div className="headerTarefas w-100">
+          <div className="listaTarefas">
+            <AiFillCheckCircle className="me-2" />
+            Lista de Tarefas
           </div>
-
-          <div className=" d-flex w-100 ">
-            <div className="d-flex ">
-              <AiFillCheckCircle className="me-2"></AiFillCheckCircle>
-              <p>Lista de Tarefas</p>
-              <div>
-                <TasksProvider className="d-flex ">
-                  <NewTask />
-                  <InputGroup className="mt-2 px-1 mb-1">
-                    <Form.Control
-                      placeholder="Buscar..."
-                      aria-label="Buscar"
-                      aria-describedby="basic-addon2"
-                    />
-                  </InputGroup>
-                  <TaskList />
-                </TasksProvider>
-              </div>
-            </div>
+          <div className="novasTarefas">
+            <TasksProvider>
+              <NewTask />
+            </TasksProvider>
           </div>
         </div>
-      </div>{" "}
-    </>
+        <InputGroup className="mt-2 px-1 mb-1" colspan="8">
+          <Form.Control
+            placeholder="Buscar..."
+            aria-label="Buscar"
+            aria-describedby="basic-addon2"
+          />
+        </InputGroup>
+        <TasksProvider>
+          <TaskList />
+        </TasksProvider>
+      </div>
+    </div>
   );
 }
