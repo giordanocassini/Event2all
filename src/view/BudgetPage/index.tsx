@@ -43,18 +43,25 @@ export default function BudgetPage() {
       return res.data.reverse();
     });
 
-    response.forEach((quotation: IQuotation) => {
-      setPrevisto((prev) => prev + quotation.expected_expense);
-      setAtual((prev) => prev + quotation.actual_expense);
-      setDiferenca(previsto - atual);
-    });
-
     setQuotations(response);
   }, [setQuotations, eventId]);
 
   useEffect(() => {
     fetchQuotation();
   }, [fetchQuotation]);
+
+  useEffect(() => {
+    let valorPrevisto: number = 0;
+    let valorContratado: number = 0;
+    quotations.forEach((quotation) => {
+      valorPrevisto += quotation.expected_expense;
+      valorContratado += quotation.actual_expense;
+    });
+
+    setPrevisto(valorPrevisto);
+    setAtual(valorContratado);
+    setDiferenca(previsto - atual);
+  }, [quotations]);
 
   const breadCrumbsItem: BreadcrumbItem[] = [
     { name: "Dashboard", link: "/dashboard" },
@@ -84,7 +91,7 @@ export default function BudgetPage() {
               <Card id="card-budget2" className="rounded text-center m-4">
                 <Card.Body className="mt-2">
                   <Card.Title className="text-black">
-                    Atual: R$ {atual}
+                    Contratado: R$ {atual}
                   </Card.Title>
                 </Card.Body>
               </Card>
