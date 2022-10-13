@@ -43,25 +43,25 @@ export default function Guests() {
   //   fetchGuest();
   // }, [fetchGuest]);
 
-  // useEffect(() => {
-  //   if (eventId) {
-  //     getGuest(eventId)
-  //       .then((response) => {
-  //         const guests = response.data;
-  //         setGuests(guests);
-  //       })
-  //       .catch(() => {
-  //         console.log("Não foi possível carregar o evento");
-  //       });
-  //   }
-  // }, [setGuests, eventId]);
+  useEffect(() => {
+    if (eventId) {
+      getGuest(eventId)
+        .then((response) => {
+          const guests = response.data;
+          setGuests(guests);
+        })
+        .catch(() => {
+          console.log("Não foi possível carregar o evento");
+        });
+    }
+  }, [setGuests, eventId]);
 
-  console.log(`kk ${guests}`);
+  console.log(`${guests}`);
 
   return (
     <>
       <div className="h-100 d-flex">
-        {/* <SideBar /> */}
+        <SideBar />
         <div className="d-flex flex-column slash">
           <div>
             <BreadCrumbs items={breadCrumbsItem} />
@@ -71,7 +71,7 @@ export default function Guests() {
               <Card.Body className="mt-2">
                 <Card.Title className="text-black">
                   Total de convidados:
-                  {/* {guests.length} */}/{event?.invite_number}
+                   {guests?.length}/{event?.invite_number}
                 </Card.Title>
               </Card.Body>
             </Card>
@@ -85,8 +85,7 @@ export default function Guests() {
             <ModalGuests />
           </div>
           
-        </div>
-      </div>
+      
       <div className="m-4">
             <Table id="width-table" className="text-left" hover>
               <thead className="thead-bg">
@@ -107,17 +106,17 @@ export default function Guests() {
                 </InputGroup>
               </td>
               <tbody className="tbody-bg">
-                {/* {guests.length > 0
-                  ? guests.map((guest: any) => <tr>
-                  <td className="text-primary">{guest.name}</td>
-                  <td>{guest.contact}</td>
+                {guests?.length > 0
+                  ? guests?.map((guest: any) => <tr>
+                  <td className="text-primary">{guest?.name}</td>
+                  <td>{guest?.contact}</td>
                   <td>
                     <Form.Check type="switch" id="custom-switch" />
-                    {guest.invite}
+                    {guest?.invite}
                   </td>
-                  <td>{guest.isConfirmed ? "Sim" : "Não"}</td>
+                  <td>{guest?.isConfirmed ? "Sim" : "Não"}</td>
                   </tr>)
-                  : ("Você ainda não adicionou nenhum convidado")} */}
+                  : ("Você ainda não adicionou nenhum convidado")}
                 <tr>
                   <td className="text-primary">Título do Item</td>
                   <td>Nome</td>
@@ -129,6 +128,8 @@ export default function Guests() {
               </tbody>
             </Table>
           </div>
+        </div>
+      </div>
     </>
   );
 }
