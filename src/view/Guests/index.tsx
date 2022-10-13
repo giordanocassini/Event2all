@@ -1,7 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import BreadCrumbs from "../../components/BreadCrumbs";
 import SideBar from "../../components/SideBar/SideBar";
-import { Card, Table, InputGroup, Form, FormGroup } from "react-bootstrap";
+import { Card, Table, InputGroup, Form, Container } from "react-bootstrap";
 import { MdPeopleAlt } from "react-icons/md";
 import { Pagination } from "@mui/material";
 import { useEffect, useState, useCallback } from "react";
@@ -62,7 +62,7 @@ export default function Guests() {
   return (
     <>
       <div className="h-100 d-flex">
-        <SideBar />
+        {/* <SideBar /> */}
         <div className="d-flex flex-column">
           <div>
             <BreadCrumbs items={breadCrumbsItem} />
@@ -77,12 +77,18 @@ export default function Guests() {
               </Card.Body>
             </Card>
           </div>
-          <div className="d-flex align-items-center justify-content-between m-4">
+          <div className="d-flex align-items-center m-4">
+            {/* <Container className=""> */}
+              
             <span className="spanConvidados">
               <MdPeopleAlt className="me-2" />
               Convidados
             </span>
+
+            <div className="ms-auto">
             <ModalGuests />
+            </div>
+            {/* </Container> */}
           </div>
           <div className="w-100 m-4">
             <Table id="width-table" className="text-left" hover>
