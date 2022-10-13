@@ -69,14 +69,16 @@ export default function BudgetPage() {
   useEffect(() => {
     let valorPrevisto: number = 0;
     let valorContratado: number = 0;
+    let valorDiferenca: number = 0;
     quotations.forEach((quotation) => {
       valorPrevisto += quotation.expected_expense;
       valorContratado += quotation.actual_expense;
     });
+    valorDiferenca = valorPrevisto - valorContratado;
 
     setPrevisto(valorPrevisto);
     setAtual(valorContratado);
-    setDiferenca(previsto - atual);
+    setDiferenca(valorDiferenca);
   }, [quotations]);
 
   const breadCrumbsItem: BreadcrumbItem[] = [
