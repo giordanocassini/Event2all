@@ -1,5 +1,5 @@
 import SideBar from "../../components/SideBar/SideBar";
-import { Card, Table, InputGroup, Form } from "react-bootstrap";
+import { Card, Table, InputGroup, Form, Button } from "react-bootstrap";
 import { MdPaid } from "react-icons/md";
 import CreateBudget from "./modal";
 import { Pagination } from "@mui/material";
@@ -169,13 +169,12 @@ export default function BudgetPage() {
                         quotation.amount_already_paid}
                     </td>
                     <td>
-                      {" "}
-                      <Form.Check
-                        className="ms-2"
-                        type="switch"
-                        id="custom-switch"
-                        label="Pago/Em Aberto"
-                      />
+                      {quotation.actual_expense ===
+                      quotation.amount_already_paid ? (
+                        <Button className="btn btn-success">Pago</Button>
+                      ) : (
+                        <Button className="btn btn-danger">Em aberto</Button>
+                      )}
                     </td>
                     <td>
                       <Dropdown>
