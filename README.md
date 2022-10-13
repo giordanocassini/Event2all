@@ -1,4 +1,4 @@
-# ![Logo](logotipo2.png)
+# ![Logo](public/images/logotipo.png)
 
 Desafio Chefão - Gama Academy: Hacker FrontEnd.
 
