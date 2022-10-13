@@ -9,13 +9,25 @@ import { useCallback, useEffect, useState } from "react";
 import { getQuotationByEventId } from "../../services/auth";
 import { useParams } from "react-router-dom";
 
+interface IQuotation {
+  id: number;
+  contact: string;
+  description: string;
+  provider: string;
+  expected_expense: number;
+  actual_expense: number;
+  amount_already_paid: number;
+  createDateColumn: Date;
+  updateDateColumn: Date;
+}
+
 export default function BudgetPage() {
   const eventId = useParams().id;
-  const [quotations, setQuotations] = useState<any[]>([]);
+  const [quotations, setQuotations] = useState<IQuotation[]>([]);
 
   const fetchQuotation = useCallback(async () => {
     const response = await getQuotationByEventId(eventId!).then((res) => {
-      return res.data;
+      return res.data.reverse();
     });
 
     setQuotations(response);
@@ -92,26 +104,22 @@ export default function BudgetPage() {
                 </InputGroup>
               </td>
               <tbody className="tbody-bg">
-                <tr>
-                  <td className="text-primary">Título do Item</td>
-                  <td>Nome</td>
-                  <td>email@email.com</td>
-                  <td>R$ 5.000,00</td>
-                  <td>R$ 5.000,00</td>
-                  <td>R$ 5.000,00</td>
-                  <td>R$ 5.000,00</td>
-                  <td>Pago/Em Aberto</td>
-                </tr>
-                <tr>
-                  <td className="text-primary">Título do Item</td>
-                  <td>Nome</td>
-                  <td>email@email.com</td>
-                  <td>R$ 5.000,00</td>
-                  <td>R$ 5.000,00</td>
-                  <td>R$ 5.000,00</td>
-                  <td>R$ 5.000,00</td>
-                  <td>Pago/Em Aberto</td>
-                </tr>
+                {quotations.map((quotation) => (
+                  <tr key={quotation.id}>
+                    <td className="text-primary">{quotation.description}</td>
+                    <td>{quotation.provider}</td>
+                    <td>{quotation.contact}</td>
+                    <td>R$ {quotation.expected_expense}</td>
+                    <td>R$ {quotation.actual_expense}</td>
+                    <td>R$ {quotation.amount_already_paid}</td>
+                    <td>
+                      R${" "}
+                      {quotation.expected_expense -
+                        quotation.amount_already_paid}
+                    </td>
+                    <td>Pago/Em Aberto</td>
+                  </tr>
+                ))}
               </tbody>
             </Table>
           </div>
