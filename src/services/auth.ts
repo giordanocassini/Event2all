@@ -31,8 +31,11 @@ interface RegisterBudget {
 }
 
 interface GuestAdd {
-  name_guest: string;
-  contact_guest: string;
+  name: string;
+  contact: string;
+  invite: boolean;
+  isConfirmed: boolean;
+  event_id: number;
 }
 
 function getConfig() {
@@ -47,7 +50,7 @@ function getConfig() {
 }
 
 export function cadastroGuest(payload: GuestAdd) {
-  return baseApi.post("/");
+  return baseApi.post("/guest", payload, getConfig());
 }
 
 export function login(payload: LoginPayload) {
