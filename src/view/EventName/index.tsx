@@ -45,7 +45,7 @@ export default function EventName() {
               <EventInfo event={event} />
             </div>
           </div>
-          <div className="d-flex flex-row justify-content-center">
+          <div className="d-flex flex-row justify-content-center flex-wrap">
             <Link className="eventLinkStyle" to={`/orcamento/${event?.id}`}>
               <CardEvent
                 title="Orçamento"
