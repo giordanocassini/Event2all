@@ -1,14 +1,15 @@
 import SideBar from "../../components/SideBar/SideBar";
 import { Card, Table, InputGroup, Form, Button } from "react-bootstrap";
 import { MdPaid } from "react-icons/md";
-import CreateBudget from "./modal";
+import ModalBudget from "./modal";
 import { Pagination } from "@mui/material";
 import BreadCrumbs from "../../components/BreadCrumbs";
 import "./BudgetPage.scss";
 import { useCallback, useEffect, useState } from "react";
 import {
   delQuotationByEventId,
-  getQuotationByEventId,
+  getQuotationById,
+  getQuotationsByEventId,
 } from "../../services/auth";
 import { useParams, useLocation } from "react-router-dom";
 import React from "react";
@@ -34,20 +35,29 @@ function useQuery(search: string) {
 
 export default function BudgetPage() {
   const { search } = useLocation();
-
-  const eventId = useParams().id;
+  const [show, setShow] = useState<boolean>(false);
+  const [edit, setEdit] = useState<boolean>(false);
   const [quotations, setQuotations] = useState<IQuotation[]>([]);
+  const [quotation, setQuotation] = useState<IQuotation>();
   const [previsto, setPrevisto] = useState<number>(0);
   const [atual, setAtual] = useState<number>(0);
   const [diferenca, setDiferenca] = useState<number>(0);
+  const eventId = useParams().id;
+
+  const editQuotation = async (id: number) => {
+    const response = await getQuotationById(id).then((res) => res.data);
+    setQuotation(response);
+    setEdit(true);
+    setShow(true);
+  };
 
   const fetchQuotation = useCallback(async () => {
-    const response = await getQuotationByEventId(eventId!).then((res) => {
+    const response = await getQuotationsByEventId(eventId!).then((res) => {
       return res.data.reverse();
     });
 
     setQuotations(response);
-  }, [setQuotations, eventId]);
+  }, [setQuotations, eventId, edit]);
 
   const handleDeleteQuotation = useCallback(
     async (id: number) => {
@@ -129,7 +139,14 @@ export default function BudgetPage() {
               <MdPaid className="mb-1" /> Orçamento
             </span>
 
-            <CreateBudget setQuotations={setQuotations} />
+            <ModalBudget
+              setQuotations={setQuotations}
+              setShow={setShow}
+              show={show}
+              edit={edit}
+              setEdit={setEdit}
+              quotation={quotation!}
+            />
           </div>
           <div className="d-flex w-100 m-4">
             <Table hover>
@@ -187,7 +204,9 @@ export default function BudgetPage() {
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu>
-                          <Dropdown.Item href="#/action-1">
+                          <Dropdown.Item
+                            onClick={() => editQuotation(quotation.id)}
+                          >
                             Editar
                           </Dropdown.Item>
                           <Dropdown.Item

@@ -1,15 +1,31 @@
-import { useState, FormEvent } from "react";
+import { useState, FormEvent, useEffect } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { IQuotation } from ".";
 
-import { cadastroBudget, getQuotationByEventId } from "../../services/auth";
+import {
+  cadastroBudget,
+  editQuotationById,
+  getQuotationsByEventId,
+} from "../../services/auth";
 
 interface Props {
+  show: boolean;
+  edit: boolean;
+  setShow: React.Dispatch<React.SetStateAction<boolean>>;
+  setEdit: React.Dispatch<React.SetStateAction<boolean>>;
   setQuotations: React.Dispatch<React.SetStateAction<IQuotation[]>>;
+  quotation: IQuotation;
 }
 
-export default function CreateBudget({ setQuotations }: Props) {
+export default function ModalBudget({
+  setQuotations,
+  setShow,
+  show,
+  setEdit,
+  edit,
+  quotation,
+}: Props) {
   const [description, setDescription] = useState<string>("");
   const [provider, setProvider] = useState<string>("");
   const [contact, setContact] = useState<string>("");
@@ -18,9 +34,25 @@ export default function CreateBudget({ setQuotations }: Props) {
   const [paidBudget, setPaidBudget] = useState<number>();
   const event_id = useParams().id as string;
 
-  const [show, setShow] = useState(false);
+  const payload = {
+    description,
+    provider,
+    contact,
+    expected_expense: predictedBudget ? predictedBudget : 0,
+    actual_expense: contractedBudget ? contractedBudget : 0,
+    amount_already_paid: paidBudget ? paidBudget : 0,
+  };
 
-  const handleClose = () => setShow(false);
+  const handleClose = () => {
+    setDescription("");
+    setProvider("");
+    setContact("");
+    setPredictedBudget(0);
+    setContractedBudget(0);
+    setPaidBudget(0);
+    setShow(false);
+    setEdit(false);
+  };
   const handleShow = () => setShow(true);
 
   const submitEvent = async (event: FormEvent) => {
@@ -36,24 +68,49 @@ export default function CreateBudget({ setQuotations }: Props) {
         amount_already_paid: paidBudget ? paidBudget : 0,
       });
 
-      const response = await getQuotationByEventId(event_id!).then((res) => {
+      const response = await getQuotationsByEventId(event_id!).then((res) => {
         return res.data.reverse();
       });
       setQuotations(response);
 
       alert("Despesa criada com sucesso");
-      setDescription("");
-      setProvider("");
-      setContact("");
-      setPredictedBudget(0);
-      setContractedBudget(0);
-      setPaidBudget(0);
 
-      setShow(false);
+      handleClose();
     } catch (error) {
       alert("Algo deu errado!");
     }
   };
+
+  const submitEditEvent = async (event: FormEvent) => {
+    event.preventDefault();
+    try {
+      await editQuotationById(quotation.id, {
+        description,
+        provider,
+        contact,
+        expected_expense: predictedBudget ? predictedBudget : 0,
+        actual_expense: contractedBudget ? contractedBudget : 0,
+        amount_already_paid: paidBudget ? paidBudget : 0,
+      });
+
+      alert("Despesa atualizada com sucesso");
+
+      handleClose();
+    } catch (error) {
+      alert("Algo deu errado!");
+    }
+  };
+
+  useEffect(() => {
+    if (edit) {
+      setDescription(quotation.description);
+      setProvider(quotation.provider);
+      setContact(quotation.contact);
+      setPredictedBudget(quotation.expected_expense);
+      setContractedBudget(quotation.actual_expense);
+      setPaidBudget(quotation.amount_already_paid);
+    }
+  }, [edit]);
 
   return (
     <>
@@ -65,10 +122,15 @@ export default function CreateBudget({ setQuotations }: Props) {
         onHide={handleClose}
       >
         <Modal.Header closeButton>
-          <span className="modal-title">Criar Orçamento</span>
+          <span className="modal-title">
+            {edit ? "Editar Orçamento" : "Criar Orçamento"}
+          </span>
         </Modal.Header>
         <Modal.Body>
-          <Form onSubmit={submitEvent} className="asd ">
+          <Form
+            onSubmit={edit ? submitEditEvent : submitEvent}
+            className="asd "
+          >
             <Form.Group className=" boxform p-1 text-start mb-2">
               <Form.Label>Descrição</Form.Label>
               <Form.Control
@@ -139,7 +201,7 @@ export default function CreateBudget({ setQuotations }: Props) {
               variant="primary"
               type="submit"
             >
-              Adicionar Despesa
+              {edit ? "Atualizar Orçamento" : "Adicionar Despesa"}
             </Button>
           </Form>
         </Modal.Body>
