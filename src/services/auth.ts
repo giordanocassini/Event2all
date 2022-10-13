@@ -30,6 +30,15 @@ interface RegisterBudget {
   amount_already_paid: number;
 }
 
+interface EditBudget {
+  description: string;
+  provider: string;
+  contact: string;
+  expected_expense: number;
+  actual_expense: number;
+  amount_already_paid: number;
+}
+
 interface GuestAdd {
   name: string;
   contact: string;
@@ -53,7 +62,7 @@ export function cadastroGuest(payload: GuestAdd) {
   return baseApi.post("/guest", payload, getConfig());
 }
 
-export function getGuest(eventId: any){
+export function getGuest(eventId: any) {
   return baseApi.get(`./guest/event/${eventId}`, getConfig());
 }
 
@@ -73,14 +82,21 @@ export function getEvent(eventId: any) {
   return baseApi.get(`event/getevent/${eventId}`, getConfig());
 }
 
+export function getQuotationsByEventId(id: number | string) {
+  return baseApi.get(`/quotation/event/${id}`, getConfig());
+}
+
+export function getQuotationById(id: number | string) {
+  return baseApi.get(`/quotation/${id}`, getConfig());
+}
+
 export function cadastroBudget(payload: RegisterBudget) {
   return baseApi.post("/quotation", payload, getConfig());
 }
 
-export function getQuotationByEventId(id: number | string) {
-  return baseApi.get(`/quotation/event/${id}`, getConfig());
+export function editQuotationById(id: number | string, payload: EditBudget) {
+  return baseApi.put(`/quotation/${id}`, payload, getConfig());
 }
-
 export function delQuotationByEventId(id: number | string) {
   return baseApi.delete(`/quotation/${id}`, getConfig());
 }
