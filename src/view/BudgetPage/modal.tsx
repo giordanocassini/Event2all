@@ -37,7 +37,7 @@ export default function CreateBudget() {
       setPredictedBudget(0);
       setContractedBudget(0);
       setPaidBudget(0);
-
+      //teste
       setShow(false);
     } catch (error) {
       alert("Algo deu errado!");
