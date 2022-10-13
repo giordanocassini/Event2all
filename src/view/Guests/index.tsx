@@ -4,8 +4,8 @@ import SideBar from "../../components/SideBar/SideBar";
 import { Card, Table, InputGroup, Form, FormGroup } from "react-bootstrap";
 import { MdPeopleAlt } from "react-icons/md";
 import { Pagination } from "@mui/material";
-import { useCallback, useEffect, useState } from "react";
-import { getEvent } from "../../services/auth";
+import { useEffect, useState, useCallback } from "react";
+import { getEvent, getGuest } from "../../services/auth";
 import "./guests.scss";
 import ModalGuests from "./modal";
 
@@ -17,6 +17,7 @@ export default function Guests() {
   ];
 
   const [event, setEvent] = useState<any>();
+  const [guests, setGuests] = useState<any>();
   const eventId = useParams().id;
 
   useEffect(() => {
@@ -25,7 +26,6 @@ export default function Guests() {
         .then((response) => {
           const event = response.data;
           setEvent(event);
-          console.log(`kkkkk ${event?.invite_number}`)
         })
         .catch(() => {
           alert("Não foi possível carregar o evento");
@@ -33,6 +33,31 @@ export default function Guests() {
     }
   }, [setEvent, eventId]);
 
+  // const fetchGuest = useCallback(async () => {
+  //   const response = await getGuest(eventId).then((res) => {
+  //     return res.data;
+  //   });
+  //   setGuests(response);
+  // }, [setGuests, eventId]);
+
+  // useEffect(() => {
+  //   fetchGuest();
+  // }, [fetchGuest]);
+
+  // useEffect(() => {
+  //   if (eventId) {
+  //     getGuest(eventId)
+  //       .then((response) => {
+  //         const guests = response.data;
+  //         setGuests(guests);
+  //       })
+  //       .catch(() => {
+  //         console.log("Não foi possível carregar o evento");
+  //       });
+  //   }
+  // }, [setGuests, eventId]);
+
+  console.log(`kk ${guests}`);
 
   return (
     <>
@@ -46,7 +71,8 @@ export default function Guests() {
             <Card id="card-budget" className=" text-center m-4">
               <Card.Body className="mt-2">
                 <Card.Title className="text-black">
-                  Total de convidados: /{event?.invite_number}
+                  Total de convidados:
+                  {/* {guests.length} */}/{event?.invite_number}
                 </Card.Title>
               </Card.Body>
             </Card>
@@ -78,6 +104,17 @@ export default function Guests() {
                 </InputGroup>
               </td>
               <tbody className="tbody-bg">
+                {/* {guests.length > 0
+                  ? guests.map((guest: any) => <tr>
+                  <td className="text-primary">{guest.name}</td>
+                  <td>{guest.contact}</td>
+                  <td>
+                    <Form.Check type="switch" id="custom-switch" />
+                    {guest.invite}
+                  </td>
+                  <td>{guest.isConfirmed ? "Sim" : "Não"}</td>
+                  </tr>)
+                  : ("Você ainda não adicionou nenhum convidado")} */}
                 <tr>
                   <td className="text-primary">Título do Item</td>
                   <td>Nome</td>
