@@ -1,6 +1,5 @@
 @import "../../assets/styles/variables.scss";
 
-
 .form-login {
   display: flex;
   flex-direction: column;
@@ -10,8 +9,7 @@
     font-weight: 700;
     font-size: 60px;
   }
-
-  .button-login {
+  .button-form-login {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,4 +25,11 @@
     border-bottom: 2px solid $green-details !important;
     font-size: 21px;
   }
+}
+
+.button-form-login:hover {
+  color: $dark-blue !important;
+  background-color: $success !important;
+  border-color: $green-details !important;
+  transform: translateY(0.2px);
 }
