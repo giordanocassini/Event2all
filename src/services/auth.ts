@@ -66,5 +66,5 @@ export function getEvent(eventId: string) {
 }
 
 export function cadastroBudget(payload: RegisterBudget) {
-  return baseApi.post("/event", payload, getConfig());
+  return baseApi.post("/quotation", payload, config);
 }

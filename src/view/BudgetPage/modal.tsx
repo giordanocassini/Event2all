@@ -11,6 +11,9 @@ export default function CreateBudget() {
   const [contracted_budget, setContractedBudget] = useState<string>("");
   const [paid_budget, setPaidBudget] = useState<string>("");
 
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   const submitEvent = async (event: FormEvent) => {
     event.preventDefault();
     try {
@@ -22,6 +25,16 @@ export default function CreateBudget() {
         contracted_budget,
         paid_budget,
       });
+
+      setBudget("");
+      setBudgetProvider("");
+      setContact("");
+      setPredictedBudget("");
+      setContractedBudget("");
+      setPaidBudget("");
+
+      setShow(false);
+
       alert("Despesa criada com sucesso");
     } catch (error) {
       alert("Algo deu errado!");
@@ -30,8 +43,7 @@ export default function CreateBudget() {
 
   const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+
 
   return (
     <>
