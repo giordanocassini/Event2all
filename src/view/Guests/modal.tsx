@@ -1,26 +1,34 @@
 import { Button, Form, FormGroup, FormLabel, Modal } from "react-bootstrap";
 import { useState, FormEvent, useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
 import { cadastroGuest } from "../../services/auth";
 import { Switch } from "@mui/material";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import "./guests.scss";
 
 export default function ModalGuests() {
-  const [name_guest, setNameGuest] = useState<string>("");
-  const [contact_guest, setContactGuest] = useState<string>("");
-  const [checkGuest, setCheckGuest] = useState<string>("");
+  const [name, setNameGuest] = useState<string>("");
+  const [contact, setContactGuest] = useState<string>("");
+  const [invite, setInviteGuest] = useState<any>(false);
+  const [isConfirmed, setIsConfirmed] = useState<any>(false);
+  const [event_id, setEvent_Id] = useState<any>();
 
   const handleInputChanges = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setCheckGuest(e.target.value);
+    setInviteGuest(e.target.value);
+    setIsConfirmed(e.target.value);
   };
+
+  const eventId = useParams().id;
 
   const submitAddGuest = async (event: FormEvent) => {
     event.preventDefault();
     try {
       await cadastroGuest({
-        name_guest,
-        contact_guest,
-        checkGuest,
+        name,
+        contact,
+        invite,
+        isConfirmed,
+        event_id
       });
       alert("Convidado adicionado com sucesso");
     } catch (error) {
@@ -51,7 +59,7 @@ export default function ModalGuests() {
                 className="inputTexto"
                 type="text"
                 placeholder="Nome do convidado"
-                value={name_guest}
+                value={name}
                 onChange={(e) => setNameGuest(e.target.value)}
                 required
               />
@@ -62,8 +70,19 @@ export default function ModalGuests() {
                 className="inputTexto"
                 type="text"
                 placeholder="Inserir contato (Opcional)"
-                value={contact_guest}
+                value={contact}
                 onChange={(e) => setContactGuest(e.target.value)}
+                required
+              />
+            </Form.Group>
+            <Form.Group className=" boxform p-1 text-start mb-2">
+              <Form.Label>Digite {eventId} abaixo para confirmar</Form.Label>
+              <Form.Control
+                className="inputTexto"
+                type="text"
+                placeholder="Digite o número acima"
+                value={event_id}
+                onChange={(e) => setEvent_Id(e.target.value)}
                 required
               />
             </Form.Group>
@@ -81,7 +100,7 @@ export default function ModalGuests() {
                 type="radio"
                 name="group1"
                 onChange={(e) => handleInputChanges(e)}
-                value="sim"
+                value="false"
                 label="Sim"
                 id="Sim"
               />
@@ -92,17 +111,8 @@ export default function ModalGuests() {
                 name="group1"
                 onChange={(e) => handleInputChanges(e)}
                 id="Não"
-                value="nao"
+                value="false"
                 label="Não"
-              />
-              <Form.Check
-                className="radio3"
-                type="radio"
-                name="group1"
-                onChange={(e) => handleInputChanges(e)}
-                value="talvez"
-                label="Talvez"
-                id="Talvez"
               />
             </FormGroup>
 

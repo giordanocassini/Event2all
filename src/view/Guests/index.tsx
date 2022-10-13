@@ -1,9 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import BreadCrumbs from "../../components/BreadCrumbs";
 import SideBar from "../../components/SideBar/SideBar";
 import { Card, Table, InputGroup, Form, FormGroup } from "react-bootstrap";
 import { MdPeopleAlt } from "react-icons/md";
 import { Pagination } from "@mui/material";
+import { useCallback, useEffect, useState } from "react";
+import { getEvent } from "../../services/auth";
 import "./guests.scss";
 import ModalGuests from "./modal";
 
@@ -13,6 +15,24 @@ export default function Guests() {
     { name: "Nome do Evento", link: "/evento" },
     { name: "Convidados", link: "/convidados" },
   ];
+
+  const [event, setEvent] = useState<any>();
+  const eventId = useParams().id;
+
+  useEffect(() => {
+    if (eventId) {
+      getEvent(eventId)
+        .then((response) => {
+          const event = response.data;
+          setEvent(event);
+          console.log(`kkkkk ${event?.invite_number}`)
+        })
+        .catch(() => {
+          alert("Não foi possível carregar o evento");
+        });
+    }
+  }, [setEvent, eventId]);
+
 
   return (
     <>
@@ -26,7 +46,7 @@ export default function Guests() {
             <Card id="card-budget" className=" text-center m-4">
               <Card.Body className="mt-2">
                 <Card.Title className="text-black">
-                  Total de convidados:
+                  Total de convidados: /{event?.invite_number}
                 </Card.Title>
               </Card.Body>
             </Card>
