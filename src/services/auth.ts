@@ -53,6 +53,10 @@ export function cadastroGuest(payload: GuestAdd) {
   return baseApi.post("/guest", payload, getConfig());
 }
 
+export function getGuest(eventId: any){
+  return baseApi.get(`./guest/event/${eventId}`, getConfig());
+}
+
 export function login(payload: LoginPayload) {
   return baseApi.post("/login", payload);
 }
