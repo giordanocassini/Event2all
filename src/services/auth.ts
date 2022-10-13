@@ -82,6 +82,9 @@ export function getEvent(eventId: any) {
   return baseApi.get(`event/getevent/${eventId}`, getConfig());
 }
 
+export function delEvent(eventId: any) {
+  return baseApi.delete(`/event/${eventId}`, getConfig());
+
 export function getQuotationsByEventId(id: number | string) {
   return baseApi.get(`/quotation/event/${id}`, getConfig());
 }

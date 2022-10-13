@@ -53,7 +53,12 @@ export default function CreateEvent({ setEvents }: Props) {
 
   return (
     <>
-      <ButtonCreateModal onClick={handleShow}>+ Criar evento</ButtonCreateModal>
+      <ButtonCreateModal 
+        onClick={handleShow}
+        className="w-100"
+        >
+          + Criar evento
+      </ButtonCreateModal>
 
       <Modal
         id="width-modal"
