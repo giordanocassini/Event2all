@@ -7,7 +7,9 @@ import BreadCrumbs from "../../components/BreadCrumbs";
 import "./BudgetPage.scss";
 import { useCallback, useEffect, useState } from "react";
 import { getQuotationByEventId } from "../../services/auth";
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
+import React from "react";
+import { BreadcrumbItem } from "../../utils/types";
 
 interface IQuotation {
   id: number;
@@ -21,7 +23,13 @@ interface IQuotation {
   updateDateColumn: Date;
 }
 
+function useQuery(search: string) {
+  return React.useMemo(() => new URLSearchParams(search), [search]);
+}
+
 export default function BudgetPage() {
+  const { search } = useLocation();
+
   const eventId = useParams().id;
   const [quotations, setQuotations] = useState<IQuotation[]>([]);
 
@@ -37,9 +45,10 @@ export default function BudgetPage() {
     fetchQuotation();
   }, [fetchQuotation]);
 
-  const breadCrumbsItem = [
-    { name: "Nome do Evento", link: "/evento" },
-    { name: "Orçamento", link: "/orcamento" },
+  const breadCrumbsItem: BreadcrumbItem[] = [
+    { name: "Dashboard", link: "/dashboard" },
+    { name: useQuery(search).get("event") ?? "", link: `/evento/${eventId}` },
+    { name: "Orçamento"},
   ];
 
   return (

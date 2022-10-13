@@ -18,8 +18,7 @@ export default function EventName() {
     if (eventId) {
       getEvent(eventId)
         .then((response) => {
-          /*       corrigir quando o back fizer os ajustes
-           */ const event = response.data;
+          const event = response.data;
           setEvent(event);
           setBreadCrumbs([
             { name: "Dashboard", link: "/dashboard" },
@@ -46,21 +45,21 @@ export default function EventName() {
             </div>
           </div>
           <div className="d-flex flex-row justify-content-center flex-wrap">
-            <Link className="eventLinkStyle" to={`/orcamento/${event?.id}`}>
+            <Link className="eventLinkStyle" to={`/orcamento/${event?.id}?event=${event?.name}`}>
               <CardEvent
                 title="Orçamento"
                 description="Faça o planejamento de custos"
                 cardImage="paid"
               />
             </Link>
-            <Link className="eventLinkStyle" to={`/convidados/${event?.id}`}>
+            <Link className="eventLinkStyle" to={`/convidados/${event?.id}?event=${event?.name}`}>
               <CardEvent
                 title="Convidados"
                 description="Gerencie seus convidados"
                 cardImage="group"
               />
             </Link>
-            <Link className="eventLinkStyle" to={`/tarefas/${event?.id}`}>
+            <Link className="eventLinkStyle" to={`/tarefas/${event?.id}?event=${event?.name}`}>
               <CardEvent
                 title="Tarefas"
                 description="Crie tarefas"
