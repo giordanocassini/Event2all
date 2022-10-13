@@ -6,6 +6,8 @@ import { NewTask } from "../../components/ToDoList/NewTask";
 import { AiFillCheckCircle } from "react-icons/ai";
 import { Form, InputGroup } from "react-bootstrap";
 import "./toDo.scss";
+
+
 export default function ToDoList() {
   const breadCrumbsItem = [
     { name: "Dashboard", link: "/dashboard" },
@@ -16,7 +18,6 @@ export default function ToDoList() {
   return (
     <div className="h-100 d-flex">
       <SideBar />
-      
       <div className="w-100 vh-100 d-flex flex-column">
           <BreadCrumbs className="" items={breadCrumbsItem} />
         <div className="headerTarefas w-100">
@@ -38,11 +39,11 @@ export default function ToDoList() {
 }
 
 
-<>
+{/* <>
       <div className="h-100 d-flex">
         <SideBar />
         <div className="w-100 vh-100 "></div>
-<div className="">
+            <div className="">
             <div className="d-flex align-items-center justify-content-center">
               <AiFillCheckCircle className="me-2" />
               Lista de Tarefas
@@ -54,8 +55,8 @@ export default function ToDoList() {
                 aria-describedby="basic-addon2"
               />
             </InputGroup> */}
-            <TasksProvider>
+           /*  <TasksProvider>
               <NewTask />
               <TaskList />
             </TasksProvider>
-            </>
+            </> */
