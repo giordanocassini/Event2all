@@ -88,7 +88,7 @@ export default function Guests() {
           
       
       <div className="m-4">
-            <Table id="width-table" className="text-left" hover>
+            <Table responsive id="width-table" className="text-left" hover>
               <thead className="thead-bg">
                 <tr>
                   <th>NOME</th>
@@ -132,29 +132,7 @@ export default function Guests() {
                 </Dropdown></span></td>
                   </tr>)
                   : ("Você ainda não adicionou nenhum convidado")}
-                <tr>
-                  <td className="text-primary">Título do Item</td>
-                  <td>Nome</td>
-                  <td>
-                    <Form.Check type="switch" id="custom-switch" />
-                  </td>
-                  <td className="d-flex justify-content-between align-items-center ">R$ 5.000,00
-                    <span className=" ">
-                      <Dropdown>
-                  <Dropdown.Toggle
-                    variant=""
-                    id="dropdown-basic"
-                    className="dropdown-img"
-                  >
-                    <BsThreeDotsVertical color="black" />
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu>
-                    <Dropdown.Item href="#/action-1">Editar</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Deletar</Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown></span>
-                  </td>
-                </tr>
+                
               </tbody>
             </Table>
           </div>
