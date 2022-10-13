@@ -12,7 +12,7 @@ export function Button() {
         handleAddTasks();
       }}
     >
-      Salvar
+      + Adicionar
     </ButtonToDo>
   );
 }

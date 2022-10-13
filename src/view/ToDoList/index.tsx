@@ -4,6 +4,7 @@ import TaskList from "../../components/ToDoList/TaskList";
 import { TasksProvider } from "../../contexts/TasksContext";
 import { NewTask } from "../../components/ToDoList/NewTask";
 import { AiFillCheckCircle } from "react-icons/ai";
+import { Form, InputGroup } from "react-bootstrap";
 export default function ToDoList() {
   const breadCrumbsItem = [
     { name: "Nome do Evento", link: "/evento" },
@@ -21,6 +22,13 @@ export default function ToDoList() {
               <AiFillCheckCircle className="me-2" />
               Lista de Tarefas
             </div>
+            {/* <InputGroup className="mt-2 px-1 mb-1">
+              <Form.Control
+                placeholder="Buscar..."
+                aria-label="Buscar"
+                aria-describedby="basic-addon2"
+              />
+            </InputGroup> */}
             <TasksProvider>
               <NewTask />
               <TaskList />

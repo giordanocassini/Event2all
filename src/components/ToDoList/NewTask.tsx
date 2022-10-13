@@ -9,6 +9,7 @@ export function NewTask() {
     <section id="new-task">
       <div>
         <input
+          placeholder="Nova tarefa..."
           type="text"
           onChange={(e) => handleAddNewTask(e)}
           value={task}
