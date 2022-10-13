@@ -1,27 +1,13 @@
 #new-task {
-  background: #f6f6f6;
-  padding: 40px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  margin-bottom: 30px;
 
   div {
     width: 100%;
     max-width: 500px;
     display: flex;
-    justify-content: space-between;
-    gap: 20px;
-
-    input {
-      flex: 70%;
-      padding: 12px 20px;
-    }
-  }
-  .inputTask {
-    border-radius: 10px;
-    border-color: rgb(88, 209, 169);
-    border-width: 5px;
-  }
+    gap: 15px;
+}
 }
 
 @media (max-width: 576px) {
