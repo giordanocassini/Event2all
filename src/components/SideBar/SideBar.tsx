@@ -15,6 +15,7 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import Dropdown from "react-bootstrap/Dropdown";
 import { getEventListByUser } from "../../services/userServices";
 import { Event } from "../../utils/types";
+import { delEvent } from "../../services/auth";
 
 export default function SideBar() {
   const [events, setEvents] = useState<Event[]>([]);
@@ -35,6 +36,19 @@ export default function SideBar() {
 
     setEvents(response);
   }, [setEvents, user.id]);
+
+  const handleDeleteEvent = useCallback(
+    async (id: number) => {
+      const response = await delEvent(id!).then((res) => res);
+      if (response.status === 204) {
+        const newEvents = events.filter(
+          (event) => event.id !== id
+        );
+        setEvents(newEvents);
+      }
+    },
+    [events, setEvents]
+  )
 
   useEffect(() => {
     fetchUser();
@@ -92,7 +106,11 @@ export default function SideBar() {
 
                   <Dropdown.Menu>
                     <Dropdown.Item href="#/action-1">Editar</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Deletar</Dropdown.Item>
+                    <Dropdown.Item 
+                      onClick={() => handleDeleteEvent(event.id)}
+                      >
+                        Deletar
+                      </Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
               </div>

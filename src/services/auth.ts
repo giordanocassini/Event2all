@@ -73,6 +73,10 @@ export function getEvent(eventId: any) {
   return baseApi.get(`event/getevent/${eventId}`, getConfig());
 }
 
+export function delEvent(eventId: any) {
+  return baseApi.delete(`/event/${eventId}`, getConfig());
+}
+
 export function cadastroBudget(payload: RegisterBudget) {
   return baseApi.post("/quotation", payload, getConfig());
 }
