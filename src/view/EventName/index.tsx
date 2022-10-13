@@ -11,7 +11,7 @@ import { BreadcrumbItem, Event } from "../../utils/types";
 export default function EventName() {
   const [event, setEvent] = useState<Event>();
   const [breadCrumbs, setBreadCrumbs] = useState<BreadcrumbItem[]>([]);
-  const eventId = useParams().idEvent;
+  const eventId = useParams().id;
 
   useEffect(() => {
     console.log(eventId);

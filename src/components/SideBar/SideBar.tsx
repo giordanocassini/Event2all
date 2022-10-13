@@ -33,9 +33,7 @@ export default function SideBar() {
       return res.data;
     });
 
-    console.log(response);
     setEvents(response);
-    console.log("events", events);
   }, [setEvents, user.id]);
 
   useEffect(() => {

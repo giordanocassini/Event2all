@@ -1,16 +1,11 @@
 import { Event } from "../../utils/types";
 import "./eventInfo.scss";
 
-
-
-
 type EventInfoProps = {
   event: Event | undefined;
-}
+};
 
-export default function EventInfo({
-  event
-}: EventInfoProps) {
+export default function EventInfo({ event }: EventInfoProps) {
   return (
     <div className="event">
       {/* vai pegar as infos do backend */}

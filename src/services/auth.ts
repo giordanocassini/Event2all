@@ -21,12 +21,13 @@ interface RegisterEvent {
 }
 
 interface RegisterBudget {
-  budget_name: string;
-  budget_provider: string;
+  event_id: string | number;
+  description: string;
+  provider: string;
   contact: string;
-  predicted_budget: string;
-  contracted_budget: string;
-  paid_budget: string;
+  expected_expense: number;
+  actual_expense: number;
+  amount_already_paid: number;
 }
 
 interface GuestAdd {
@@ -66,5 +67,9 @@ export function getEvent(eventId: string) {
 }
 
 export function cadastroBudget(payload: RegisterBudget) {
-  return baseApi.post("/event", payload, getConfig());
+  return baseApi.post("/quotation", payload, getConfig());
+}
+
+export function getQuotationByEventId(id: number | string) {
+  return baseApi.get(`/quotation/event/${id}`, getConfig());
 }

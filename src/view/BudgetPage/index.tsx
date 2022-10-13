@@ -5,13 +5,31 @@ import CreateBudget from "./modal";
 import { Pagination } from "@mui/material";
 import BreadCrumbs from "../../components/BreadCrumbs";
 import "./BudgetPage.scss";
+import { useCallback, useEffect, useState } from "react";
+import { getQuotationByEventId } from "../../services/auth";
+import { useParams } from "react-router-dom";
 
 export default function BudgetPage() {
+  const eventId = useParams().id;
+  const [quotations, setQuotations] = useState<any[]>([]);
+
+  const fetchQuotation = useCallback(async () => {
+    const response = await getQuotationByEventId(eventId!).then((res) => {
+      return res.data;
+    });
+
+    setQuotations(response);
+  }, [setQuotations, eventId]);
+
+  useEffect(() => {
+    fetchQuotation();
+  }, [fetchQuotation]);
+
   const breadCrumbsItem = [
     { name: "Nome do Evento", link: "/evento" },
     { name: "Orçamento", link: "/orcamento" },
   ];
-  
+
   return (
     <>
       <div className="h-100 d-flex">
@@ -97,11 +115,11 @@ export default function BudgetPage() {
               </tbody>
             </Table>
           </div>
-              <Pagination
-                className="d-flex w-100 align-items-center justify-content-center"
-                count={10}
-                color="primary"
-              />
+          <Pagination
+            className="d-flex w-100 align-items-center justify-content-center"
+            count={10}
+            color="primary"
+          />
         </div>
       </div>
     </>

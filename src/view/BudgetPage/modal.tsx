@@ -1,122 +1,125 @@
 import { useState, FormEvent } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
+import { useParams } from "react-router-dom";
 
 import { cadastroBudget } from "../../services/auth";
 
 export default function CreateBudget() {
-  const [budget_name, setBudget] = useState<string>("");
-  const [budget_provider, setBudgetProvider] = useState<string>("");
+  const [description, setDescription] = useState<string>("");
+  const [provider, setProvider] = useState<string>("");
   const [contact, setContact] = useState<string>("");
-  const [predicted_budget, setPredictedBudget] = useState<string>("");
-  const [contracted_budget, setContractedBudget] = useState<string>("");
-  const [paid_budget, setPaidBudget] = useState<string>("");
-
-  const submitEvent = async (event: FormEvent) => {
-    event.preventDefault();
-    try {
-      await cadastroBudget({
-        budget_name,
-        budget_provider,
-        contact,
-        predicted_budget,
-        contracted_budget,
-        paid_budget,
-      });
-      alert("Despesa criada com sucesso");
-    } catch (error) {
-      alert("Algo deu errado!");
-    }
-  };
+  const [predictedBudget, setPredictedBudget] = useState<number>();
+  const [contractedBudget, setContractedBudget] = useState<number>();
+  const [paidBudget, setPaidBudget] = useState<number>();
+  const event_id = useParams().id as string;
 
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const submitEvent = async (event: FormEvent) => {
+    event.preventDefault();
+    try {
+      await cadastroBudget({
+        event_id,
+        description,
+        provider,
+        contact,
+        expected_expense: predictedBudget ? predictedBudget : 0,
+        actual_expense: contractedBudget ? contractedBudget : 0,
+        amount_already_paid: paidBudget ? paidBudget : 0,
+      });
+      alert("Despesa criada com sucesso");
+      setDescription("");
+      setProvider("");
+      setContact("");
+      setPredictedBudget(0);
+      setContractedBudget(0);
+      setPaidBudget(0);
+
+      setShow(false);
+    } catch (error) {
+      alert("Algo deu errado!");
+    }
+  };
+
   return (
     <>
       <Button onClick={handleShow}>+ Adicionar Despesa</Button>
-      <Modal id="width-modal" className="d-flex align-items-center" show={show} onHide={handleClose}>
+      <Modal
+        id="width-modal"
+        className="d-flex align-items-center"
+        show={show}
+        onHide={handleClose}
+      >
         <Modal.Header closeButton>
-        <span className="modal-title">Criar Evento</span> 
+          <span className="modal-title">Criar Orçamento</span>
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={submitEvent} className="asd ">
             <Form.Group className=" boxform p-1 text-start mb-2">
-              <Form.Label>
-                Descrição 
-              </Form.Label>
+              <Form.Label>Descrição</Form.Label>
               <Form.Control
                 className="inputTexto"
                 type="text"
                 placeholder="Descrição da despesa..."
-                value={budget_name}
-                onChange={(e) => setBudget(e.target.value)}
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
                 required
               />
             </Form.Group>
             <Form.Group className=" boxform p-1 text-start mb-2">
-              <Form.Label>
-                Fornecedor
-              </Form.Label>
+              <Form.Label>Fornecedor</Form.Label>
               <Form.Control
                 className="inputTexto"
                 type="text"
                 placeholder="Nome do fornecedor (Opcional)"
-                value={budget_provider}
-                onChange={(e) => setBudgetProvider(e.target.value)}
+                value={provider}
+                onChange={(e) => setProvider(e.target.value)}
                 required
               />
             </Form.Group>
             <Form.Group className=" boxform p-1 text-start mb-2">
-              <Form.Label>
-                Contato
-              </Form.Label>
+              <Form.Label>Contato</Form.Label>
               <Form.Control
                 className="inputTexto"
                 type="text"
                 placeholder="Contato do fornecedor (Opcional)"
                 value={contact}
                 onChange={(e) => setContact(e.target.value)}
-                required
               />
             </Form.Group>
             <Form.Group className=" boxform p-1 text-start mb-2">
-              <Form.Label>
-                Valor Previsto
-              </Form.Label>
+              <Form.Label>Valor Previsto</Form.Label>
               <Form.Control
                 className="inputTexto"
                 type="text"
                 placeholder="$ 3"
-                value={predicted_budget}
-                onChange={(e) => setPredictedBudget(e.target.value)}
+                value={predictedBudget}
+                onChange={(e) => setPredictedBudget(Number(e.target.value))}
                 required
               />
             </Form.Group>
             <Form.Group className=" boxform p-1 text-start mb-2">
-              <Form.Label>
-                Valor Contratado
-              </Form.Label>
+              <Form.Label>Valor Contratado</Form.Label>
               <Form.Control
                 className="inputTexto"
                 type="text"
                 placeholder=""
-                value={contracted_budget}
-                onChange={(e) => setContractedBudget(e.target.value)}
+                value={contractedBudget}
+                onChange={(e) => setContractedBudget(Number(e.target.value))}
                 required
               />
             </Form.Group>
             <Form.Group className=" boxform p-1 text-start mb-2">
-              <Form.Label>
-                Valor Pago
-              </Form.Label>
+              <Form.Label>Valor Pago</Form.Label>
               <Form.Control
                 className="inputTexto"
                 type="number"
                 placeholder="$ 3"
-                value={paid_budget}
-                onChange={(e) => setPaidBudget(e.target.value)}
+                value={paidBudget}
+                onChange={(e) => setPaidBudget(Number(e.target.value))}
                 required
               />
             </Form.Group>
