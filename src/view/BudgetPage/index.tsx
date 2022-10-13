@@ -6,7 +6,10 @@ import { Pagination } from "@mui/material";
 import BreadCrumbs from "../../components/BreadCrumbs";
 import "./BudgetPage.scss";
 import { useCallback, useEffect, useState } from "react";
-import { getQuotationByEventId } from "../../services/auth";
+import {
+  delQuotationByEventId,
+  getQuotationByEventId,
+} from "../../services/auth";
 import { useParams, useLocation } from "react-router-dom";
 import React from "react";
 import { BreadcrumbItem } from "../../utils/types";
@@ -45,6 +48,19 @@ export default function BudgetPage() {
 
     setQuotations(response);
   }, [setQuotations, eventId]);
+
+  const handleDeleteQuotation = useCallback(
+    async (id: number) => {
+      const response = await delQuotationByEventId(id!).then((res) => res);
+      if (response.status === 204) {
+        const newQuotations = quotations.filter(
+          (quotation) => quotation.id !== id
+        );
+        setQuotations(newQuotations);
+      }
+    },
+    [quotations, setQuotations]
+  );
 
   useEffect(() => {
     fetchQuotation();
@@ -173,7 +189,9 @@ export default function BudgetPage() {
                           <Dropdown.Item href="#/action-1">
                             Editar
                           </Dropdown.Item>
-                          <Dropdown.Item href="#/action-2">
+                          <Dropdown.Item
+                            onClick={() => handleDeleteQuotation(quotation.id)}
+                          >
                             Deletar
                           </Dropdown.Item>
                         </Dropdown.Menu>
