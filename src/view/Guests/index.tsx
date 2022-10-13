@@ -1,7 +1,8 @@
 import { Link, useParams } from "react-router-dom";
 import BreadCrumbs from "../../components/BreadCrumbs";
 import SideBar from "../../components/SideBar/SideBar";
-import { Card, Table, InputGroup, Form, Container } from "react-bootstrap";
+import { Card, Table, InputGroup, Form, Dropdown } from "react-bootstrap";
+import { BsThreeDotsVertical } from "react-icons/bs";
 import { MdPeopleAlt } from "react-icons/md";
 import { useEffect, useState, useCallback } from "react";
 import { getEvent, getGuest } from "../../services/auth";
@@ -70,7 +71,7 @@ export default function Guests() {
             <Card id="card-budget" className=" text-center m-4">
               <Card.Body className="mt-2">
                 <Card.Title className="text-black">
-                  Total de convidados:
+                  Total de convidados:&nbsp;
                    {guests?.length}/{event?.invite_number}
                 </Card.Title>
               </Card.Body>
@@ -114,7 +115,21 @@ export default function Guests() {
                     <Form.Check type="switch" id="custom-switch" />
                     {guest?.invite}
                   </td>
-                  <td>{guest?.isConfirmed ? "Sim" : "Não"}</td>
+                  <td className="d-flex justify-content-between align-items-center ">{guest?.isConfirmed ? "Sim" : "Não"}
+                  <span className="">
+                      <Dropdown>
+                  <Dropdown.Toggle
+                    variant=""
+                    id="dropdown-basic"
+                    className="dropdown-img"
+                  >
+                    <BsThreeDotsVertical color="black" />
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                    <Dropdown.Item href="#/action-1">Editar</Dropdown.Item>
+                    <Dropdown.Item href="#/action-2">Deletar</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown></span></td>
                   </tr>)
                   : ("Você ainda não adicionou nenhum convidado")}
                 <tr>
@@ -123,7 +138,22 @@ export default function Guests() {
                   <td>
                     <Form.Check type="switch" id="custom-switch" />
                   </td>
-                  <td>R$ 5.000,00</td>
+                  <td className="d-flex justify-content-between align-items-center ">R$ 5.000,00
+                    <span className=" ">
+                      <Dropdown>
+                  <Dropdown.Toggle
+                    variant=""
+                    id="dropdown-basic"
+                    className="dropdown-img"
+                  >
+                    <BsThreeDotsVertical color="black" />
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                    <Dropdown.Item href="#/action-1">Editar</Dropdown.Item>
+                    <Dropdown.Item href="#/action-2">Deletar</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown></span>
+                  </td>
                 </tr>
               </tbody>
             </Table>
