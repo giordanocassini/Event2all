@@ -3,7 +3,11 @@ import { useState, FormEvent } from "react";
 import { cadastroEvent } from "../../services/auth";
 import { ButtonModal } from "./eventButton";
 
-export default function EventButton() {
+interface Props {
+  setEvents: React.Dispatch<React.SetStateAction<any[]>>;
+}
+
+export default function EventButton({ setEvents }: Props) {
   const [name, setEvent] = useState<string>("");
   const [date, setEventDate] = useState<string>("");
   const [place, setPlace] = useState<string>("");
@@ -14,14 +18,26 @@ export default function EventButton() {
   const submitEvent = async (event: FormEvent) => {
     event.preventDefault();
     try {
-      await cadastroEvent({
+      const response = await cadastroEvent({
         name,
         date,
         place,
-        invite_number,
+        invite_number: invite_number ? invite_number : 0,
         managers: managers === "" ? [] : managers.split(","),
-        event_budget,
+        event_budget: event_budget ? event_budget : 0,
       });
+
+      setEvents((prev) => [...prev, response.data]);
+
+      setEvent("");
+      setEventDate("");
+      setPlace("");
+      setInviteNumber(0);
+      setManagers("");
+      setEventBudget(0);
+
+      setShow(false);
+
       alert("Evento criado com sucesso");
     } catch (error) {
       alert("Algo deu errado!");

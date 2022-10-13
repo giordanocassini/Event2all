@@ -6,7 +6,7 @@
   height: 576px;
 }
 
-.sub-text{
+.sub-text {
   font-size: 26.4px;
 }
 
@@ -18,14 +18,14 @@ div > h3 {
 }
 
 #card {
-  background-color: #E7F1FF;
+  background-color: #e7f1ff;
   width: 304px;
   height: 296px;
   margin-left: 24px;
   box-shadow: 0px 4px 0px 0px rgba(0, 0, 0, 0.5) !important;
 }
 
-#cards{
+#cards {
   height: 485px !important;
   background-color: $green-primary;
   margin-top: 60px;
@@ -35,37 +35,37 @@ div > h3 {
   width: 20% !important;
 }
 
-h4{
+h4 {
   font-size: 34.8px !important;
   font-weight: 700 !important;
   line-height: 70px !important;
-  color: #0D6EFD;
+  color: #0d6efd;
 }
 
-hr{
+hr {
   background-color: white;
   height: 1px;
   width: 100%;
 }
 
-@media only screen and (max-width: 1150px){
+@media only screen and (max-width: 1150px) {
   .content-home,
-  .img-home{
+  .img-home {
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
 }
 
-@media only screen and (max-width: 850px){
-  h4{
+@media only screen and (max-width: 850px) {
+  h4 {
     font-size: 25px !important;
   }
-  .span-responsivity{
+  .span-responsivity {
     font-size: 18px !important;
   }
 }
 
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 768px) {
   .img-home {
     width: 70% !important;
     height: 70% !important;
@@ -86,7 +86,7 @@ hr{
     flex-wrap: nowrap !important;
     justify-content: flex-start !important;
     align-items: center;
-    
+
     height: 50rem;
 
     overflow-x: auto !important;
@@ -97,12 +97,13 @@ hr{
     padding: 0;
   }
 }
- @media only screen and (max-width: 450px){
-
+@media only screen and (max-width: 450px) {
   #card {
     flex: 0 0 80%;
     padding: 0;
   }
-
+  
+  .img-home {
+    display: none;
+  }
 }
-

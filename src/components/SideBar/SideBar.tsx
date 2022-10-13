@@ -9,15 +9,15 @@ import EventLogo from "../../../public/images/dashboard.png";
 import { RootStore } from "../../store";
 import EventList from "./eventList";
 import { useEffect, useState, useCallback } from "react";
-import baseAPI from "../../services/api";
 import "./sideBar.scss";
 import CreateEvent from "./modal";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import Dropdown from "react-bootstrap/Dropdown";
-import DropdownButton from "react-bootstrap/Dropdown";
 import { getEventListByUser } from "../../services/userServices";
+import { Event } from "../../utils/types";
 
 export default function SideBar() {
+  const [events, setEvents] = useState<Event[]>([]);
   const user = useSelector((store: RootStore) => store.userReduce);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -27,7 +27,6 @@ export default function SideBar() {
     dispatch(removeUser());
     navigate("/");
   };
-  const [events, setEvents] = useState<any[]>([]);
 
   const fetchUser = useCallback(async () => {
     const response = await getEventListByUser(user.id).then((res) => {
@@ -80,7 +79,9 @@ export default function SideBar() {
         {events.length > 0 ? (
           events.map((event) => (
             <div className="d-flex justify-content-between text-white fs-5 w-100 mb-4">
-              <div className="">{event.name}</div>
+              <Link to={`/evento/${event.id}`}>
+                <div>{event.name}</div>
+              </Link>
               <div className="">
                 <Dropdown>
                   <Dropdown.Toggle
@@ -100,7 +101,7 @@ export default function SideBar() {
             </div>
           ))
         ) : (
-          <EventList />
+          <EventList setEvents={setEvents} />
         )}
 
         <hr />

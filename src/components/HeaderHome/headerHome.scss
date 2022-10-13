@@ -8,40 +8,33 @@
   background-color: $dark-blue;
 }
 
-.nav-text {
-  font-size: 1rem;
-}
-.nav-text:hover {
-  color: $success;
-}
-
-.nav-text:active {
-  color: $green-primary !important;
+.button-login {
+  background-color: $button-login !important;
+  color: #151515 !important;
+  border: $green-details 0.05px solid !important;
+  border-bottom: #6a6a6a 0.0938rem solid !important;
+  font-weight: 700 !important;
+  font-size: 1.2rem !important;
 }
 
-.btn {
-  border: #6a6a6a 0.05px solid;
-  border-bottom: #6a6a6a 0.0938rem solid;
-}
-
-.btn:hover {
-  border-color: $green-primary !important;
+.button-login:hover {
+  border-color: $green-details !important;
   transform: translateY(0.2px);
-  // padding: 2px !important;
 }
 
-.btn-success {
+.button-signup {
+  background-color: $green-primary !important;
+  color: #151515 !important;
   border: $green-details 0.05px solid !important;
   border-bottom: $green-details 0.0938rem solid !important;
+  font-weight: 700 !important;
+  font-size: 1.2rem !important;
 }
 
-.btn-success:hover {
+.button-signup:hover {
+  background-color: $success !important;
   border-color: $green-details !important;
-}
-
-.button-header {
-  text-decoration: none;
-  color: $dark-blue;
+  transform: translateY(0.2px);
 }
 
 @media only screen and (max-width: 768px) {
@@ -49,34 +42,35 @@
     display: none;
   }
 
-  nav{
+  nav {
     flex-wrap: wrap !important;
-  }
-
-  .button-login {
-    background-color: $green-primary !important;
-    border: none !important;
-    width: 10rem;
-    height: 3rem;
-    font-weight: 700 !important;
-    font-size: 1.3rem !important;
-  }
-
-  .button-signup {
-    display: none !important;
   }
 }
 
-@media only screen and (max-width: 450px){
-  #media{
-    margin-top: .625rem;
+@media only screen and (max-width: 541px) {
+  #media {
     justify-content: center !important;
     align-items: center !important;
   }
 
-  #mediaImg{
+  #mediaImg {
     justify-content: center !important;
     align-items: center !important;
     margin: 0 !important;
+  }
+}
+
+@media screen and (max-width: 353px) {
+  #media {
+    flex-wrap: wrap;
+  }
+
+  .button-login {
+    margin-top: 10px;
+    margin-bottom: 10px !important;
+  }
+
+  .button-signup {
+    margin-bottom: 10px !important;
   }
 }
