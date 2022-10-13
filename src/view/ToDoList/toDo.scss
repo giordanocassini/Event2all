@@ -1,19 +1,20 @@
-.headerTarefas{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 1rem;
-    align-items: center;
+.headerTarefas {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem;
+  align-items: center;
 }
-.listaTarefas{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
+.listaTarefas {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-weight: 700;
+  font-size: 21px;
+  color: #191933;
 }
-.novasTarefas{
-    display: flex;
-    flex-direction: row;
-    align-items: center !important;
-    
+.novasTarefas {
+  display: flex;
+  flex-direction: row;
+  align-items: center !important;
 }
