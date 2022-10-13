@@ -1,0 +1,19 @@
+.headerTarefas{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem;
+    align-items: center;
+}
+.listaTarefas{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+.novasTarefas{
+    display: flex;
+    flex-direction: row;
+    align-items: center !important;
+    
+}
