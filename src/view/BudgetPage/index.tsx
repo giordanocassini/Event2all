@@ -10,6 +10,9 @@ import { getQuotationByEventId } from "../../services/auth";
 import { useParams, useLocation } from "react-router-dom";
 import React from "react";
 import { BreadcrumbItem } from "../../utils/types";
+import Dropdown from "react-bootstrap/Dropdown";
+import { BsThreeDotsVertical } from "react-icons/bs";
+
 
 interface IQuotation {
   id: number;
@@ -134,6 +137,22 @@ export default function BudgetPage() {
                         id="custom-switch"
                         label="Pago/Em Aberto"
                       />
+                    </td>
+                    <td>
+                    <Dropdown>
+                      <Dropdown.Toggle
+                        variant="sucess"
+                        id="dropdown-basic"
+                        className="dropdown-img"
+                      >
+                        <BsThreeDotsVertical />
+                      </Dropdown.Toggle>
+
+                      <Dropdown.Menu>
+                        <Dropdown.Item href="#/action-1">Editar</Dropdown.Item>
+                        <Dropdown.Item href="#/action-2">Deletar</Dropdown.Item>
+                      </Dropdown.Menu>
+                    </Dropdown>
                     </td>
                   </tr>
                 ))}
