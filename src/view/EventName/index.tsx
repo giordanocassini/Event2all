@@ -8,32 +8,29 @@ import "./eventName.scss";
 import { getEvent } from "../../services/auth";
 import { BreadcrumbItem, Event } from "../../utils/types";
 
-
 export default function EventName() {
   const [event, setEvent] = useState<Event>();
   const [breadCrumbs, setBreadCrumbs] = useState<BreadcrumbItem[]>([]);
   const eventId = useParams().idEvent;
- 
 
   useEffect(() => {
-   if(eventId){
-    getEvent(eventId)
-    .then((response) => {
-/*       corrigir quando o back fizer os ajustes
- */      const event = response.data[0];
-      setEvent(event);
-      setBreadCrumbs([
-        { name: "Dashboard", link: "/dashboard" },
-        { name: event?.name },
-      ]);
-    })
-    .catch(() => {
-      alert("Não foi possível carregar o evento")         
-    });
-   }
-      
-  }
-  , [setEvent, setBreadCrumbs, eventId]);
+    console.log(eventId);
+    if (eventId) {
+      getEvent(eventId)
+        .then((response) => {
+          /*       corrigir quando o back fizer os ajustes
+           */ const event = response.data;
+          setEvent(event);
+          setBreadCrumbs([
+            { name: "Dashboard", link: "/dashboard" },
+            { name: event?.name },
+          ]);
+        })
+        .catch(() => {
+          alert("Não foi possível carregar o evento");
+        });
+    }
+  }, [setEvent, setBreadCrumbs, eventId]);
 
   return (
     <>
