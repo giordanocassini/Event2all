@@ -80,3 +80,7 @@ export function cadastroBudget(payload: RegisterBudget) {
 export function getQuotationByEventId(id: number | string) {
   return baseApi.get(`/quotation/event/${id}`, getConfig());
 }
+
+export function delQuotationByEventId(id: number | string) {
+  return baseApi.delete(`/quotation/${id}`, getConfig());
+}
