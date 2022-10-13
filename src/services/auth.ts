@@ -20,6 +20,15 @@ interface RegisterEvent {
   event_budget: number;
 }
 
+interface EditEvent {
+  name: string;
+  date: string;
+  place: string;
+  invite_number: number;
+  managers: string[];
+  event_budget: number;
+}
+
 interface RegisterBudget {
   event_id: string | number;
   description: string;
@@ -82,10 +91,13 @@ export function getEvent(eventId: any) {
   return baseApi.get(`event/getevent/${eventId}`, getConfig());
 }
 
+export function editEventById(eventId: any, payload: EditEvent) {
+  return baseApi.put(`/event/${eventId}`, payload, getConfig());
+}
+
 export function delEvent(eventId: any) {
   return baseApi.delete(`/event/${eventId}`, getConfig());
 }
-
 export function getQuotationsByEventId(id: number | string) {
   return baseApi.get(`/quotation/event/${id}`, getConfig());
 }
