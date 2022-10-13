@@ -13,8 +13,7 @@ import { BreadcrumbItem } from "../../utils/types";
 import Dropdown from "react-bootstrap/Dropdown";
 import { BsThreeDotsVertical } from "react-icons/bs";
 
-
-interface IQuotation {
+export interface IQuotation {
   id: number;
   contact: string;
   description: string;
@@ -35,10 +34,19 @@ export default function BudgetPage() {
 
   const eventId = useParams().id;
   const [quotations, setQuotations] = useState<IQuotation[]>([]);
+  const [previsto, setPrevisto] = useState<number>(0);
+  const [atual, setAtual] = useState<number>(0);
+  const [diferenca, setDiferenca] = useState<number>(0);
 
   const fetchQuotation = useCallback(async () => {
     const response = await getQuotationByEventId(eventId!).then((res) => {
       return res.data.reverse();
+    });
+
+    response.forEach((quotation: IQuotation) => {
+      setPrevisto((prev) => prev + quotation.expected_expense);
+      setAtual((prev) => prev + quotation.actual_expense);
+      setDiferenca(previsto - atual);
     });
 
     setQuotations(response);
@@ -66,21 +74,27 @@ export default function BudgetPage() {
             <div>
               <Card id="card-budget" className="rounded text-center m-4">
                 <Card.Body className="mt-2">
-                  <Card.Title className="text-black">Previsto:</Card.Title>
+                  <Card.Title className="text-black">
+                    Previsto: R$ {previsto}
+                  </Card.Title>
                 </Card.Body>
               </Card>
             </div>
             <div>
               <Card id="card-budget2" className="rounded text-center m-4">
                 <Card.Body className="mt-2">
-                  <Card.Title className="text-black">Atual:</Card.Title>
+                  <Card.Title className="text-black">
+                    Atual: R$ {atual}
+                  </Card.Title>
                 </Card.Body>
               </Card>
             </div>
             <div>
               <Card id="card-budget3" className="rounded text-center m-4">
                 <Card.Body className="mt-2">
-                  <Card.Title className="text-black">Restante:</Card.Title>
+                  <Card.Title className="text-black">
+                    Restante: R$ {diferenca}
+                  </Card.Title>
                 </Card.Body>
               </Card>
             </div>
@@ -90,7 +104,7 @@ export default function BudgetPage() {
               <MdPaid className="mb-1" /> Orçamento
             </span>
 
-            <CreateBudget />
+            <CreateBudget setQuotations={setQuotations} />
           </div>
           <div className="d-flex w-100 m-4">
             <Table hover>
@@ -139,20 +153,24 @@ export default function BudgetPage() {
                       />
                     </td>
                     <td>
-                    <Dropdown>
-                      <Dropdown.Toggle
-                        variant="sucess"
-                        id="dropdown-basic"
-                        className="dropdown-img"
-                      >
-                        <BsThreeDotsVertical />
-                      </Dropdown.Toggle>
+                      <Dropdown>
+                        <Dropdown.Toggle
+                          variant="sucess"
+                          id="dropdown-basic"
+                          className="dropdown-img"
+                        >
+                          <BsThreeDotsVertical />
+                        </Dropdown.Toggle>
 
-                      <Dropdown.Menu>
-                        <Dropdown.Item href="#/action-1">Editar</Dropdown.Item>
-                        <Dropdown.Item href="#/action-2">Deletar</Dropdown.Item>
-                      </Dropdown.Menu>
-                    </Dropdown>
+                        <Dropdown.Menu>
+                          <Dropdown.Item href="#/action-1">
+                            Editar
+                          </Dropdown.Item>
+                          <Dropdown.Item href="#/action-2">
+                            Deletar
+                          </Dropdown.Item>
+                        </Dropdown.Menu>
+                      </Dropdown>
                     </td>
                   </tr>
                 ))}
