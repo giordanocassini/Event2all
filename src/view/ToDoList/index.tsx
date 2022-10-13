@@ -15,6 +15,7 @@ export default function ToDoList() {
   ];
 
   return (
+    <TasksProvider>
     <div className="h-100 d-flex">
       <SideBar />
       <div className="w-100 vh-100 d-flex flex-column">
@@ -27,9 +28,9 @@ export default function ToDoList() {
             Lista de Tarefas
           </div>
           <div className="novasTarefas">
-            <TasksProvider>
+            
               <NewTask />
-            </TasksProvider>
+            
           </div>
         </div>
         <InputGroup className="mt-2 px-1 mb-1" colspan="8">
@@ -39,10 +40,11 @@ export default function ToDoList() {
             aria-describedby="basic-addon2"
           />
         </InputGroup>
-        <TasksProvider>
+       
           <TaskList />
-        </TasksProvider>
+        
       </div>
     </div>
+    </TasksProvider>
   );
 }
