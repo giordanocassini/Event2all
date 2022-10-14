@@ -159,15 +159,6 @@ export default function BudgetPage() {
                   <th>STATUS </th>
                 </tr>
               </thead>
-              <td colspan="8">
-                <InputGroup className="mt-2 px-1 mb-1">
-                  <Form.Control
-                    placeholder="Buscar..."
-                    aria-label="Buscar"
-                    aria-describedby="basic-addon2"
-                  />
-                </InputGroup>
-              </td>
               <tbody className="tbody-bg">
                 {quotations.map((quotation) => (
                   <tr key={quotation.id}>
