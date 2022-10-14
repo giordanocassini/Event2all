@@ -30,11 +30,11 @@ Projeto desenvolvido essencialmente em React, TypeScript, Bootstrap, Styled-Comp
 
 ## 🎨 Design do projeto
 
-[Link do figma](https://www.figma.com/file/exX9QlHGpYkzzOEjdJvLex/Projeto-Chef%C3%A3o-(Figma)?node-id=101%3A125787)
+[Link do Figma](<https://www.figma.com/file/exX9QlHGpYkzzOEjdJvLex/Projeto-Chef%C3%A3o-(Figma)?node-id=101%3A125787>)
 
 ## 📎 Notion
 
-[Link do figma](https://www.notion.so/gamaxp43-g1/Projeto-Chef-o-XP-43-b70ca8977e944a6a8fea0acd45ade2ae)
+[Link do Notion](https://www.notion.so/gamaxp43-g1/Projeto-Chef-o-XP-43-b70ca8977e944a6a8fea0acd45ade2ae)
 
 ## ✒️ Autores
 
