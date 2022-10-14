@@ -1,11 +1,10 @@
 import { useState, FormEvent, useEffect } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
-import "./stylemodal.ts";
 import { cadastroEvent, editEventById } from "../../services/auth";
 import { ButtonCreateModal } from "./stylemodal";
-ButtonCreateModal;
-import "./modal.scss";
 import { Event } from "../../utils/types";
+import "./stylemodal.ts";
+import "./modal.scss";
 
 interface Props {
   setEvents: React.Dispatch<React.SetStateAction<Event[]>>;

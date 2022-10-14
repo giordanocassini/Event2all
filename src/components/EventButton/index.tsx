@@ -60,7 +60,7 @@ export default function EventButton({ setEvents }: Props) {
           <span className="modal-title">Criar Evento</span>
         </Modal.Header>
         <Modal.Body>
-          <Form onSubmit={submitEvent} className="asd ">
+          <Form onSubmit={submitEvent} className="">
             <Form.Group className=" boxform p-1 text-start mb-2">
               <Form.Label>Nome do Evento</Form.Label>
               <Form.Control
@@ -72,7 +72,7 @@ export default function EventButton({ setEvents }: Props) {
                 required
               />
             </Form.Group>
-            <Form.Group className=" boxform p-1 text-start mb-2">
+            <Form.Group className="boxform p-1 text-start mb-2">
               <Form.Label>Data</Form.Label>
               <Form.Control
                 className="inputTexto"
@@ -82,7 +82,7 @@ export default function EventButton({ setEvents }: Props) {
                 required
               />
             </Form.Group>
-            <Form.Group className=" boxform p-1 text-start mb-2">
+            <Form.Group className="boxform p-1 text-start mb-2">
               <Form.Label>Local</Form.Label>
               <Form.Control
                 className="inputTexto"
@@ -104,7 +104,7 @@ export default function EventButton({ setEvents }: Props) {
                 required
               />
             </Form.Group>
-            <Form.Group className=" boxform p-1 text-start mb-2">
+            <Form.Group className="boxform p-1 text-start mb-2">
               <Form.Label>Responsáveis</Form.Label>
               <Form.Control
                 className="inputTexto"
@@ -114,7 +114,7 @@ export default function EventButton({ setEvents }: Props) {
                 onChange={(e) => setManagers(e.target.value)}
               />
             </Form.Group>
-            <Form.Group className=" boxform p-1 text-start mb-5">
+            <Form.Group className="boxform p-1 text-start mb-5">
               <Form.Label>Orçamento Previsto</Form.Label>
               <Form.Control
                 className="inputTexto"

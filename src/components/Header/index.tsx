@@ -1,7 +1,7 @@
 import Container from "react-bootstrap/Container";
+import { Link } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import "./header.scss";
-import { Link } from "react-router-dom";
 
 export default function Header() {
   return (

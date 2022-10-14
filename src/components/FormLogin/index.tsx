@@ -1,12 +1,12 @@
-import { FormEvent, useState, useEffect } from "react";
+import { FormEvent, useState } from "react";
 import { Form, Button, FormGroup } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
-import { login } from "../../services/auth";
 import { useDispatch } from "react-redux";
-import { getUser, setUser } from "../../store/modules/users";
 import { Dispatch } from "@reduxjs/toolkit";
-import "./formLogin.scss";
+import { getUser } from "../../store/modules/users";
 import { PLogin } from "./style";
+import { login } from "../../services/auth";
+import "./formLogin.scss";
 
 export default function FormLogin() {
   const [email, setEmail] = useState<string>("");
