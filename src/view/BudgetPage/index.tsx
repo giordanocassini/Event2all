@@ -8,6 +8,7 @@ import "./BudgetPage.scss";
 import { useCallback, useEffect, useState } from "react";
 import {
   delQuotationByEventId,
+  getEvent,
   getQuotationById,
   getQuotationsByEventId,
 } from "../../services/auth";
@@ -41,7 +42,6 @@ export default function BudgetPage() {
   const [quotation, setQuotation] = useState<IQuotation>();
   const [previsto, setPrevisto] = useState<number>(0);
   const [atual, setAtual] = useState<number>(0);
-  const [diferenca, setDiferenca] = useState<number>(0);
   const eventId = useParams().id;
 
   const editQuotation = async (id: number) => {
@@ -52,6 +52,10 @@ export default function BudgetPage() {
   };
 
   const fetchQuotation = useCallback(async () => {
+    const responseEvent = await getEvent(eventId).then((res) => res.data);
+
+    setPrevisto(responseEvent.event_budget);
+
     const response = await getQuotationsByEventId(eventId!).then((res) => {
       return res.data.reverse();
     });
@@ -77,18 +81,11 @@ export default function BudgetPage() {
   }, [fetchQuotation]);
 
   useEffect(() => {
-    let valorPrevisto: number = 0;
     let valorContratado: number = 0;
-    let valorDiferenca: number = 0;
     quotations.forEach((quotation) => {
-      valorPrevisto += quotation.expected_expense;
       valorContratado += quotation.actual_expense;
     });
-    valorDiferenca = valorPrevisto - valorContratado;
-
-    setPrevisto(valorPrevisto);
     setAtual(valorContratado);
-    setDiferenca(valorDiferenca);
   }, [quotations]);
 
   const breadCrumbsItem: BreadcrumbItem[] = [
@@ -110,7 +107,7 @@ export default function BudgetPage() {
               <Card id="card-budget" className="rounded text-center m-4">
                 <Card.Body className="mt-2">
                   <Card.Title className="text-black">
-                    Previsto: R$ {previsto}
+                    Orçamento Geral: R$ {previsto}
                   </Card.Title>
                 </Card.Body>
               </Card>
@@ -128,7 +125,7 @@ export default function BudgetPage() {
               <Card id="card-budget3" className="rounded text-center m-4">
                 <Card.Body className="mt-2">
                   <Card.Title className="text-black">
-                    Restante: R$ {diferenca}
+                    Restante: R$ {previsto - atual}
                   </Card.Title>
                 </Card.Body>
               </Card>

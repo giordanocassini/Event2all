@@ -15,9 +15,12 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import Dropdown from "react-bootstrap/Dropdown";
 import { getEventListByUser } from "../../services/userServices";
 import { Event } from "../../utils/types";
-import { delEvent } from "../../services/auth";
+import { delEvent, getEvent } from "../../services/auth";
 
 export default function SideBar() {
+  const [show, setShow] = useState<boolean>(false);
+  const [edit, setEdit] = useState<boolean>(false);
+  const [event, setEvent] = useState<Event>();
   const [events, setEvents] = useState<Event[]>([]);
   const user = useSelector((store: RootStore) => store.userReduce);
   const navigate = useNavigate();
@@ -35,20 +38,25 @@ export default function SideBar() {
     });
 
     setEvents(response);
-  }, [setEvents, user.id]);
+  }, [setEvents, user.id, edit]);
 
   const handleDeleteEvent = useCallback(
     async (id: number) => {
       const response = await delEvent(id!).then((res) => res);
       if (response.status === 204) {
-        const newEvents = events.filter(
-          (event) => event.id !== id
-        );
+        const newEvents = events.filter((event) => event.id !== id);
         setEvents(newEvents);
       }
     },
     [events, setEvents]
-  )
+  );
+
+  const editEvent = async (id: number) => {
+    const response = await getEvent(id).then((res) => res.data);
+    setEvent(response);
+    setShow(true);
+    setEdit(true);
+  };
 
   useEffect(() => {
     fetchUser();
@@ -90,7 +98,10 @@ export default function SideBar() {
         <hr className="mb-4" />
         {events.length > 0 ? (
           events.map((event) => (
-            <div className="d-flex justify-content-between text-white fs-5 w-100 mb-4">
+            <div
+              className="d-flex justify-content-between text-white fs-5 w-100 mb-4"
+              key={event.id}
+            >
               <Link className="event-text mt-2" to={`/evento/${event.id}`}>
                 <div>{event.name}</div>
               </Link>
@@ -105,23 +116,37 @@ export default function SideBar() {
                   </Dropdown.Toggle>
 
                   <Dropdown.Menu>
-                    <Dropdown.Item href="#/action-1">Editar</Dropdown.Item>
-                    <Dropdown.Item 
-                      onClick={() => handleDeleteEvent(event.id)}
-                      >
-                        Deletar
-                      </Dropdown.Item>
+                    <Dropdown.Item onClick={() => editEvent(event.id)}>
+                      Editar
+                    </Dropdown.Item>
+                    <Dropdown.Item onClick={() => handleDeleteEvent(event.id)}>
+                      Deletar
+                    </Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
               </div>
             </div>
           ))
         ) : (
-          <EventList setEvents={setEvents} />
+          <EventList
+            setEvents={setEvents}
+            setShow={setShow}
+            show={show}
+            setEdit={setEdit}
+          />
         )}
 
         <hr />
-        {events.length > 0 && <CreateEvent setEvents={setEvents} />}
+        {events.length > 0 && (
+          <CreateEvent
+            setEvents={setEvents}
+            setShow={setShow}
+            show={show}
+            setEdit={setEdit}
+            event={event!}
+            edit={edit}
+          />
+        )}
         <Button className="logoff-botao w-100 m-4 " onClick={exit}>
           <IoExitOutline className="me-2" />
           Fazer Logoff

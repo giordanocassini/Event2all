@@ -25,7 +25,6 @@ interface EditEvent {
   date: string;
   place: string;
   invite_number: number;
-  managers: string[];
   event_budget: number;
 }
 

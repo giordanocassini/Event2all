@@ -94,11 +94,7 @@ export default function ModalBudget({
       });
 
       alert("Despesa atualizada com sucesso");
-
-      handleClose();
-    } catch (error) {
-      alert("Algo deu errado!");
-    }
+    } catch (error) {}
   };
 
   useEffect(() => {
