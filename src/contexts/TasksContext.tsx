@@ -1,7 +1,6 @@
 import { ChangeEvent, createContext, ReactNode, useState, useCallback, useEffect} from 'react';
 import { getTasks } from '../services/auth';
-
-
+import { useParams, useLocation } from "react-router-dom";
 interface ITasks {
     id: number;
     content: string;
@@ -19,21 +18,24 @@ interface ITasksContext {
 interface ITasksProviderProps {
     children: ReactNode;
 }
+
 export const TasksContext = createContext<ITasksContext>({} as ITasksContext);
 
 export function TasksProvider({children}: ITasksProviderProps) {
+    const eventId = useParams().id;
     const [tasks, setTasks] = useState<ITasks[]>([]);
     const [task, setTask] = useState('');
-
-    
     
     const fetchTasks = useCallback(async () => {
-        const response = await getTasks(14).then((res) => {
-          return res.data;
-        });
-    
-        setTasks(response);
-      }, [setTasks]);
+        if(eventId){
+            const response = await getTasks(eventId).then((res) => {
+                return res.data;
+              });
+              setTasks(response);
+        }
+    }, [setTasks]);
+        
+      
     
       useEffect(() => {
         fetchTasks();
@@ -53,7 +55,7 @@ export function TasksProvider({children}: ITasksProviderProps) {
         }
 
         setTasks(oldTask => [...oldTask, newTask]);
-        localStorage.setItem('ls_tasks', JSON.stringify([...tasks, newTask]))
+        
         setTask('');
     }
 
