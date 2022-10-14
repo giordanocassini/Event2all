@@ -81,12 +81,15 @@ export default function Guests() {
             <span className="spanConvidados">
               <MdPeopleAlt className="me-2" />
               Convidados
+            </span>
+          <div className="d-flex align-items-center justify-content-between">
+            <div className="me-3">
               Total de convidados:&nbsp;
                   {guests?.length}/{event?.invite_number}
-            </span>
-            <ModalGuests />
+                  </div>
+            <ModalGuests/>
           </div>
-
+          </div>
           <div className="m-4">
             <Table responsive id="width-table" className="text-left" hover>
               <thead className="thead-bg">
