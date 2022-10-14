@@ -116,11 +116,17 @@ export default function Guests() {
                         </td>
                         <td className="d-flex justify-content-between align-items-center">
                           {guest?.isConfirmed === "sim" ? (
-                            <PayStatus>Sim</PayStatus>
+                            <PayStatus>
+                              Sim
+                            </PayStatus>
                           ) : guest?.isConfirmed === "nao" ? (
-                            <FailStatus>Não</FailStatus>
+                            <FailStatus>
+                              Não
+                            </FailStatus>
                           ) : (
-                            <LoadingStatus>Talvez</LoadingStatus>
+                            <LoadingStatus>
+                              Talvez
+                            </LoadingStatus>
                           )}
                           <span>
                             <Dropdown>

@@ -134,8 +134,9 @@ export default function BudgetPage() {
             </div>
           </div>
           <div className="d-flex align-items-center justify-content-between m-4">
-            <span className="">
-              <MdPaid className="mb-1" /> Orçamento
+            <span>
+              <MdPaid className="mb-1" /> 
+              Orçamento
             </span>
 
             <ModalBudget
