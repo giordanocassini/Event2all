@@ -14,5 +14,6 @@ export const ButtonModal = styled.button`
     background-color: #72dfb8 !important;
     box-shadow: 0 0 8px #0a6545;
     border-bottom: 3px solid #0a6545;
+    transition: background-color 1s ease-out 100ms;
   }
 `;
