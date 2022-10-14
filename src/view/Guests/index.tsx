@@ -61,7 +61,7 @@ export default function Guests() {
 
   const handleDeleteGuest = useCallback(
     async (id: number) => {
-      const response = await delGuest(eventId!).then((res) => res);
+      const response = await delGuest(id!).then((res) => res);
       if (response.status === 204) {
         const newGuests = guests.filter(
           (guest) => guest.id !== id
