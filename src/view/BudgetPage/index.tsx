@@ -100,7 +100,7 @@ export default function BudgetPage() {
     <>
       <div className="h-100 d-flex">
         <SideBar />
-        <div className="d-flex flex-column">
+        <div className="d-flex flex-column w-100">
           <div>
             <BreadCrumbs items={breadCrumbsItem} />
           </div>
@@ -147,7 +147,7 @@ export default function BudgetPage() {
               quotation={quotation!}
             />
           </div>
-          <div className="d-flex w-100 m-4">
+          <div className="m-4">
             <Table hover>
               <thead className="thead-bg">
                 <tr>
@@ -175,7 +175,7 @@ export default function BudgetPage() {
                       {quotation.expected_expense -
                         quotation.amount_already_paid}
                     </td>
-                    <td>
+                    <td className="d-flex justify-content-between align-items-center ">
                       {quotation.actual_expense ===
                       quotation.amount_already_paid ? (
                         <PayStatus>
@@ -188,8 +188,7 @@ export default function BudgetPage() {
                           Em aberto
                           </LoadingStatus>
                       )}
-                    </td>
-                    <td>
+                      <span className="me-2">
                       <Dropdown>
                         <Dropdown.Toggle
                           variant="sucess"
@@ -212,10 +211,11 @@ export default function BudgetPage() {
                           </Dropdown.Item>
                         </Dropdown.Menu>
                       </Dropdown>
+                      </span>
                     </td>
                   </tr>
                 ))}
-              </tbody>
+                </tbody>
             </Table>
           </div>
         </div>
