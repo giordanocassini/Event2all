@@ -1,5 +1,5 @@
 import { ChangeEvent, createContext, ReactNode, useState, useCallback, useEffect} from 'react';
-import { getTasks } from '../services/auth';
+import { getTasks, postTask } from '../services/auth';
 import { useParams, useLocation } from "react-router-dom";
 interface ITasks {
     id: number;
@@ -36,7 +36,6 @@ export function TasksProvider({children}: ITasksProviderProps) {
     }, [setTasks]);
         
       
-    
       useEffect(() => {
         fetchTasks();
       }, [fetchTasks]);
@@ -47,16 +46,18 @@ export function TasksProvider({children}: ITasksProviderProps) {
 
     function handleAddTasks() {
         if(!task) return;
+        if(!eventId) return;
         
-        const newTask = {
-            id: Date.now(),
+        const payload = {
             content: task,
-            done: false
+            event_id: Number(eventId)
         }
 
-        setTasks(oldTask => [...oldTask, newTask]);
-        
-        setTask('');
+        postTask(payload).then((response) => {
+            const createdTask = response.data.newList
+            setTasks(oldTask => [...oldTask, createdTask]);
+            setTask('');
+        });        
     }
 
     function handleUpdateTask(id: number) {
