@@ -1,16 +1,16 @@
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { useEffect, useState, useCallback } from "react";
+import { BsThreeDotsVertical } from "react-icons/bs";
+import { CgClose } from "react-icons/cg";
+import { FcCheckmark } from "react-icons/fc";
+import { MdPeopleAlt } from "react-icons/md";
+import { Table, Dropdown } from "react-bootstrap";
 import BreadCrumbs from "../../components/BreadCrumbs";
 import SideBar from "../../components/SideBar/SideBar";
-import { Card, Table, InputGroup, Form, Dropdown } from "react-bootstrap";
-import { BsThreeDotsVertical } from "react-icons/bs";
-import { MdPeopleAlt } from "react-icons/md";
-import { useEffect, useState, useCallback } from "react";
 import { getEvent, getGuest, delGuest, editGuest } from "../../services/auth";
 import { LoadingStatus, PayStatus, FailStatus } from "../BudgetPage/style";
-import { FcCheckmark } from "react-icons/fc";
-import { CgClose } from "react-icons/cg";
-import "./guests.scss";
 import ModalGuests from "./modal";
+import "./guests.scss";
 
 export interface IGuests {
   id: number;
@@ -63,9 +63,7 @@ export default function Guests() {
     async (id: number) => {
       const response = await delGuest(id!).then((res) => res);
       if (response.status === 204) {
-        const newGuests = guests.filter(
-          (guest) => guest.id !== id
-        );
+        const newGuests = guests.filter((guest) => guest.id !== id);
         setGuests(newGuests);
       }
     },
@@ -116,7 +114,7 @@ export default function Guests() {
                             <CgClose color="red" />
                           )}
                         </td>
-                        <td className="d-flex justify-content-between align-items-center ">
+                        <td className="d-flex justify-content-between align-items-center">
                           {guest?.isConfirmed === "sim" ? (
                             <PayStatus>Sim</PayStatus>
                           ) : guest?.isConfirmed === "nao" ? (
@@ -124,7 +122,7 @@ export default function Guests() {
                           ) : (
                             <LoadingStatus>Talvez</LoadingStatus>
                           )}
-                          <span className="">
+                          <span>
                             <Dropdown>
                               <Dropdown.Toggle
                                 variant=""
@@ -134,10 +132,9 @@ export default function Guests() {
                                 <BsThreeDotsVertical color="black" />
                               </Dropdown.Toggle>
                               <Dropdown.Menu>
-                                  {/* <Dropdown.Item href="#/action-1">
-                                    Editar
-                                  </Dropdown.Item> */}
-                                <Dropdown.Item onClick={() => handleDeleteGuest(guest.id)}>
+                                <Dropdown.Item
+                                  onClick={() => handleDeleteGuest(guest.id)}
+                                >
                                   Deletar
                                 </Dropdown.Item>
                               </Dropdown.Menu>
