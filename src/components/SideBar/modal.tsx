@@ -57,8 +57,6 @@ export default function CreateEvent({
       setEvents((prev) => [...prev, response.data]);
 
       handleClose();
-
-      alert("Evento criado com sucesso");
     } catch (error) {
       alert("Algo deu errado");
     }
@@ -74,8 +72,6 @@ export default function CreateEvent({
         invite_number: invite_number ? invite_number : 0,
         event_budget: event_budget ? event_budget : 0,
       });
-
-      alert("Evento atualizado com sucesso!");
 
       handleClose();
     } catch (error) {

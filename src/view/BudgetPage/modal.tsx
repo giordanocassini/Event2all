@@ -90,7 +90,6 @@ export default function ModalBudget({
         amount_already_paid: paidBudget ? paidBudget : 0,
       });
 
-      alert("Despesa atualizada com sucesso");
       handleClose();
     } catch (error) {}
   };
