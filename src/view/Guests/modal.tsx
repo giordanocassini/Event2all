@@ -26,9 +26,9 @@ export default function ModalGuests() {
         contact,
         invite,
         isConfirmed,
-        event_id
+        event_id,
       });
-      alert("Convidado adicionado com sucesso");
+      handleClose();
     } catch (error) {
       alert("Algo deu errado!");
     }
@@ -85,14 +85,10 @@ export default function ModalGuests() {
               />
             </Form.Group>
             <FormGroup>
-              <span className="m-2">
-                Convite enviado?
-              </span>
-            <Form.Check className="ms-2" type="switch" id="custom-switch"/>
+              <span className="m-2">Convite enviado?</span>
+              <Form.Check className="ms-2" type="switch" id="custom-switch" />
             </FormGroup>
-            <span className="m-2">
-                Confirmado?
-              </span>
+            <span className="m-2">Confirmado?</span>
             <FormGroup className="mt-2 d-flex">
               <Form.Check
                 className="radio1 m-2"
@@ -113,7 +109,7 @@ export default function ModalGuests() {
                 value="nao"
                 label="Não"
               />
-              
+
               <Form.Check
                 className="radio3 m-2"
                 type="radio"
