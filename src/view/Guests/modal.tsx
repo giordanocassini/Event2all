@@ -70,7 +70,7 @@ export default function ModalGuests() {
                 placeholder="Inserir contato (Opcional)"
                 value={contact}
                 onChange={(e) => setContactGuest(e.target.value)}
-                required
+               
               />
             </Form.Group>
             <Form.Group className=" boxform p-1 text-start mb-2">
