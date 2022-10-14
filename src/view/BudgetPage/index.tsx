@@ -1,6 +1,8 @@
 import SideBar from "../../components/SideBar/SideBar";
 import { Card, Table, InputGroup, Form, Button } from "react-bootstrap";
 import { MdPaid } from "react-icons/md";
+import { BsCheck2Circle } from "react-icons/bs";
+import { GiSandsOfTime } from "react-icons/gi";
 import ModalBudget from "./modal";
 import BreadCrumbs from "../../components/BreadCrumbs";
 import "./BudgetPage.scss";
@@ -176,9 +178,15 @@ export default function BudgetPage() {
                     <td>
                       {quotation.actual_expense ===
                       quotation.amount_already_paid ? (
-                        <PayStatus>Pago</PayStatus>
+                        <PayStatus>
+                          <BsCheck2Circle/>
+                          Pago
+                          </PayStatus>
                       ) : (
-                        <LoadingStatus>Em aberto</LoadingStatus>
+                        <LoadingStatus>
+                          <GiSandsOfTime/>
+                          Em aberto
+                          </LoadingStatus>
                       )}
                     </td>
                     <td>
