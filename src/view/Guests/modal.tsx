@@ -26,9 +26,9 @@ export default function ModalGuests() {
         contact,
         invite,
         isConfirmed,
-        event_id
+        event_id,
       });
-      alert("Convidado adicionado com sucesso");
+      handleClose();
     } catch (error) {
       alert("Algo deu errado!");
     }
@@ -85,11 +85,13 @@ export default function ModalGuests() {
               />
             </Form.Group>
             <FormGroup>
-            <Form.Check className="ms-2" type="switch" id="custom-switch" label="Confirmado?" />
+              <span className="m-2">Convite enviado?</span>
+              <Form.Check className="ms-2" type="switch" id="custom-switch" />
             </FormGroup>
-            <FormGroup className="mx-4 mt-2 d-flex justify-content-evenly ">
+            <span className="m-2">Confirmado?</span>
+            <FormGroup className="mt-2 d-flex">
               <Form.Check
-                className="radio1"
+                className="radio1 m-2"
                 type="radio"
                 name="group1"
                 onChange={(e) => handleInputChanges(e)}
@@ -99,7 +101,7 @@ export default function ModalGuests() {
               />
 
               <Form.Check
-                className="radio2"
+                className="radio2 m-2"
                 type="radio"
                 name="group1"
                 onChange={(e) => handleInputChanges(e)}
@@ -107,9 +109,9 @@ export default function ModalGuests() {
                 value="nao"
                 label="Não"
               />
-              
+
               <Form.Check
-                className="radio3"
+                className="radio3 m-2"
                 type="radio"
                 name="group1"
                 onChange={(e) => handleInputChanges(e)}
