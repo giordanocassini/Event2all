@@ -1,8 +1,8 @@
 import { Breadcrumb } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { AiOutlineArrowLeft } from "react-icons/ai";
-import "./breadCrumbs.scss";
 import { BreadcrumbItem } from "../../utils/types";
+import "./breadCrumbs.scss";
 
 type BreadProps = {
   items: BreadcrumbItem[];

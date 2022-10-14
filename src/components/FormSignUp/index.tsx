@@ -1,11 +1,8 @@
-import { Form, Card, FormGroup, Button } from "react-bootstrap";
+import { Form, FormGroup, Button } from "react-bootstrap";
 import { FormEvent, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { register } from "../../services/auth";
-import Header from "../Header";
-import Footer from "../Footer";
-//import { cadastro } from "../../services/userServices";
-import { useNavigate } from "react-router-dom";
 import "./formSignUp.scss";
 
 export default function FormSignUp() {
@@ -51,7 +48,7 @@ export default function FormSignUp() {
         <span>Preencha seus dados e programe seu evento já!</span>
         <Form onSubmit={submit} className="text-center">
           <Form.Group
-            className=" boxform p-1 text-start mb-2"
+            className="boxform p-1 text-start mb-2"
             controlId="formBasicEmail"
           >
             <Form.Label>
@@ -99,7 +96,7 @@ export default function FormSignUp() {
           </Form.Group>
 
           <Form.Group
-            className=" boxform p-1 text-start mb-2"
+            className="boxform p-1 text-start mb-2"
             controlId="formBasicPassword"
           >
             <Form.Label>
