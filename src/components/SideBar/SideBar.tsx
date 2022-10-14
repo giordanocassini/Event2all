@@ -1,4 +1,4 @@
-import { InputGroup, Form, Button } from "react-bootstrap";
+import { InputGroup, Form, Button, Container } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import Avatar from "react-avatar";
 import { Link, useNavigate } from "react-router-dom";
@@ -63,7 +63,7 @@ export default function SideBar() {
   }, [fetchUser]);
 
   return (
-    <div className="vh-100 d-flex">
+    <div className="vh-100  d-flex">
       <div className="d-flex flex-column align-items-center stylesidebar">
         <div className="">
           <img src="/images/logotipo2.png" alt="logo" className="mt-5 mb-4" />

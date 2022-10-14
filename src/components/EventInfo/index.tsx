@@ -1,6 +1,7 @@
 import { Event } from "../../utils/types";
 import moment from "moment";
-import "./eventInfo.scss";
+import "./styles.ts";
+import { InfoEventStyle, StyleInfo } from "./styles";
 
 type EventInfoProps = {
   event: Event | undefined;
@@ -8,12 +9,11 @@ type EventInfoProps = {
 
 export default function EventInfo({ event }: EventInfoProps) {
   return (
-    <div className="event">
-      {/* vai pegar as infos do backend */}
+    <StyleInfo>
       <div>
         <h3>{event?.name}</h3>
       </div>
-      <div className="info-event">
+      <InfoEventStyle>
         <div>
           <p>DATA</p>
           <p>{moment(event?.date).format("DD/MM/YYYY kk:mm:ss")}</p>
@@ -30,7 +30,7 @@ export default function EventInfo({ event }: EventInfoProps) {
           <p>CONVIDADOS</p>
           <p>{event?.invite_number}</p>
         </div>
-      </div>
-    </div>
+      </InfoEventStyle>
+    </StyleInfo>
   );
 }

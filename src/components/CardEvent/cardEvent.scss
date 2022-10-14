@@ -2,9 +2,13 @@
   background-color: #f6f6f6;
   width: 19.125rem;
   height: 21.25rem;
-  border: 1px #47475C;
-  border-bottom: 4px solid #47475C;
+  border: 1px #47475c;
+  border-bottom: 4px solid #47475c;
   border-radius: 0.5rem;
+  &:hover {
+    background: #bdf1da;
+    transition: background-color 2s ease-out 100ms;
+  }
   .cardImage {
     width: 23%;
   }

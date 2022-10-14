@@ -52,7 +52,6 @@ interface GuestAdd {
   contact: string;
   invite: boolean;
   isConfirmed: boolean;
-  event_id: number;
 }
 
 function getConfig() {
@@ -66,12 +65,12 @@ function getConfig() {
   return config;
 }
 
-export function cadastroGuest(payload: GuestAdd) {
-  return baseApi.post("/guest", payload, getConfig());
+export function cadastroGuest(eventId: any, payload: GuestAdd) {
+  return baseApi.post(`/guest/${eventId}`, payload, getConfig());
 }
 
 export function getGuest(eventId: any) {
-  return baseApi.get(`./guest/event/${eventId}`, getConfig());
+  return baseApi.get(`/guest/event/${eventId}`, getConfig());
 }
 
 export function login(payload: LoginPayload) {
