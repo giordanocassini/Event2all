@@ -63,7 +63,7 @@ export default function Guests() {
     <>
       <div className="h-100 d-flex">
         <SideBar />
-        <div className="d-flex flex-column slash">
+        <div className="d-flex flex-column slash w-100">
           <div>
             <BreadCrumbs items={breadCrumbsItem} />
           </div>
