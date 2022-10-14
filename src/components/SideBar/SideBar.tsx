@@ -2,7 +2,6 @@ import { InputGroup, Form, Button, Container } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import Avatar from "react-avatar";
 import { Link, useNavigate } from "react-router-dom";
-import { BsSearch } from "react-icons/bs";
 import { IoExitOutline } from "react-icons/io5";
 import { removeUser } from "../../store/modules/users";
 import EventLogo from "../../../public/images/dashboard.png";

@@ -168,7 +168,6 @@ export default function CreateEvent({
                 placeholder=""
                 value={managers}
                 onChange={(e) => setManagers(e.target.value)}
-                // required
               />
             </Form.Group>
             <Form.Group className=" boxform p-1 text-start mb-5">
