@@ -75,7 +75,7 @@ export default function ModalGuests() {
                 placeholder="Inserir contato (Opcional)"
                 value={contact}
                 onChange={(e) => setContactGuest(e.target.value)}
-                required
+               
               />
             </Form.Group>
             <span className="m-2">Convite enviado?</span>
