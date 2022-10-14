@@ -11,6 +11,10 @@ Este projeto necessita de alguns passos para rodar corretamente, conforme descri
 
     1. Prévia instalação do Node.js - (https://nodejs.org/en/)
 
+## :partying_face: Link do Deploy
+
+[Event2All](https://event2all.netlify.app/)
+
 ## 🔧 Configurando o servidor
 
     1. Via terminal, digite o comando "npm install" para instalar todas as dependências do projeto.
