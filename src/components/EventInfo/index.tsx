@@ -1,4 +1,5 @@
 import { Event } from "../../utils/types";
+import moment from "moment";
 import "./eventInfo.scss";
 
 type EventInfoProps = {
@@ -15,7 +16,7 @@ export default function EventInfo({ event }: EventInfoProps) {
       <div className="info-event">
         <div>
           <p>DATA</p>
-          <p>{event?.date}</p>
+          <p>{moment(event?.date).format("DD/MM/YYYY kk:mm:ss")}</p>
         </div>
         <div>
           <p>LOCAL</p>
