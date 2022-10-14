@@ -79,16 +79,6 @@ export default function SideBar() {
             {user.name}
           </span>
         </div>
-        <InputGroup className="mt-4 me-auto">
-          <Form.Control
-            placeholder="Buscar..."
-            aria-label="Buscar"
-            aria-describedby="basic-addon2"
-          />
-          <Button className="bg-primary">
-            <BsSearch />
-          </Button>
-        </InputGroup>
         <span className="mt-5 me-auto events-font" style={{ color: "white" }}>
           <div className="linkEvent">
             <img className="mb-2 px-2" src={EventLogo} alt="Logo" />

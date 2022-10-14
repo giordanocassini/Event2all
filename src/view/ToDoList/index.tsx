@@ -28,21 +28,10 @@ export default function ToDoList() {
             Lista de Tarefas
           </div>
           <div className="novasTarefas">
-            
               <NewTask />
-            
           </div>
         </div>
-        <InputGroup className="mt-2 px-1 mb-1" colspan="8">
-          <Form.Control
-            placeholder="Buscar..."
-            aria-label="Buscar"
-            aria-describedby="basic-addon2"
-          />
-        </InputGroup>
-       
           <TaskList />
-        
       </div>
     </div>
     </TasksProvider>

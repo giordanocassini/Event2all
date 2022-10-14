@@ -67,27 +67,27 @@ export default function Guests() {
           <div>
             <BreadCrumbs items={breadCrumbsItem} />
           </div>
-          <div className="d-flex align items center justify-content-center">
+          {/* <div className="d-flex align items center justify-content-center">
             <Card id="card-budget" className=" text-center m-4">
               <Card.Body className="mt-2">
                 <Card.Title className="text-black">
                   Total de convidados:&nbsp;
-                   {guests?.length}/{event?.invite_number}
+                  {guests?.length}/{event?.invite_number}
                 </Card.Title>
               </Card.Body>
             </Card>
-          </div>
+          </div> */}
           <div className="d-flex align-items-center justify-content-between m-4">
-              
             <span className="spanConvidados">
               <MdPeopleAlt className="me-2" />
               Convidados
+              Total de convidados:&nbsp;
+                  {guests?.length}/{event?.invite_number}
             </span>
             <ModalGuests />
           </div>
-          
-      
-      <div className="m-4">
+
+          <div className="m-4">
             <Table responsive id="width-table" className="text-left" hover>
               <thead className="thead-bg">
                 <tr>
@@ -97,42 +97,41 @@ export default function Guests() {
                   <th>CONFIRMADO?</th>
                 </tr>
               </thead>
-              <td colspan="8">
-                <InputGroup className="mt-2 px-1 mb-1">
-                  <Form.Control
-                    placeholder="Buscar..."
-                    aria-label="Buscar"
-                    aria-describedby="basic-addon2"
-                  />
-                </InputGroup>
-              </td>
               <tbody className="tbody-bg">
                 {guests?.length > 0
-                  ? guests?.map((guest: any) => <tr>
-                  <td className="text-primary">{guest?.name}</td>
-                  <td>{guest?.contact}</td>
-                  <td>
-                    <Form.Check type="switch" id="custom-switch" />
-                    {guest?.invite}
-                  </td>
-                  <td className="d-flex justify-content-between align-items-center ">{guest?.isConfirmed ? "Sim" : "Não"}
-                  <span className="">
-                      <Dropdown>
-                  <Dropdown.Toggle
-                    variant=""
-                    id="dropdown-basic"
-                    className="dropdown-img"
-                  >
-                    <BsThreeDotsVertical color="black" />
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu>
-                    <Dropdown.Item href="#/action-1">Editar</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Deletar</Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown></span></td>
-                  </tr>)
-                  : ("Você ainda não adicionou nenhum convidado")}
-                
+                  ? guests?.map((guest: any) => (
+                      <tr>
+                        <td className="text-primary">{guest?.name}</td>
+                        <td>{guest?.contact}</td>
+                        <td>
+                          <Form.Check type="switch" id="custom-switch" />
+                          {guest?.invite}
+                        </td>
+                        <td className="d-flex justify-content-between align-items-center ">
+                          {guest?.isConfirmed ? "Sim" : "Não"}
+                          <span className="">
+                            <Dropdown>
+                              <Dropdown.Toggle
+                                variant=""
+                                id="dropdown-basic"
+                                className="dropdown-img"
+                              >
+                                <BsThreeDotsVertical color="black" />
+                              </Dropdown.Toggle>
+                              <Dropdown.Menu>
+                                <Dropdown.Item href="#/action-1">
+                                  Editar
+                                </Dropdown.Item>
+                                <Dropdown.Item href="#/action-2">
+                                  Deletar
+                                </Dropdown.Item>
+                              </Dropdown.Menu>
+                            </Dropdown>
+                          </span>
+                        </td>
+                      </tr>
+                    ))
+                  : "Você ainda não adicionou nenhum convidado"}
               </tbody>
             </Table>
           </div>
