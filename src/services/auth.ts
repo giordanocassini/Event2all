@@ -54,6 +54,11 @@ interface GuestAdd {
   isConfirmed: boolean;
 }
 
+interface TaskAdd{
+  content: string;
+  event_id: number;
+}
+
 function getConfig() {
   const token = window.localStorage.getItem("token");
 
@@ -116,4 +121,8 @@ export function delQuotationByEventId(id: number | string) {
 }
 export function getTasks(eventId: number | string) {
   return baseApi.get(`content/event/${eventId}`, getConfig());
+}
+
+export function postTask(payload: TaskAdd) {
+  return baseApi.post("/content", payload, getConfig());
 }
