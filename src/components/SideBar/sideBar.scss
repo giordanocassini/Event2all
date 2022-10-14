@@ -6,7 +6,7 @@
   padding: 0 32px;
 }
 
-.event-text{
+.event-text {
   color: white;
   text-decoration: none;
   font-size: 16px;
@@ -46,15 +46,14 @@ hr {
   border: 1px #fff solid;
   font-weight: 300;
   font-size: 20px;
-  color: #6EA8FE;
+  color: #6ea8fe;
 }
 
 .dropdown-img {
   color: white;
   filter: brightness(10);
-
 }
 
 .dropdown-toggle::after {
-  display:none !important
+  display: none !important;
 }

@@ -9,7 +9,7 @@ export default function Dashboard() {
   const [events, setEvents] = useState<any[]>([]);
   return (
     <>
-      <div className="h-100 d-flex">
+      <div className="d-flex">
         <SideBar />
         <div className="dashboard vh-100 w-100 ">
           <div className="text-dash d-flex justify-content-center align-items-center m-4 ">
