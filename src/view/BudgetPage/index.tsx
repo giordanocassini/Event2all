@@ -178,44 +178,46 @@ export default function BudgetPage() {
                     <td className="d-flex justify-content-between align-items-center ">
                       {quotation.actual_expense ===
                       quotation.amount_already_paid ? (
-                        <PayStatus>
-                          <BsCheck2Circle/>
+                        <PayStatus className="d-flex align-items-center justify-content-between">
+                          <BsCheck2Circle />
                           Pago
-                          </PayStatus>
+                        </PayStatus>
                       ) : (
-                        <LoadingStatus>
-                          <GiSandsOfTime/>
+                        <LoadingStatus className="d-flex align-items-center justify-content-between">
+                          <GiSandsOfTime />
                           Em aberto
-                          </LoadingStatus>
+                        </LoadingStatus>
                       )}
                       <span className="me-2">
-                      <Dropdown>
-                        <Dropdown.Toggle
-                          variant="sucess"
-                          id="dropdown-basic"
-                          className="dropdown-img"
-                        >
-                          <BsThreeDotsVertical />
-                        </Dropdown.Toggle>
+                        <Dropdown>
+                          <Dropdown.Toggle
+                            variant="sucess"
+                            id="dropdown-basic"
+                            className="dropdown-img"
+                          >
+                            <BsThreeDotsVertical />
+                          </Dropdown.Toggle>
 
-                        <Dropdown.Menu>
-                          <Dropdown.Item
-                            onClick={() => editQuotation(quotation.id)}
-                          >
-                            Editar
-                          </Dropdown.Item>
-                          <Dropdown.Item
-                            onClick={() => handleDeleteQuotation(quotation.id)}
-                          >
-                            Deletar
-                          </Dropdown.Item>
-                        </Dropdown.Menu>
-                      </Dropdown>
+                          <Dropdown.Menu>
+                            <Dropdown.Item
+                              onClick={() => editQuotation(quotation.id)}
+                            >
+                              Editar
+                            </Dropdown.Item>
+                            <Dropdown.Item
+                              onClick={() =>
+                                handleDeleteQuotation(quotation.id)
+                              }
+                            >
+                              Deletar
+                            </Dropdown.Item>
+                          </Dropdown.Menu>
+                        </Dropdown>
                       </span>
                     </td>
                   </tr>
                 ))}
-                </tbody>
+              </tbody>
             </Table>
           </div>
         </div>
