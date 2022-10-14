@@ -37,8 +37,6 @@ export default function EventButton({ setEvents }: Props) {
       setEventBudget(0);
 
       setShow(false);
-
-      alert("Evento criado com sucesso");
     } catch (error) {
       alert("Algo deu errado!");
     }
