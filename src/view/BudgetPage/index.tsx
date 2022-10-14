@@ -2,7 +2,6 @@ import SideBar from "../../components/SideBar/SideBar";
 import { Card, Table, InputGroup, Form, Button } from "react-bootstrap";
 import { MdPaid } from "react-icons/md";
 import ModalBudget from "./modal";
-import { Pagination } from "@mui/material";
 import BreadCrumbs from "../../components/BreadCrumbs";
 import "./BudgetPage.scss";
 import { useCallback, useEffect, useState } from "react";
@@ -210,11 +209,6 @@ export default function BudgetPage() {
               </tbody>
             </Table>
           </div>
-          <Pagination
-            className="d-flex w-100 align-items-center justify-content-center"
-            count={10}
-            color="primary"
-          />
         </div>
       </div>
     </>
