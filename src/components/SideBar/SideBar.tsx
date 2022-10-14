@@ -62,8 +62,6 @@ export default function SideBar() {
     fetchUser();
   }, [fetchUser]);
 
-  // console.log(`aaaaaa ${event.length} asd`)
-
   return (
     <div className="vh-100 d-flex">
       <div className="d-flex flex-column align-items-center stylesidebar">
