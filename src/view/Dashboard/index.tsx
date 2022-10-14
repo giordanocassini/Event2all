@@ -8,18 +8,18 @@ export default function Dashboard() {
     <>
       <div className="d-flex">
         <SideBar />
-        <div className="dashboard vh-100 w-100 ">
-          <div className="text-dash d-flex justify-content-center align-items-center m-4 ">
+        <div className="dashboard vh-100 w-100">
+          <div className="text-dash d-flex justify-content-center align-items-center m-4">
             <div>
               <h3 className="mt-4 w-50">
                 Clique no botão para adicionar um novo evento.
               </h3>
             </div>
-            <div className="m-4 ">
+            <div className="m-4">
               <EventButton setEvents={setEvents} />
             </div>
           </div>
-          <div className="d-flex justify-content-center ">
+          <div className="d-flex justify-content-center">
             <img src={"/images/festa2.png"} />
           </div>
         </div>

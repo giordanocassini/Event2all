@@ -1,6 +1,6 @@
-import { Button, Form, FormGroup, FormLabel, Modal } from "react-bootstrap";
-import { useState, FormEvent, useEffect } from "react";
+import { useState, FormEvent } from "react";
 import { Link, useParams } from "react-router-dom";
+import { Button, Form, FormGroup, Modal } from "react-bootstrap";
 import { cadastroGuest } from "../../services/auth";
 import "./guests.scss";
 
@@ -55,8 +55,8 @@ export default function ModalGuests() {
           <span className="modal-title">Adicionar Convidado</span>
         </Modal.Header>
         <Modal.Body>
-          <Form onSubmit={submitAddGuest} className="asd ">
-            <Form.Group className=" boxform p-1 text-start mb-2">
+          <Form onSubmit={submitAddGuest} className="asd">
+            <Form.Group className="boxform p-1 text-start mb-2">
               <Form.Label>Nome </Form.Label>
               <Form.Control
                 className="inputTexto"
@@ -67,7 +67,7 @@ export default function ModalGuests() {
                 required
               />
             </Form.Group>
-            <Form.Group className=" boxform p-1 text-start mb-2">
+            <Form.Group className="boxform p-1 text-start mb-2">
               <Form.Label>Contato</Form.Label>
               <Form.Control
                 className="inputTexto"

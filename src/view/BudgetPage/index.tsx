@@ -1,23 +1,23 @@
-import SideBar from "../../components/SideBar/SideBar";
 import { Card, Table, InputGroup, Form, Button } from "react-bootstrap";
+import { useParams, useLocation } from "react-router-dom";
+import { useCallback, useEffect, useState } from "react";
 import { MdPaid } from "react-icons/md";
 import { BsCheck2Circle } from "react-icons/bs";
 import { GiSandsOfTime } from "react-icons/gi";
-import ModalBudget from "./modal";
+import { BsThreeDotsVertical } from "react-icons/bs";
 import BreadCrumbs from "../../components/BreadCrumbs";
+import Dropdown from "react-bootstrap/Dropdown";
+import ModalBudget from "./modal";
+import SideBar from "../../components/SideBar/SideBar";
 import "./BudgetPage.scss";
-import { useCallback, useEffect, useState } from "react";
 import {
   delQuotationByEventId,
   getEvent,
   getQuotationById,
   getQuotationsByEventId,
 } from "../../services/auth";
-import { useParams, useLocation } from "react-router-dom";
 import React from "react";
 import { BreadcrumbItem } from "../../utils/types";
-import Dropdown from "react-bootstrap/Dropdown";
-import { BsThreeDotsVertical } from "react-icons/bs";
 import { LoadingStatus, PayStatus } from "./style";
 
 export interface IQuotation {
