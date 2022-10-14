@@ -134,9 +134,9 @@ export default function Guests() {
                                 <BsThreeDotsVertical color="black" />
                               </Dropdown.Toggle>
                               <Dropdown.Menu>
-                                <Dropdown.Item href="#/action-1">
-                                  Editar
-                                </Dropdown.Item>
+                                  {/* <Dropdown.Item href="#/action-1">
+                                    Editar
+                                  </Dropdown.Item> */}
                                 <Dropdown.Item onClick={() => handleDeleteGuest(guest.id)}>
                                   Deletar
                                 </Dropdown.Item>
