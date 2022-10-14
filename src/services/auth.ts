@@ -115,3 +115,6 @@ export function editQuotationById(id: number | string, payload: EditBudget) {
 export function delQuotationByEventId(id: number | string) {
   return baseApi.delete(`/quotation/${id}`, getConfig());
 }
+export function getTasks(eventId: number | string) {
+  return baseApi.get(`content/event/${eventId}`, getConfig());
+}

@@ -1,11 +1,12 @@
-import { ChangeEvent, createContext, ReactNode, useState } from 'react';
+import { ChangeEvent, createContext, ReactNode, useState, useCallback, useEffect} from 'react';
+import { getTasks } from '../services/auth';
+
 
 interface ITasks {
     id: number;
-    task: string;
+    content: string;
     done: boolean;
 }
-
 interface ITasksContext {
     task: string;
     tasks: ITasks[];
@@ -18,20 +19,25 @@ interface ITasksContext {
 interface ITasksProviderProps {
     children: ReactNode;
 }
-
 export const TasksContext = createContext<ITasksContext>({} as ITasksContext);
 
 export function TasksProvider({children}: ITasksProviderProps) {
-    const [tasks, setTasks] = useState<ITasks[]>(() => {
-        const storagedTasks = localStorage.getItem('ls_tasks');
-    
-        if(storagedTasks) {
-          return JSON.parse(storagedTasks);
-        }
-    
-        return [];
-    })
+    const [tasks, setTasks] = useState<ITasks[]>([]);
     const [task, setTask] = useState('');
+
+    
+    
+    const fetchTasks = useCallback(async () => {
+        const response = await getTasks(14).then((res) => {
+          return res.data;
+        });
+    
+        setTasks(response);
+      }, [setTasks]);
+    
+      useEffect(() => {
+        fetchTasks();
+      }, [fetchTasks]);
 
     function handleAddNewTask(e: ChangeEvent<HTMLInputElement>) {
         setTask(e.target.value)
@@ -42,7 +48,7 @@ export function TasksProvider({children}: ITasksProviderProps) {
         
         const newTask = {
             id: Date.now(),
-            task,
+            content: task,
             done: false
         }
 
