@@ -78,6 +78,14 @@ export function getGuest(eventId: any) {
   return baseApi.get(`/guest/event/${eventId}`, getConfig());
 }
 
+export function editGuest(eventId: any, payload: GuestAdd){
+  return baseApi.put(`/guest/${eventId}`, payload, getConfig());
+}
+
+export function delGuest(eventId: any){
+  return baseApi.delete(`/guest/${eventId}`, getConfig());
+}
+
 export function login(payload: LoginPayload) {
   return baseApi.post("/login", payload);
 }
