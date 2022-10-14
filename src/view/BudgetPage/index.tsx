@@ -16,6 +16,7 @@ import React from "react";
 import { BreadcrumbItem } from "../../utils/types";
 import Dropdown from "react-bootstrap/Dropdown";
 import { BsThreeDotsVertical } from "react-icons/bs";
+import { LoadingStatus, PayStatus } from "./style";
 
 export interface IQuotation {
   id: number;
@@ -115,7 +116,7 @@ export default function BudgetPage() {
               <Card id="card-budget2" className="rounded text-center m-4">
                 <Card.Body className="mt-2">
                   <Card.Title className="text-black">
-                    Contratado: R$ {atual}
+                    Atual: R$ {atual}
                   </Card.Title>
                 </Card.Body>
               </Card>
@@ -124,7 +125,7 @@ export default function BudgetPage() {
               <Card id="card-budget3" className="rounded text-center m-4">
                 <Card.Body className="mt-2">
                   <Card.Title className="text-black">
-                    Restante: R$ {previsto - atual}
+                    Saldo: R$ {previsto - atual}
                   </Card.Title>
                 </Card.Body>
               </Card>
@@ -175,9 +176,9 @@ export default function BudgetPage() {
                     <td>
                       {quotation.actual_expense ===
                       quotation.amount_already_paid ? (
-                        <Button className="btn btn-success">Pago</Button>
+                        <PayStatus>Pago</PayStatus>
                       ) : (
-                        <Button className="btn btn-danger">Em aberto</Button>
+                        <LoadingStatus>Em aberto</LoadingStatus>
                       )}
                     </td>
                     <td>

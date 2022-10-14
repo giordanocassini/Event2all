@@ -1,52 +1,51 @@
-#card-budget{
-height: 77px;
-width: 306px;
-border-radius: 8px;
-background-color: #F6F6F6;
-box-shadow: 0px 4px 0px black;
-border: 0;
+#card-budget {
+  height: 77px;
+  width: 306px;
+  border-radius: 8px;
+  background-color: #f6f6f6;
+  box-shadow: 0px 4px 0px black;
+  border: 0;
 }
 
-#card-budget2{
-height: 77px;
-width: 306px;
-border-radius: 8px;
-background-color: #F6F6F6;
-box-shadow: 0px 4px 0px #0A6545;
-border: 0;
+#card-budget2 {
+  height: 77px;
+  width: 306px;
+  border-radius: 8px;
+  background-color: #f6f6f6;
+  box-shadow: 0px 4px 0px #0d6efd;
+  border: 0;
 }
 
-#card-budget3{
-height: 77px;
-width: 306px;
-border-radius: 8px;
-background-color: #F6F6F6;
-box-shadow: 0px 4px 0px #CF1C1C;
-border: 0;
+#card-budget3 {
+  height: 77px;
+  width: 306px;
+  border-radius: 8px;
+  background-color: #f6f6f6;
+  box-shadow: 0px 4px 0px #14c989;
+  border: 0;
 }
 
-.thead-bg{
-    background-color: #E9E9EB;
+.thead-bg {
+  background-color: #e9e9eb;
 }
 
-.tbody-bg{
-    background-color: #F6F6F6;
+.tbody-bg {
+  background-color: #f6f6f6;
 }
 
-th{
-    padding-top: 16px !important;
-    padding-bottom: 25px !important;
+th {
+  padding-top: 16px !important;
+  padding-bottom: 25px !important;
 }
 
-th:first-child{
-    border-top-left-radius: 8px
+th:first-child {
+  border-top-left-radius: 8px;
 }
 
-th:last-child{
-    border-top-right-radius: 8px
+th:last-child {
+  border-top-right-radius: 8px;
 }
 
 .dropdown-img {
-    color: black;
-  }
-  
+  color: black;
+}
