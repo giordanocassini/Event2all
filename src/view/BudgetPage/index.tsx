@@ -115,7 +115,7 @@ export default function BudgetPage() {
               <Card id="card-budget2" className="rounded text-center m-4">
                 <Card.Body className="mt-2">
                   <Card.Title className="text-black">
-                    Contratado: R$ {atual}
+                    Atual: R$ {atual}
                   </Card.Title>
                 </Card.Body>
               </Card>
@@ -124,7 +124,7 @@ export default function BudgetPage() {
               <Card id="card-budget3" className="rounded text-center m-4">
                 <Card.Body className="mt-2">
                   <Card.Title className="text-black">
-                    Restante: R$ {previsto - atual}
+                    Saldo: R$ {previsto - atual}
                   </Card.Title>
                 </Card.Body>
               </Card>
