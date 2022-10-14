@@ -5,13 +5,14 @@ import './taskList.scss';
 
 export default function TaskList() {
     const { tasks } = useContext(TasksContext)
+//console.log(tasks);
     return(
         <div className="container">
             <ul id="task-list">
                 {tasks && tasks.map((task) => (
                     <Task
                         key={task.id} 
-                        task={task.task} 
+                        content={task.content} 
                         done={task.done} 
                         id={task.id} 
                     />

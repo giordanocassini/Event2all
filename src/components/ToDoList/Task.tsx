@@ -5,11 +5,11 @@ import "./task.scss";
 
 interface TaskProps {
   id: number;
-  task: string;
+  content: string;
   done: boolean;
 }
 
-export function Task({ id, task, done }: TaskProps) {
+export function Task({ id, content, done }: TaskProps) {
   const { handleUpdateTask, handleDeleteTask } = useContext(TasksContext);
   return (
     <>
@@ -22,7 +22,7 @@ export function Task({ id, task, done }: TaskProps) {
             onClick={() => handleUpdateTask(id)}
           />
           <label htmlFor={"check_" + id} className={done ? "active" : ""}>
-            {task}
+            {content}
           </label>
         </div>
         <span
