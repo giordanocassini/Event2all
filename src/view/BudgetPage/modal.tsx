@@ -92,6 +92,7 @@ export default function ModalBudget({
       });
 
       alert("Despesa atualizada com sucesso");
+      handleClose();
     } catch (error) {}
   };
 
