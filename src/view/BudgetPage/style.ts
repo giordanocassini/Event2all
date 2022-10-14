@@ -1,5 +1,14 @@
 import styled from "styled-components";
 
+export const FailStatus = styled.button`
+  background-color: #B00E0E;
+  border-radius: 5px;
+  color: black;
+  font-size: 16px;
+  width: 5rem;
+  border: #B00E0E;
+`;
+
 export const PayStatus = styled.button`
   background-color: #d0f4e7;
   border-radius: 5px;

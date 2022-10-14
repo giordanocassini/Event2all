@@ -6,6 +6,9 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import { MdPeopleAlt } from "react-icons/md";
 import { useEffect, useState, useCallback } from "react";
 import { getEvent, getGuest } from "../../services/auth";
+import { LoadingStatus, PayStatus, FailStatus } from "../BudgetPage/style";
+import {FcCheckmark} from "react-icons/fc"
+import {CgClose} from "react-icons/cg"
 import "./guests.scss";
 import ModalGuests from "./modal";
 
@@ -57,7 +60,7 @@ export default function Guests() {
     }
   }, [setGuests, eventId]);
 
-  console.log(`${guests}`);
+  console.log(`${guests?.contact}`);
 
   return (
     <>
@@ -107,11 +110,10 @@ export default function Guests() {
                         <td className="text-primary">{guest?.name}</td>
                         <td>{guest?.contact}</td>
                         <td>
-                          <Form.Check type="switch" id="custom-switch" />
-                          {guest?.invite}
+                          {guest?.invite ? <FcCheckmark/> : <CgClose color="red"/>}
                         </td>
                         <td className="d-flex justify-content-between align-items-center ">
-                          {guest?.isConfirmed ? "Sim" : "Não"}
+                          {guest?.isConfirmed === "sim" ? (<PayStatus>Sim</PayStatus>) : guest?.isConfirmed === "nao" ? <FailStatus>Não</FailStatus> : <LoadingStatus>Talvez</LoadingStatus> }
                           <span className="">
                             <Dropdown>
                               <Dropdown.Toggle
