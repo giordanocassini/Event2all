@@ -1,5 +1,4 @@
 import { Card } from "react-bootstrap";
-import { StringOptions } from "sass";
 import "./cardEvent.scss";
 
 type CardEventProps = {

@@ -2,7 +2,6 @@ import { useState, FormEvent, useEffect } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { IQuotation } from ".";
-
 import {
   cadastroBudget,
   editQuotationById,
@@ -91,7 +90,6 @@ export default function ModalBudget({
         amount_already_paid: paidBudget ? paidBudget : 0,
       });
 
-      alert("Despesa atualizada com sucesso");
       handleClose();
     } catch (error) {}
   };
@@ -126,7 +124,7 @@ export default function ModalBudget({
             onSubmit={edit ? submitEditEvent : submitEvent}
             className="asd "
           >
-            <Form.Group className=" boxform p-1 text-start mb-2">
+            <Form.Group className="boxform p-1 text-start mb-2">
               <Form.Label>Descrição</Form.Label>
               <Form.Control
                 className="inputTexto"
@@ -137,7 +135,7 @@ export default function ModalBudget({
                 required
               />
             </Form.Group>
-            <Form.Group className=" boxform p-1 text-start mb-2">
+            <Form.Group className="boxform p-1 text-start mb-2">
               <Form.Label>Fornecedor</Form.Label>
               <Form.Control
                 className="inputTexto"
@@ -148,7 +146,7 @@ export default function ModalBudget({
                 required
               />
             </Form.Group>
-            <Form.Group className=" boxform p-1 text-start mb-2">
+            <Form.Group className="boxform p-1 text-start mb-2">
               <Form.Label>Contato</Form.Label>
               <Form.Control
                 className="inputTexto"
@@ -158,7 +156,7 @@ export default function ModalBudget({
                 onChange={(e) => setContact(e.target.value)}
               />
             </Form.Group>
-            <Form.Group className=" boxform p-1 text-start mb-2">
+            <Form.Group className="boxform p-1 text-start mb-2">
               <Form.Label>Valor Previsto</Form.Label>
               <Form.Control
                 className="inputTexto"
@@ -169,7 +167,7 @@ export default function ModalBudget({
                 required
               />
             </Form.Group>
-            <Form.Group className=" boxform p-1 text-start mb-2">
+            <Form.Group className="boxform p-1 text-start mb-2">
               <Form.Label>Valor Contratado</Form.Label>
               <Form.Control
                 className="inputTexto"
@@ -180,7 +178,7 @@ export default function ModalBudget({
                 required
               />
             </Form.Group>
-            <Form.Group className=" boxform p-1 text-start mb-2">
+            <Form.Group className="boxform p-1 text-start mb-2">
               <Form.Label>Valor Pago</Form.Label>
               <Form.Control
                 className="inputTexto"
@@ -192,7 +190,7 @@ export default function ModalBudget({
               />
             </Form.Group>
             <Button
-              className=" m-3 d-flex  aligh-items-end justify-content-end "
+              className="m-3 d-flex  aligh-items-end justify-content-end"
               variant="primary"
               type="submit"
             >
@@ -204,4 +202,3 @@ export default function ModalBudget({
     </>
   );
 }
-// Alinhar com o pessoal de backend sobre os parametros e pedir pra adicionar/alterar

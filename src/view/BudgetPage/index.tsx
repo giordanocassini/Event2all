@@ -1,23 +1,23 @@
-import SideBar from "../../components/SideBar/SideBar";
 import { Card, Table, InputGroup, Form, Button } from "react-bootstrap";
+import { useParams, useLocation } from "react-router-dom";
+import { useCallback, useEffect, useState } from "react";
 import { MdPaid } from "react-icons/md";
 import { BsCheck2Circle } from "react-icons/bs";
 import { GiSandsOfTime } from "react-icons/gi";
-import ModalBudget from "./modal";
+import { BsThreeDotsVertical } from "react-icons/bs";
 import BreadCrumbs from "../../components/BreadCrumbs";
+import Dropdown from "react-bootstrap/Dropdown";
+import ModalBudget from "./modal";
+import SideBar from "../../components/SideBar/SideBar";
 import "./BudgetPage.scss";
-import { useCallback, useEffect, useState } from "react";
 import {
   delQuotationByEventId,
   getEvent,
   getQuotationById,
   getQuotationsByEventId,
 } from "../../services/auth";
-import { useParams, useLocation } from "react-router-dom";
 import React from "react";
 import { BreadcrumbItem } from "../../utils/types";
-import Dropdown from "react-bootstrap/Dropdown";
-import { BsThreeDotsVertical } from "react-icons/bs";
 import { LoadingStatus, PayStatus } from "./style";
 
 export interface IQuotation {
@@ -134,8 +134,9 @@ export default function BudgetPage() {
             </div>
           </div>
           <div className="d-flex align-items-center justify-content-between m-4">
-            <span className="">
-              <MdPaid className="mb-1" /> Orçamento
+            <span>
+              <MdPaid className="mb-1" /> 
+              Orçamento
             </span>
 
             <ModalBudget
@@ -178,44 +179,46 @@ export default function BudgetPage() {
                     <td className="d-flex justify-content-between align-items-center ">
                       {quotation.actual_expense ===
                       quotation.amount_already_paid ? (
-                        <PayStatus>
-                          <BsCheck2Circle/>
+                        <PayStatus className="d-flex align-items-center justify-content-between">
+                          <BsCheck2Circle />
                           Pago
-                          </PayStatus>
+                        </PayStatus>
                       ) : (
-                        <LoadingStatus>
-                          <GiSandsOfTime/>
+                        <LoadingStatus className="d-flex align-items-center justify-content-between">
+                          <GiSandsOfTime />
                           Em aberto
-                          </LoadingStatus>
+                        </LoadingStatus>
                       )}
                       <span className="me-2">
-                      <Dropdown>
-                        <Dropdown.Toggle
-                          variant="sucess"
-                          id="dropdown-basic"
-                          className="dropdown-img"
-                        >
-                          <BsThreeDotsVertical />
-                        </Dropdown.Toggle>
+                        <Dropdown>
+                          <Dropdown.Toggle
+                            variant="sucess"
+                            id="dropdown-basic"
+                            className="dropdown-img"
+                          >
+                            <BsThreeDotsVertical />
+                          </Dropdown.Toggle>
 
-                        <Dropdown.Menu>
-                          <Dropdown.Item
-                            onClick={() => editQuotation(quotation.id)}
-                          >
-                            Editar
-                          </Dropdown.Item>
-                          <Dropdown.Item
-                            onClick={() => handleDeleteQuotation(quotation.id)}
-                          >
-                            Deletar
-                          </Dropdown.Item>
-                        </Dropdown.Menu>
-                      </Dropdown>
+                          <Dropdown.Menu>
+                            <Dropdown.Item
+                              onClick={() => editQuotation(quotation.id)}
+                            >
+                              Editar
+                            </Dropdown.Item>
+                            <Dropdown.Item
+                              onClick={() =>
+                                handleDeleteQuotation(quotation.id)
+                              }
+                            >
+                              Deletar
+                            </Dropdown.Item>
+                          </Dropdown.Menu>
+                        </Dropdown>
                       </span>
                     </td>
                   </tr>
                 ))}
-                </tbody>
+              </tbody>
             </Table>
           </div>
         </div>

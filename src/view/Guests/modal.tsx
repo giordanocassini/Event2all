@@ -1,8 +1,7 @@
 import { Button, Form, FormGroup, FormLabel, Modal } from "react-bootstrap";
 import { useState, FormEvent, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { cadastroGuest, getGuest } from "../../services/auth";
-import { IGuests } from ".";
+import { Link, useParams } from "react-router-dom";
+import { cadastroGuest } from "../../services/auth";
 import "./guests.scss";
 
 
@@ -69,8 +68,8 @@ export default function ModalGuests({
           <span className="modal-title">Adicionar Convidado</span>
         </Modal.Header>
         <Modal.Body>
-          <Form onSubmit={submitAddGuest} className="asd ">
-            <Form.Group className=" boxform p-1 text-start mb-2">
+          <Form onSubmit={submitAddGuest} className="asd">
+            <Form.Group className="boxform p-1 text-start mb-2">
               <Form.Label>Nome </Form.Label>
               <Form.Control
                 className="inputTexto"
@@ -81,7 +80,7 @@ export default function ModalGuests({
                 required
               />
             </Form.Group>
-            <Form.Group className=" boxform p-1 text-start mb-2">
+            <Form.Group className="boxform p-1 text-start mb-2">
               <Form.Label>Contato</Form.Label>
               <Form.Control
                 className="inputTexto"

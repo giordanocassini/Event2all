@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 export const FailStatus = styled.button`
-  background-color: #B00E0E;
+  background-color: #b00e0e;
   border-radius: 5px;
   color: black;
   font-size: 16px;
   width: 5rem;
-  border: #B00E0E;
+  border: #b00e0e;
 `;
 
 export const PayStatus = styled.button`
@@ -22,6 +22,6 @@ export const LoadingStatus = styled.button`
   border-radius: 5px;
   color: black;
   font-size: 16px;
-  width: 8rem;
+  width: 7.2rem;
   border: #e7f1ff;
 `;

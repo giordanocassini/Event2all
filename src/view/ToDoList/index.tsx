@@ -4,7 +4,6 @@ import TaskList from "../../components/ToDoList/TaskList";
 import { TasksProvider } from "../../contexts/TasksContext";
 import { NewTask } from "../../components/ToDoList/NewTask";
 import { AiFillCheckCircle } from "react-icons/ai";
-import { Form, InputGroup } from "react-bootstrap";
 import "./toDo.scss";
 
 export default function ToDoList() {

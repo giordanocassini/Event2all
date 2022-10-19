@@ -1,11 +1,10 @@
 import { useState, FormEvent, useEffect } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
-import "./stylemodal.ts";
 import { cadastroEvent, editEventById } from "../../services/auth";
 import { ButtonCreateModal } from "./stylemodal";
-ButtonCreateModal;
-import "./modal.scss";
 import { Event } from "../../utils/types";
+import "./stylemodal.ts";
+import "./modal.scss";
 
 interface Props {
   setEvents: React.Dispatch<React.SetStateAction<Event[]>>;
@@ -58,8 +57,6 @@ export default function CreateEvent({
       setEvents((prev) => [...prev, response.data]);
 
       handleClose();
-
-      alert("Evento criado com sucesso");
     } catch (error) {
       alert("Algo deu errado");
     }
@@ -75,8 +72,6 @@ export default function CreateEvent({
         invite_number: invite_number ? invite_number : 0,
         event_budget: event_budget ? event_budget : 0,
       });
-
-      alert("Evento atualizado com sucesso!");
 
       handleClose();
     } catch (error) {
@@ -168,7 +163,6 @@ export default function CreateEvent({
                 placeholder=""
                 value={managers}
                 onChange={(e) => setManagers(e.target.value)}
-                // required
               />
             </Form.Group>
             <Form.Group className=" boxform p-1 text-start mb-5">
