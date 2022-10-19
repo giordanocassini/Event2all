@@ -1,10 +1,18 @@
 import { Button, Form, FormGroup, FormLabel, Modal } from "react-bootstrap";
 import { useState, FormEvent, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
-import { cadastroGuest } from "../../services/auth";
+import { useParams } from "react-router-dom";
+import { cadastroGuest, getGuest } from "../../services/auth";
+import { IGuests } from ".";
 import "./guests.scss";
 
-export default function ModalGuests() {
+
+interface Props{
+  setGuests:  React.Dispatch<React.SetStateAction<IGuests[]>>;
+}
+
+export default function ModalGuests({
+  setGuests
+}: Props) {
   const [name, setNameGuest] = useState<string>("");
   const [contact, setContactGuest] = useState<string>("");
   const [invite, setInviteGuest] = useState<any>(false);
@@ -32,6 +40,12 @@ export default function ModalGuests() {
           isConfirmed,
         }
       );
+
+      const response = await getGuest(eventId!).then((res) => {
+        return res.data.reverse();
+      });
+      setGuests(response);
+
       handleClose();
     } catch (error) {
       alert("Algo deu errado!");
