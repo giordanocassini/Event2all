@@ -1,7 +1,8 @@
 import { Button, Form, FormGroup, FormLabel, Modal } from "react-bootstrap";
 import { useState, FormEvent, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
-import { cadastroGuest } from "../../services/auth";
+import { useParams } from "react-router-dom";
+import { cadastroGuest, getGuest } from "../../services/auth";
+import { IGuests } from ".";
 import "./guests.scss";
 
 
