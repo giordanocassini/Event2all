@@ -2,9 +2,18 @@
   font-weight: 700;
 }
 
+thead{
+  position: sticky;
+}
+
 #width-table {
   // width: 966px;
   overflow-x: auto !important;
+}
+
+.overy{
+  max-height: 1100px !important;
+  overflow-y: auto !important;
 }
 
 .radio2 {

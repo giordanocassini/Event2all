@@ -91,7 +91,7 @@ export default function Guests() {
               <ModalGuests setGuests = {setGuests} />
             </div>
           </div>
-          <div className="m-4">
+          <div className="m-4 overy">
             <Table responsive id="width-table" className="text-left" hover>
               <thead className="thead-bg">
                 <tr>
