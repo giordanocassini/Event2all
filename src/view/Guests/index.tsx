@@ -50,7 +50,7 @@ export default function Guests() {
     if (eventId) {
       getGuest(eventId)
         .then((response) => {
-          const guests = response.data;
+          const guests = response.data.reverse();
           setGuests(guests);
         })
         .catch(() => {
@@ -88,10 +88,10 @@ export default function Guests() {
                 Total de convidados:&nbsp;
                 {guests?.length}/{event?.invite_number}
               </div>
-              <ModalGuests />
+              <ModalGuests setGuests = {setGuests} />
             </div>
           </div>
-          <div className="m-4">
+          <div className="m-4 overy">
             <Table responsive id="width-table" className="text-left" hover>
               <thead className="thead-bg">
                 <tr>
