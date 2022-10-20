@@ -28,6 +28,7 @@ export default function FormSignUp() {
           birth_date,
           password,
         });
+        alert("Cadastro realizado com sucesso!");
         navigate("/login");
       } catch (error) {}
     }
