@@ -57,6 +57,7 @@ export default function CreateEvent({
       setEvents((prev) => [...prev, response.data]);
 
       handleClose();
+      alert("Evento cadastrado com sucesso!!!");
     } catch (error) {
       alert("Algo deu errado");
     }

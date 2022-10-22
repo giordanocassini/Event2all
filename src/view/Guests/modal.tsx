@@ -5,14 +5,11 @@ import { cadastroGuest, getGuest } from "../../services/auth";
 import { IGuests } from ".";
 import "./guests.scss";
 
-
-interface Props{
-  setGuests:  React.Dispatch<React.SetStateAction<IGuests[]>>;
+interface Props {
+  setGuests: React.Dispatch<React.SetStateAction<IGuests[]>>;
 }
 
-export default function ModalGuests({
-  setGuests
-}: Props) {
+export default function ModalGuests({ setGuests }: Props) {
   const [name, setNameGuest] = useState<string>("");
   const [contact, setContactGuest] = useState<string>("");
   const [invite, setInviteGuest] = useState<any>(false);
@@ -20,7 +17,7 @@ export default function ModalGuests({
 
   const toggler = () => {
     invite ? setInviteGuest(false) : setInviteGuest(true);
-  }
+  };
 
   const handleInputChanges = (e: React.ChangeEvent<HTMLInputElement>) => {
     setIsConfirmed(e.target.value);
@@ -31,15 +28,12 @@ export default function ModalGuests({
   const submitAddGuest = async (event: FormEvent) => {
     event.preventDefault();
     try {
-      await cadastroGuest(
-         eventId!,
-        {
-          name,
-          contact,
-          invite,
-          isConfirmed,
-        }
-      );
+      await cadastroGuest(eventId!, {
+        name,
+        contact,
+        invite,
+        isConfirmed,
+      });
 
       const response = await getGuest(eventId!).then((res) => {
         return res.data.reverse();
@@ -47,11 +41,11 @@ export default function ModalGuests({
       setGuests(response);
 
       handleClose();
+      alert("Convidado cadastrado com sucesso");
     } catch (error) {
       alert("Algo deu errado!");
     }
   };
-
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -89,7 +83,6 @@ export default function ModalGuests({
                 placeholder="Inserir contato (Opcional)"
                 value={contact}
                 onChange={(e) => setContactGuest(e.target.value)}
-               
               />
             </Form.Group>
             <span className="m-2">Convite enviado?</span>

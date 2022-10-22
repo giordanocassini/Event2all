@@ -73,6 +73,7 @@ export default function ModalBudget({
       setQuotations(response);
 
       handleClose();
+      alert("Orçamento cadastrado com sucesso");
     } catch (error) {
       alert("Algo deu errado!");
     }
