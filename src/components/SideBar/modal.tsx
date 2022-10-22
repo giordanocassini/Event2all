@@ -59,7 +59,7 @@ export default function CreateEvent({
       handleClose();
       alert("Evento cadastrado com sucesso!!!");
     } catch (error) {
-      alert("Algo deu errado");
+      alert("Responsável adicional não cadastrado na plataforma ");
     }
   };
 
@@ -75,6 +75,7 @@ export default function CreateEvent({
       });
 
       handleClose();
+      alert(" Evento editado com sucesso");
     } catch (error) {
       alert("Algo deu errado");
     }
@@ -157,7 +158,7 @@ export default function CreateEvent({
               />
             </Form.Group>
             <Form.Group className=" boxform p-1 text-start mb-2">
-              <Form.Label>Responsáveis</Form.Label>
+              <Form.Label> </Form.Label>
               <Form.Control
                 className="inputTexto"
                 type="text"

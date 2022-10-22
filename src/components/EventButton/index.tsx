@@ -39,7 +39,7 @@ export default function EventButton({ setEvents }: Props) {
       setShow(false);
       alert("Evento criado com sucesso");
     } catch (error) {
-      alert("Algo deu errado!");
+      alert("Responsável adicional não  cadastrado na plataforma ");
     }
   };
   const [show, setShow] = useState(false);
