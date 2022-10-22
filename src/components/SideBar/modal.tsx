@@ -160,7 +160,7 @@ export default function CreateEvent({
               <Form.Control
                 className="inputTexto"
                 type="text"
-                placeholder=""
+                placeholder="Digite o email do responsável"
                 value={managers}
                 onChange={(e) => setManagers(e.target.value)}
               />
