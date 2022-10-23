@@ -1,15 +1,25 @@
 import SideBar from "../../components/SideBar/SideBar";
 import BreadCrumbs from "../../components/BreadCrumbs";
+import { useParams, useLocation } from "react-router-dom";
 import TaskList from "../../components/ToDoList/TaskList";
 import { TasksProvider } from "../../contexts/TasksContext";
 import { NewTask } from "../../components/ToDoList/NewTask";
 import { AiFillCheckCircle } from "react-icons/ai";
+import { BreadcrumbItem } from "../../utils/types";
+import React from "react";
 import "./toDo.scss";
 
+function useQuery(search: string) {
+  return React.useMemo(() => new URLSearchParams(search), [search]);
+}
+
 export default function ToDoList() {
-  const breadCrumbsItem = [
+  const { search } = useLocation();
+  const eventId = useParams().id;
+
+  const breadCrumbsItem: BreadcrumbItem[] = [
     { name: "Dashboard", link: "/dashboard" },
-    { name: "Nome do Evento", link: "/evento" },
+    { name: useQuery(search).get("event") ?? "", link: `/evento/${eventId}` },
     { name: "Tarefas" },
   ];
 
