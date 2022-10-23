@@ -1,5 +1,6 @@
-import { useParams } from "react-router-dom";
 import { useEffect, useState, useCallback } from "react";
+import { useParams, useLocation } from "react-router-dom";
+import React from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { CgClose } from "react-icons/cg";
 import { FcCheckmark } from "react-icons/fc";
@@ -10,6 +11,7 @@ import SideBar from "../../components/SideBar/SideBar";
 import { getEvent, getGuest, delGuest, editGuest } from "../../services/auth";
 import { LoadingStatus, PayStatus, FailStatus } from "../BudgetPage/style";
 import ModalGuests from "./modal";
+import { BreadcrumbItem } from "../../utils/types";
 import "./guests.scss";
 
 export interface IGuests {
@@ -20,14 +22,12 @@ export interface IGuests {
   createDateColumn: Date;
   updateDateColumn: Date;
 }
+function useQuery(search: string) {
+  return React.useMemo(() => new URLSearchParams(search), [search]);
+}
 
 export default function Guests() {
-  const breadCrumbsItem = [
-    { name: "Home", link: "/" },
-    { name: "Nome do Evento", link: "/evento" },
-    { name: "Convidados", link: "/convidados" },
-  ];
-
+  const { search } = useLocation();
   const [event, setEvent] = useState<any>();
   const [guests, setGuests] = useState<IGuests[]>([]);
   const [guest, setGuest] = useState<IGuests>();
@@ -69,6 +69,12 @@ export default function Guests() {
     },
     [guests, setGuests]
   );
+
+  const breadCrumbsItem: BreadcrumbItem[] = [
+    { name: "Dashboard", link: "/dashboard" },
+    { name: useQuery(search).get("event") ?? "", link: `/evento/${eventId}` },
+    { name: "Convidados"},
+  ];
 
   return (
     <>
@@ -158,3 +164,7 @@ export default function Guests() {
     </>
   );
 }
+function search(search: any) {
+  throw new Error("Function not implemented.");
+}
+
