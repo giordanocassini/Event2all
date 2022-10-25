@@ -40,11 +40,12 @@
 @media only screen and (max-width: 768px) {
   .header-resp {
     display: none;
+    
+    nav {
+      flex-wrap: wrap !important;
+    }
   }
 
-  nav {
-    flex-wrap: wrap !important;
-  }
 }
 
 @media only screen and (max-width: 541px) {
