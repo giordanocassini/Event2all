@@ -1,0 +1,22 @@
+
+.dashboard {
+    margin-left: 440px !important;
+}
+
+@media screen and (max-width: 980px) {
+    .dashboard {
+        margin-top: 48px !important;
+        margin-left: 0 !important;
+    }
+
+    .text-dash {
+        flex-direction: column;
+        justify-content: center !important;
+        align-items: center;
+    }
+
+    h3 {
+        text-align: center !important;
+        margin: 0;
+    }
+}

@@ -57,3 +57,34 @@ hr {
 .dropdown-toggle::after {
   display: none !important;
 }
+
+.desktopSidebar {
+  position: fixed !important;
+}
+
+@media screen and (max-width: 980px) {
+  .desktopSidebar {
+    display: none !important;
+  }
+  .mobileNavbar {
+    position: fixed !important;
+  }
+
+  .stylesidebar {
+    width: 100% !important;
+  }
+}
+
+@media screen and (min-width: 980px) {
+  .desktopSidebar {
+    display: flex !important;
+  }
+
+  .mobileNavbar {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 780px) {
+
+}
