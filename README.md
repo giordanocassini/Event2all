@@ -41,5 +41,5 @@ Projeto desenvolvido essencialmente em React, TypeScript, Bootstrap, Styled-Comp
 [Tatyanna Mota](https://github.com/tatymota)<br/>
 [Larissa Mendes](https://github.com/annalare/)<br/>
 [Thalita Pereira](https://github.com/pereirathalita)<br/>
-[Fernando](https://github.com/froyalt)<br/>
+[Fernando Torreal](https://github.com/froyalt)<br/>
 [Shin](https://github.com/shinkr99)<br/>
