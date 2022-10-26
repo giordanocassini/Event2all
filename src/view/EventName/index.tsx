@@ -35,7 +35,7 @@ export default function EventName() {
     <>
       <div className="h-100 d-flex">
         <SideBar />
-        <div className="w-100 vh-100">
+        <div className="w-100 vh-100 eventDash">
           <div>
             <div>
               <BreadCrumbs items={breadCrumbs} />
