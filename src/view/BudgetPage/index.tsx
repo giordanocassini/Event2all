@@ -100,7 +100,7 @@ export default function BudgetPage() {
     <>
       <div className="h-100 d-flex">
         <SideBar />
-        <div className="d-flex flex-column w-100">
+        <div className="d-flex flex-column w-100 guestDashboard">
           <div>
             <BreadCrumbs items={breadCrumbsItem} />
           </div>
