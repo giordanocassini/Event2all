@@ -27,7 +27,7 @@ export default function ToDoList() {
     <TasksProvider>
     <div className="h-100 d-flex">
       <SideBar />
-      <div className="w-100 vh-100 d-flex flex-column">
+      <div className="w-100 vh-100 d-flex flex-column taskDashboard">
         <div>
           <BreadCrumbs items={breadCrumbsItem} />
         </div>

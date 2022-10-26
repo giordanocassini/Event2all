@@ -18,3 +18,16 @@
   flex-direction: row;
   align-items: center !important;
 }
+
+
+.taskDashboard {
+  margin-left: 375px !important;
+}
+
+@media screen and (max-width: 980px) {
+  .taskDashboard {
+      margin-top: 48px !important;
+      margin-left: 0 !important;
+  }
+
+}

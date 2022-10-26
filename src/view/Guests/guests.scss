@@ -40,3 +40,17 @@ thead{
   background-color: rgba(124, 219, 15, 0.767);
   color: black;
 }
+
+
+
+.guestDashboard {
+  margin-left: 375px !important;
+}
+
+@media screen and (max-width: 980px) {
+  .guestDashboard {
+      margin-top: 48px !important;
+      margin-left: 0 !important;
+  }
+
+}
